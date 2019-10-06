@@ -25,43 +25,53 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: ConferenceList(),
-      drawer: Drawer(
-        child: Column(
-          children: <Widget>[
-            Padding(
-              padding: EdgeInsets.only(top: 20),
-            ),
-            ListTile(
-              title: Text('Home Page'),
-              leading: Icon(Icons.home),
-            ),
-            ListTile(
-              title: Text('Favorites'),
-              leading: Icon(Icons.star),
-            ),
-            ListTile(
-              title: Text('Search'),
-              leading: Icon(Icons.search),
-            ),
-          ],
+        appBar: AppBar(
+          title: Text(widget.title),
         ),
-      ),
-    );
+        body: ConferenceList(),
+        drawer: Drawer(
+          child: Column(
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.only(top: 20),
+              ),
+              ListTile(
+                title: Text('Home Page'),
+                leading: Icon(Icons.home),
+              ),
+              ListTile(
+                title: Text('Favorites'),
+                leading: Icon(Icons.star),
+              ),
+              ListTile(
+                title: Text('Search'),
+                leading: Icon(Icons.search),
+              ),
+            ],
+          ),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: 0,
+          type: BottomNavigationBarType.shifting,
+          items: [
+            BottomNavigationBarItem(
+                icon: Icon(Icons.ac_unit, color: Color.fromARGB(255, 0, 0, 0)),
+                title: new Text('')),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.ac_unit, color: Color.fromARGB(255, 0, 0, 0)),
+                title: new Text('')),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.ac_unit, color: Color.fromARGB(255, 0, 0, 0)),
+                title: new Text('')),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.access_alarm,
+                    color: Color.fromARGB(255, 0, 0, 0)),
+                title: new Text(''))
+          ],
+        ));
   }
 }
 
@@ -74,7 +84,8 @@ class ConferenceList extends StatelessWidget {
           leading: CircleAvatar(
             backgroundColor: Colors.blue,
           ),
-          title: Text('Conference A'),
+          title: Text('Conference A',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40, color: Colors.blue)),
           subtitle: Text('theme: A \nStarts: 10:30'),
           isThreeLine: true,
           dense: true,
@@ -83,9 +94,12 @@ class ConferenceList extends StatelessWidget {
         ),
         ListTile(
           leading: CircleAvatar(
-            backgroundColor: Colors.blue,
+            backgroundColor: Colors.yellow,
           ),
-          title: Text('Conference A'),
+          title: Text('Conference A',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              )),
           subtitle: Text('theme: A \nStarts: 10:30'),
           isThreeLine: true,
           dense: true,
@@ -95,9 +109,12 @@ class ConferenceList extends StatelessWidget {
         ),
         ListTile(
           leading: CircleAvatar(
-            backgroundColor: Colors.blue,
+            backgroundColor: Colors.red,
           ),
-          title: Text('Conference A'),
+          title: Text('Conference A',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              )),
           subtitle: Text('theme: A \nStarts: 10:30'),
           isThreeLine: true,
           dense: true,
@@ -106,9 +123,12 @@ class ConferenceList extends StatelessWidget {
         ),
         ListTile(
           leading: CircleAvatar(
-            backgroundColor: Colors.blue,
+            backgroundColor: Colors.green,
           ),
-          title: Text('Conference A'),
+          title: Text('Conference A',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              )),
           subtitle: Text('theme: A \nStarts: 10:30'),
           isThreeLine: true,
           dense: true,
@@ -117,9 +137,12 @@ class ConferenceList extends StatelessWidget {
         ),
         ListTile(
           leading: CircleAvatar(
-            backgroundColor: Colors.blue,
+            backgroundColor: Colors.black,
           ),
-          title: Text('Conference A'),
+          title: Text('Conference A',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              )),
           subtitle: Text('theme: A \nStarts: 10:30'),
           isThreeLine: true,
           dense: true,
