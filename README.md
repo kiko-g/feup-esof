@@ -13,6 +13,15 @@
 > Matheus Alves ([matheusstiehler](https://github.com/matheusstiehler))
 
 
+**TO DO**
+- [x] Fazer modulo do drawer profile.
+- [x] Fazer modulo do drawer favorites.
+- [x] Fazer modulo do drawer settings.
+- [x] Perceber o que esta de mal nas routes flutter.
+- [x] Fazer menu de navegacao inferior com 3 icons
+- [x] Acabar user stories.
+
+
  
 
 
