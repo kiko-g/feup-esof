@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'profile.dart';
-import 'favorites.dart';
+// import 'favorites.dart';
 import 'settings.dart';
-import 'help.dart';
+// import 'help.dart';
 
 void main() => runApp(CampusNAV());
 

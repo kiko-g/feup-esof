@@ -15,7 +15,7 @@ class MyProfileState extends State<MyProfile> {
     return new Scaffold(
       appBar: AppBar(title: Text('PROFILE')),
       drawer: AppDrawer(),
-      body: new Checkbox(activeColor: Colors.blue, value: false, tristate: true,),
+      // body: new Checkbox(activeColor: Colors.blue, value: false, tristate: true)
     );
   }
 }
