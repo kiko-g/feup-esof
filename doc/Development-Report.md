@@ -50,7 +50,7 @@ Start by contextualizing your module, describing the main concepts, terms, roles
 
 ### Use case diagram 
 
-![Use case diagram](/doc/Images/UseCases.jpg)
+![Use case diagram](/Images/UseCases.jpg)
 Create a use-case diagram in UML with all high-level use cases possibly addressed by your module.
 
 Give each use case a concise, results-oriented name. Use cases should reflect the tasks the user needs to be able to accomplish using the system. Include an action verb and a noun. 
