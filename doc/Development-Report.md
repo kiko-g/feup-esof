@@ -31,6 +31,7 @@ Francisco Gonçalves, João Mota, Luís Ramos, Martim Pinto Silva, Matheus Stieh
 ---
 
 ## Product Vision
+
 Campus NAV is a navigational application for mobile that focuses on conferences and more importantly helping attendees navigating in unknown buildings that house theese conferences.
 
 Campus NAV will allow its users to explore freely without any boundaries in an unknown environment and also provide extra information about the conferences currently taking place aswell as other scheduled conferences. The application will also allow the users to know a litle bit more about the building itself, giving attendees more freedom and thus a better overall experience.
@@ -38,11 +39,21 @@ Campus NAV will allow its users to explore freely without any boundaries in an u
 ---
 
 ## Elevator Pitch
+
 Campus NAV is a mobile application that helps conferences attendants navigating inside buildings. This results in the use of less manpower to help attendants, and gives them a better overall experience.
 
 ---
 
 ## Requirements
+
+The application should give the user a realiable realtime location and provide up to date information about conference schedules.
+
+For this, the application needs to keep a stable connection with the various beacons scaterred through the buildings.
+
+Both connection with the various beacons and the user location will be achieved using bluetooth in conjuction with open source APIs.
+
+
+bluetooth in  using open source APIs and user location will be triangulated using 
 
 In this section, you should describe all kinds of requirements for your module: functional and non-functional requirements.
 
@@ -50,12 +61,53 @@ Start by contextualizing your module, describing the main concepts, terms, roles
 
 ### Use case diagram 
 
-![Use case diagram](Images/UseCases.jpg)
+![Use case diagram](useCases.jpg)
+
+
 Create a use-case diagram in UML with all high-level use cases possibly addressed by your module.
 
 Give each use case a concise, results-oriented name. Use cases should reflect the tasks the user needs to be able to accomplish using the system. Include an action verb and a noun. 
 
 Briefly describe each use case mentioning the following:
+
+#### Use Cases
+* **Go to Conference**
+
+**Actor**: Attendee
+
+**Description**: After an attendee has arrived at a conference location, and has selected the conference, the application will guide him to the conference room.
+
+
+The user indicates that she wants to purchase items that she has selected.
+Preconditions:
+
+User has selected the items to be purchased.
+Post-conditions:
+
+The order will be placed in the system.
+The user will have a tracking ID for the order.
+The user will know the estimated delivery date for the order.
+Normal Flow:
+
+The user will indicate that she wants to order the items that have already been selected.
+The system will present the billing and shipping information that the user previously stored.
+The user will confirm that the existing billing and shipping information should be used for this order.
+The system will present the amount that the order will cost, including applicable taxes and shipping charges.
+The user will confirm that the order information is accurate.
+The system will provide the user with a tracking ID for the order.
+The system will submit the order to the fulfillment system for evaluation.
+The fulfillment system will provide the system with an estimated delivery date.
+The system will present the estimated delivery date to the user.
+The user will indicate that the order should be placed.
+The system will request that the billing system should charge the user for the order.
+The billing system will confirm that the charge has been placed for the order.
+The system will submit the order to the fulfillment system for processing.
+The fulfillment system will confirm that the order is being processed.
+The system will indicate to the user that the user has been charged for the order.
+The system will indicate to the user that the order has been placed.
+The user will exit the system.
+Alternate Flows:
+
 
 * **Actor**. Name only the actor that will be initiating this use case, i.e. a person or other entity external to the software system being specified who interacts with the system and performs use cases to accomplish tasks. 
 * **Description**. Provide a brief description of the reason for and outcome of this use case, or a high-level description of the sequence of actions and the outcome of executing the use case. 
