@@ -17,7 +17,8 @@
 - [ ] Fazer modulo do drawer profile.
 - [ ] Fazer modulo do drawer favorites.
 - [ ] Fazer modulo do drawer settings.
-- [ ] Perceber o que esta de mal nas routes flutter.
+- [ ] Image assets conferences logo can't upload!?
+- [ ] ReordableListView!?
 - [ ] Fazer menu de navegacao inferior com 3 icons
 - [ ] Continuar user stories.
 
