@@ -1,7 +1,7 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'main.dart';
+import 'drawer.dart';
 
 class Bloc {
   final _themeController = StreamController<bool>();
@@ -30,7 +30,7 @@ class MySettingsState extends State<MySettings> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(title: Text('Settings'),),
-      drawer: AppDrawer(),
+      drawer: AppDrawer(context),
       body: Container(
         padding: new EdgeInsets.all(32.0),
         child: new Column(

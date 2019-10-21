@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'main.dart';
-
+import 'drawer.dart';
 
 class MyProfile extends StatefulWidget {
   @override
@@ -14,9 +13,8 @@ class MyProfileState extends State<MyProfile> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(title: Text('PROFILE')),
-      drawer: AppDrawer(),
-      // body: new Checkbox(activeColor: Colors.blue, value: false, tristate: true)
+      drawer: AppDrawer(context),
+      body: new Checkbox(activeColor: Colors.blue, value: false, tristate: true,),
     );
   }
 }
-
