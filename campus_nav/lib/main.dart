@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'drawer.dart';
+import 'favourites.dart';
 import 'search.dart';
 
 /*
@@ -65,33 +66,26 @@ class ConferenceList extends StatelessWidget {
   final conferencesList;
   ConferenceList(this.conferencesList);
   
-  final children = <Widget>[];
+  final customWidgetList = <Widget>[];
 
   @override
   Widget build(BuildContext context) {
     
     for(var i=0; i<conferencesList.length; i++) {
-      children.add(new ExpansionTile(
-            leading: CircleAvatar(backgroundImage: conferencesList[i][5],),
-            title: Text(conferencesList[i][0],
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white)),
-            initiallyExpanded: false,
-            children: <Widget>[
-              ListTile(
-                leading: Icon(Icons.star_border), 
-                title: Text('Theme: ' + conferencesList[i][1] + '\nStarts: ' + conferencesList[i][2] + '\nEnds: ' + conferencesList[i][3] + '\nRoom: ' + conferencesList[i][4],
-                  style: TextStyle(fontWeight: FontWeight.w200, fontSize: 20, color: Colors.white)),
-                onTap: () => {},
-                trailing: Icon(Icons.directions_walk),
-              )
-            ],
-            trailing: Icon(Icons.arrow_drop_down_circle),
+      customWidgetList.add(
+        MyCustomWidget(
+          name: conferencesList[i][0],
+          theme: conferencesList[i][1],
+          starts: conferencesList[i][2],
+          ends: conferencesList[i][3],
+          room: conferencesList[i][4],
+          image: conferencesList[i][5],
         )
       );
     }
 
-    return ListView(
-        children: children,
+    return ListView(  
+        children: customWidgetList,
     );
   }
 }
@@ -120,14 +114,88 @@ class BottomNavigationMenu extends StatelessWidget {
   }
 }
 
+class MyCustomWidget extends StatefulWidget {
+  final name, theme, starts, ends, room, image;
+  MyCustomWidget({this.name, this.theme, this.starts, this.ends, this.room, this.image});
+
+  @override
+  _MyCustomWidgetState createState() => 
+  _MyCustomWidgetState(
+    name: name,
+    theme: theme,
+    starts: starts,
+    ends: ends,
+    room: room,
+    image: image,
+  );
+}
+
+class _MyCustomWidgetState extends State<MyCustomWidget> {
+  bool isFavourited = false;
+
+  var name, theme, starts, ends, room, image;
+  _MyCustomWidgetState({this.name, this.theme, this.starts, this.ends, this.room, this.image});
+  
+  updateFav() {
+    setState(() {
+      if(isFavourited)
+        isFavourited = false;
+      else 
+        isFavourited = true;       
+    });
+  }
+
+  updateGo() {
+    setState(() {
+      print('GO GO GO\n');   
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return ExpansionTile(
+      leading: 
+      ClipOval(
+        child: Image.asset(image,
+          fit: BoxFit.fitWidth,
+          width: 50.0,
+          height: 50.0,
+      )
+      ),
+      title: Text(name,
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white)),
+      initiallyExpanded: false,
+      children: <Widget>[
+        ListTile(
+          leading: IconButton(
+            color: Colors.yellow,
+            tooltip: "Add to  Myfavourites",
+            icon: (isFavourited ? Icon(Icons.star) : Icon(Icons.star_border)),
+            onPressed: updateFav,
+          ),
+          trailing: IconButton(
+            tooltip: "Go to conference room",
+            icon: Icon(Icons.directions_run),
+            onPressed: updateGo,
+          ),
+          title: Text('Theme: ' + theme + '\nStarts: ' + starts + '\nEnds: ' + ends + '\nRoom: ' + room,
+            style: TextStyle(fontWeight: FontWeight.w200, fontSize: 20, color: Colors.white)),
+        )
+      ],
+      trailing: Icon(Icons.arrow_drop_down_circle),
+    );
+  }
+}
+
+
 //Update everyday to display conferences on present day
 List conferenceVector() {
 
-  final webSummitImg = AssetImage('assets/images/conferencesLogos/Web_Summit.png');
-  final icmlImg = AssetImage('assets/images/conferencesLogos/ICML.png');
-  final cesImg = AssetImage('assets/images/conferencesLogos/CES.png');
-  final dreamForceImg = AssetImage('assets/images/conferencesLogos/Dreamforce.png');
-  final inc5000Img = AssetImage('assets/images/conferencesLogos/inc-5000.png');
+  final String webSummitImg = 'assets/images/Web_Summit.png';
+  final String icmlImg = 'assets/images/ICML.png';
+  final String cesImg = 'assets/images/CES.png';
+  final String dreamForceImg = 'assets/images/Dreamforce.png';
+  final String inc5000Img = 'assets/images/inc-5000.png';
 
   List conferencesList = [
     ["Web Summit", "Tech", "10:30", "11:30", "B201", webSummitImg],
