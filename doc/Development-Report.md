@@ -77,17 +77,11 @@ Briefly describe each use case mentioning the following:
 
 **Description**: After an attendee has arrived at a conference location, and has selected the conference, the application will guide him to the conference room.
 
+**Preconditions**: Attendee has selected the conference that he would like to go to.
 
-The user indicates that she wants to purchase items that she has selected.
-Preconditions:
+**Post-conditions**: The order will be placed in the system. The user will have a tracking ID for the order. The user will know the estimated delivery date for the order.
 
-User has selected the items to be purchased.
-Post-conditions:
-
-The order will be placed in the system.
-The user will have a tracking ID for the order.
-The user will know the estimated delivery date for the order.
-Normal Flow:
+**Normal Flow**:
 
 The user will indicate that she wants to order the items that have already been selected.
 The system will present the billing and shipping information that the user previously stored.
@@ -106,7 +100,7 @@ The fulfillment system will confirm that the order is being processed.
 The system will indicate to the user that the user has been charged for the order.
 The system will indicate to the user that the order has been placed.
 The user will exit the system.
-Alternate Flows:
+**Alternate Flows**:
 
 
 * **Actor**. Name only the actor that will be initiating this use case, i.e. a person or other entity external to the software system being specified who interacts with the system and performs use cases to accomplish tasks. 
