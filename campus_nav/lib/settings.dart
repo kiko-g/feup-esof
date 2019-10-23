@@ -20,10 +20,8 @@ class MySettingsState extends State<MySettings> {
 
   bool darkMode = false;
 
-  void onChanged(bool valueReceived) {
-    setState(() {
-      bloc.changeTheme;
-    });
+  void onChanged() {
+    bloc.changeTheme;
   }
 
   @override
@@ -39,7 +37,12 @@ class MySettingsState extends State<MySettings> {
               title: Text('Dark Mode'),
               activeColor: Colors.white,
               value: darkMode,
-              onChanged: (bool value) { onChanged(value); },
+              onChanged: (bool value) { 
+                setState(() {
+                  darkMode = value;
+                  onChanged();
+                }); 
+              },
             )
           ],
         ),
