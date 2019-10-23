@@ -13,14 +13,11 @@
 > Matheus Alves ([matheusstiehler](https://github.com/matheusstiehler))
 
 
-**TO DO**
+**App content TO DO:**
+
 - [ ] Fazer modulo do drawer profile.
 - [ ] Fazer modulo do drawer favorites.
-- [ ] Fazer modulo do drawer settings.
-- [ ] Image assets conferences logo can't upload!?
-- [ ] ReordableListView!?
-- [ ] Fazer menu de navegacao inferior com 3 icons
-- [ ] Continuar user stories.
+- [ ] Fazer modulo do drawer settings
 
 
  
