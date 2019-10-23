@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'drawer.dart';
 import 'favourites.dart';
+import 'drawer.dart';
 import 'search.dart';
 
 /*
@@ -22,6 +22,7 @@ class CampusNAV extends StatelessWidget {
       title: 'Campus NAV', 
       theme: ThemeData(
         primaryColor: Colors.blue,
+        secondaryHeaderColor: Colors.white60,
         brightness: Brightness.dark,
       ),
       home: MyHomePage(title: 'Campus NAV'),
