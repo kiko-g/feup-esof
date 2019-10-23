@@ -9,28 +9,31 @@ import 'search.dart';
 profile - Francisco Gonçalves
 settings - Joao Mota
 search conference - Martim
-Bluetooth - Luis/Matheus
+Bluetooth - Luis/Matheus  
 material_design_icons_flutter ? 
 */
 
 void main() => runApp(CampusNAV());
 
-class CampusNAV extends StatelessWidget {
+class CampusNAV extends StatelessWidget
+{
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+  {
     return MaterialApp(
-      title: 'Campus NAV', 
+      title: 'Campus NAV',
       theme: ThemeData(
         primaryColor: Colors.blue,
         secondaryHeaderColor: Colors.white60,
-        brightness: Brightness.dark,
-      ),
-      home: MyHomePage(title: 'Campus NAV'),
-    );
+        brightness: Brightness.dark),
+
+      home: MyHomePage(
+        title: 'Campus NAV'),);
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatelessWidget 
+{
   final title;
   MyHomePage({this.title});
 
@@ -85,9 +88,7 @@ class ConferenceList extends StatelessWidget {
       );
     }
 
-    return ListView(  
-        children: customWidgetList,
-    );
+    return ListView( children: customWidgetList, );
   }
 }
 

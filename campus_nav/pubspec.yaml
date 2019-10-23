@@ -17,6 +17,7 @@ environment:
   sdk: ">=2.3.0 <3.0.0"
 
 dependencies:
+  color: any
   flutter:
     sdk: flutter
   material_design_icons_flutter: 3.2.3695
