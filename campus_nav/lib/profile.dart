@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'drawer.dart';
 
 class MyProfile extends StatefulWidget {
   @override
@@ -41,7 +42,7 @@ class MyProfileState extends State<MyProfile>
             elevation: 0.0,
             backgroundColor: Color(0xFF70baf6),
           ),
-          drawer: new Drawer(child: new Container(),),
+          drawer: AppDrawer(),
           backgroundColor: Color(0x999999),
           body: new Center(
             child: new Column(

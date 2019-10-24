@@ -58,7 +58,7 @@ class MyHomePage extends StatelessWidget
           ],
         ),
         body: ConferenceList(conferencesList),
-        drawer: AppDrawer(context),
+        drawer: AppDrawer(),
         bottomNavigationBar: BottomNavigationMenu(),
     );
   }

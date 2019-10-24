@@ -13,7 +13,7 @@ class MyFavouritesState extends State<MyFavourites> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(title: Text('Favourites'),),
-      drawer: AppDrawer(context),
+      drawer: AppDrawer(),
       body: Column(),
     );
   }

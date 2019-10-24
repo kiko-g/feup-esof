@@ -7,9 +7,6 @@ import 'help.dart';
 
 class AppDrawer extends StatelessWidget {
 
-  final context1; //é preciso passar o msm context para build?
-  AppDrawer(this.context1);
-
   @override
   Widget build(BuildContext context) {
     return Drawer(

@@ -28,7 +28,7 @@ class MySettingsState extends State<MySettings> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(title: Text('Settings'),),
-      drawer: AppDrawer(context),
+      drawer: AppDrawer(),
       body: Container(
         padding: new EdgeInsets.all(32.0),
         child: new Column(
