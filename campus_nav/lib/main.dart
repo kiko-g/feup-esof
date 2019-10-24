@@ -73,6 +73,7 @@ class ConferenceList extends StatelessWidget {
     for(var i=0; i<conferencesList.length; i++) {
       customWidgetList.add(
         MyCustomWidget(
+          key: Key("$i"),
           name: conferencesList[i][0],
           theme: conferencesList[i][1],
           starts: conferencesList[i][2],

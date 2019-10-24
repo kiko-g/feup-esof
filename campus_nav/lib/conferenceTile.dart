@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
 
-//Dart input/ouput operations
-//import 'dart:io';
-
-//Stores fav's after each change in isFavourited boolean value - without repeating info
-//import 'storage.dart';
+//Stores fav's after each change in selected favourites
+import 'storage.dart';
 
 class MyCustomWidget extends StatefulWidget {
   final name, theme, starts, ends, room, image, speakers;
-  MyCustomWidget({this.name, this.theme, this.starts, this.ends, this.room, this.image, this.speakers});
+  final Key key;
+  
+  MyCustomWidget({
+    @required this.name, 
+    @required this.theme, 
+    @required this.starts, 
+    @required this.ends, 
+    @required this.room, 
+    @required this.image, 
+    @required this.speakers, 
+    @required this.key});
 
   @override
   _MyCustomWidgetState createState() => 
@@ -20,21 +27,37 @@ class MyCustomWidget extends StatefulWidget {
     room: room,
     image: image,
     speakers: speakers,
+    key: key,
   );
 }
 
 class _MyCustomWidgetState extends State<MyCustomWidget> {
-  bool isFavourited = false;
-
   var name, theme, starts, ends, room, image, speakers;
-  _MyCustomWidgetState({this.name, this.theme, this.starts, this.ends, this.room, this.image, this.speakers});
+  bool isFavourited = false;
+  Key key;
+
+  Storage storage;
+  
+  _MyCustomWidgetState({
+    @required this.name, 
+    @required this.theme, 
+    @required this.starts, 
+    @required this.ends, 
+    @required this.room, 
+    @required this.image, 
+    @required this.speakers,
+    @required this.key});
   
   updateFav() {
     setState(() {
-      if(isFavourited)
+      if(isFavourited) {
         isFavourited = false;
-      else 
-        isFavourited = true;       
+        storage.writeFavourites(key.toString(), "0");
+      }
+      else {
+        isFavourited = true;
+        storage.writeFavourites(key.toString(), "1");
+      }     
     });
   }
 
@@ -101,8 +124,6 @@ List conferenceVector() {
   final String cesImg = 'assets/images/CES.png';
   final String dreamForceImg = 'assets/images/Dreamforce.png';
   final String inc5000Img = 'assets/images/inc-5000.png';
-
-
 
   List conferencesList = [
     ["Web Summit", "Tech", "10:30", "11:30", "B201", webSummitImg, ["John", "Lucas"]],
