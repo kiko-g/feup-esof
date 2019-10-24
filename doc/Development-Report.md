@@ -167,6 +167,9 @@ In this subsection please describe in more detail which, and how, user(s) story(
 ---
 
 ## Implementation
+Saving preferences:
+> Storage ([storage.dart](https://github.com/softeng-feup/open-cx-nav-inc/blob/master/campus_nav/lib/storage.dart))\
+
 During implementation, while not necessary, it 
 
 It might be also useful to explain a few aspects of the code that have the greatest potential to confuse software engineers about how it works. 
