@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:dynamic_theme/dynamic_theme.dart';
 import 'dart:async';
 import 'drawer.dart';
 import 'favourites.dart';
 import 'search.dart';
+import 'settings.dart';
 
 /*
 é preciso passar context para o appDrawer?
@@ -18,13 +20,19 @@ void main() => runApp(CampusNAV());
 class CampusNAV extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Campus NAV', 
-      theme: ThemeData(
-        primaryColor: Colors.blue,
-        brightness: Brightness.dark,
+    return new DynamicTheme(
+      defaultBrightness: Brightness.light,
+      data: (defaultBrightness) => new ThemeData(
+        primarySwatch: Colors.indigo,
+        brightness: defaultBrightness,
       ),
-      home: MyHomePage(title: 'Campus NAV'),
+      themedWidgetBuilder: (context, theme) {
+        return new MaterialApp(
+          title: 'Campus NAV',
+          theme: theme,
+          home: MyHomePage(title: 'Campus NAV'),
+        );
+      }
     );
   }
 }
