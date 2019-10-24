@@ -24,7 +24,7 @@ class CampusNAV extends StatelessWidget
     return new DynamicTheme(
       defaultBrightness: Brightness.light,
       data: (defaultBrightness) => new ThemeData(
-        primarySwatch: Colors.indigo,
+        // primarySwatch: Colors.indigo,
         brightness: defaultBrightness,
       ),
       themedWidgetBuilder: (context, theme) {
@@ -171,7 +171,7 @@ class _MyCustomWidgetState extends State<MyCustomWidget> {
       )
       ),
       title: Text(name,
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white)),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
       initiallyExpanded: false,
       children: <Widget>[
         ListTile(
@@ -187,7 +187,7 @@ class _MyCustomWidgetState extends State<MyCustomWidget> {
             onPressed: updateGo,
           ),
           title: Text('Theme: ' + theme + '\nStarts: ' + starts + '\nEnds: ' + ends + '\nRoom: ' + room,
-            style: TextStyle(fontWeight: FontWeight.w200, fontSize: 20, color: Colors.white)),
+            style: TextStyle(fontWeight: FontWeight.w400, fontSize: 20)),
         )
       ],
       trailing: Icon(Icons.arrow_drop_down_circle),

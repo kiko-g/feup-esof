@@ -17,7 +17,7 @@ class MyProfileState extends State<MyProfile>
     final String imgUrl = 'https://avatars1.githubusercontent.com/u/12510902?s=200&v=4';
 
     return new Stack(children: <Widget>[
-      new Container(color: Color(0xFF002840),),
+      new Container(),
       // new Image.network(imgUrl, fit: BoxFit.contain),
       // new BackdropFilter(
       //   filter: new ui.ImageFilter.blur(
@@ -32,30 +32,24 @@ class MyProfileState extends State<MyProfile>
       new Scaffold(
           appBar: new AppBar(
             title: new Text(
-              "PROFILE", style: 
-              new TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: _width/15,
-                color: new Color(0xFFFFFFFF))
+              "Profile", style: 
+              new TextStyle()
               ),
-            centerTitle: true,
+            centerTitle: false,
             elevation: 0.0,
-            backgroundColor: Color(0xFF70baf6),
           ),
           drawer: AppDrawer(),
-          backgroundColor: Color(0x999999),
           body: new Center(
             child: new Column(
               children: <Widget>[
-                new SizedBox(height: _height/12,),
+                new SizedBox(height: 20,),
                 new CircleAvatar(radius:_width<_height? _width/4:_height/4,backgroundImage: NetworkImage(imgUrl),),
                 new SizedBox(height: _height/25.0,),
                 new Text(
                   'Softeng FEUP NAV Team',
                   style: new TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: _width/15,
-                    color: new Color(0xFFFFFFFF)),
+                    fontSize: _width/15),
                 ),
                 new Padding(
                   padding: new EdgeInsets.only(top: _height/30, left: _width/8, right: _width/8),
@@ -63,34 +57,32 @@ class MyProfileState extends State<MyProfile>
                    style:  
                     new TextStyle(
                       fontWeight: FontWeight.normal,
-                      fontSize: 15, 
-                      color: Color(0xFFFFFFFF)),
+                      fontSize: 15),
                       textAlign: TextAlign.center)
                 ),
-                new Divider(height: 30, color: Color(0xFFFFFFFF),),
+                new Divider(height: 30),
                 new Row(
                   
                   children: <Widget>[ 
-                    rowCell(1, 'Conferences Attended'),
+                    rowCell(1, 'Attended'),
                     rowCell(1, 'Connections'),
                     rowCell(5, 'Topics of Interest')]
                 ),
-                new Divider(height: 90, color: Color(0xFFFFFFFF)),
+                new Divider(height: 60),
                 new Padding(
                   padding: new EdgeInsets.only(left: _width/8, right: _width/8), 
-                  child: new FlatButton(
+                  child: new FlatButton(color: Color(0xFF002040),
                     onPressed: (){},
                     child: new Container(
-                      child: 
+                      child:
                         new Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            new Icon(Icons.person),
+                            new Icon(Icons.person, color: Color(0xFFFFFFFF),),
                             new SizedBox(width: _width/30,),
-                            new Text('Account Settings')]
+                            new Text('Account Settings', style: new TextStyle(color: Color(0xFFFFFFFF)))]
                         ),
                     ),
-                    color: Color(0xFF70baf6),
                   ),
                 ),
               ],
@@ -104,17 +96,12 @@ class MyProfileState extends State<MyProfile>
   Widget rowCell(int count, String type) => new Expanded(
     child: new Column(
       children: <Widget>[
-        new Text('$count',
-          textAlign: TextAlign.center,
-          style: 
-            new TextStyle(color: Color(0xFFFFFFFF))),
+        new Text('$count', textAlign: TextAlign.center, textScaleFactor: 2,
+          style: new TextStyle(fontSize: 13, height: 2)),
         new Text(
           type, 
           textAlign: TextAlign.center,
-          style: 
-            new TextStyle(
-              color: Color(0xFFFFFFFF),
-              fontWeight: FontWeight.normal)
+          style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 15)
           )
       ],
     ),
