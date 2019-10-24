@@ -64,7 +64,6 @@ class _MyCustomWidgetState extends State<MyCustomWidget> {
     readFavourites(index).then((futureValue) {
       setState(() {
         value = futureValue; 
-        debugPrint("index: $index ; value: " + value);
         if(value == "1") 
           isFavourited = true;
         else             
