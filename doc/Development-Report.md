@@ -198,14 +198,15 @@ For the purpose of ESOF, we will use a very simple approach, just to manage feat
 
 ## Project management
 
-Software project management is an art and science of planning and leading software projects, in which software projects are planned, implemented, monitored and controlled.
+**[Trello Link](https://trello.com/b/XgQ9OzGB)**
 
-In the context of ESOF, we expect that each team adopts a project management tool capable of registering tasks, assign tasks to people, add estimations to tasks, monitor tasks progress, and therefore being able to track their projects.
+The project management is done using [Trello](https://trello.com) with the following structure:
 
-Example of tools to do this are:
-  * [Trello.com](https://trello.com)
-  * [Github Projects](https://github.com/features/project-management/com)
-  * [Pivotal Tracker](https://www.pivotaltracker.com)
-  * [Jira](https://www.atlassian.com/software/jira)
+**BackLog**: User stories planned for the project that are not yet done.
 
-We recommend to use the simplest tool that can possibly work for the team.
+**To Do**: User stories to be done in the upcoming weeks.
+
+**Doing**: User stories that are currently being worked on.
+
+**Done**: User stories that have already been done and successfully tested.
+
