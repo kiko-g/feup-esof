@@ -1,5 +1,5 @@
+//Flutter widgets
 import 'package:flutter/material.dart';
-
 //Acess to Home Page module
 import 'main.dart';
 //Acess to Profile module
@@ -10,7 +10,6 @@ import 'favourites.dart';
 import 'settings.dart';
 //Acess to Help module
 import 'help.dart';
-
 
 class AppDrawer extends StatelessWidget {
   @override

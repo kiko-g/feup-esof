@@ -1,6 +1,7 @@
+//Flutter widgets
 import 'package:flutter/material.dart';
+//Change between dark and light mode
 import 'package:dynamic_theme/dynamic_theme.dart';
-
 //Acess to custom list tile widget
 import 'conferenceTile.dart';
 //App drawer used in all modules
@@ -73,7 +74,7 @@ class ConferenceList extends StatelessWidget {
     for(var i=0; i<conferencesList.length; i++) {
       customWidgetList.add(
         MyCustomWidget(
-          key: Key("$i"),
+          index: i,
           name: conferencesList[i][0],
           theme: conferencesList[i][1],
           starts: conferencesList[i][2],

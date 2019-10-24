@@ -1,11 +1,12 @@
+//Flutter widgets
 import 'package:flutter/material.dart';
-
 //Stores fav's after each change in selected favourites
 import 'storage.dart';
 
 class MyCustomWidget extends StatefulWidget {
-  final name, theme, starts, ends, room, image, speakers;
-  final Key key;
+  final name, theme, starts, ends;
+  final room, image, speakers;
+  final num index;
   
   MyCustomWidget({
     @required this.name, 
@@ -15,7 +16,7 @@ class MyCustomWidget extends StatefulWidget {
     @required this.room, 
     @required this.image, 
     @required this.speakers, 
-    @required this.key});
+    @required this.index});
 
   @override
   _MyCustomWidgetState createState() => 
@@ -27,36 +28,65 @@ class MyCustomWidget extends StatefulWidget {
     room: room,
     image: image,
     speakers: speakers,
-    key: key,
+    index: "$index",
   );
 }
 
 class _MyCustomWidgetState extends State<MyCustomWidget> {
-  var name, theme, starts, ends, room, image, speakers;
+  var name, theme, starts, ends;
+  var room, image, speakers, index;
+  
   bool isFavourited = false;
-  Key key;
+  String value;
 
-  Storage storage;
+  _MyCustomWidgetState({@required var name, @required var theme, 
+    @required var starts, @required var ends, 
+    @required var room, @required var image, 
+    @required var speakers, @required var index})  {
+
+    this.name = name;
+    this.theme = theme;
+    this.starts = starts;
+    this.ends = ends;
+    this.room = room;
+    this.image = image;
+    this.speakers = speakers;
+    this.index = index;
+  }
+
+
+  setData() {
+    readFavourites(index).then((futureVal) {
+      setState(() {
+        value = futureVal;
+      });
+    });
+  }
+
+
+
+  @override
+  void initState() {
+    super.initState();
+    setData();
+    print("widget: $value - $index");
+
+    if(value == "1")
+      isFavourited = true;
+    else 
+      isFavourited = false;
+  }
   
-  _MyCustomWidgetState({
-    @required this.name, 
-    @required this.theme, 
-    @required this.starts, 
-    @required this.ends, 
-    @required this.room, 
-    @required this.image, 
-    @required this.speakers,
-    @required this.key});
-  
+
   updateFav() {
     setState(() {
       if(isFavourited) {
         isFavourited = false;
-        storage.writeFavourites(key.toString(), "0");
+        writeFavourites("$index", "0");
       }
       else {
         isFavourited = true;
-        storage.writeFavourites(key.toString(), "1");
+        writeFavourites("$index", "1");
       }     
     });
   }
