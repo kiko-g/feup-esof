@@ -1,4 +1,0 @@
-#Wed Oct 23 11:29:41 BST 2019
-base.0=D\:\\1S\\ESOF\\2019_20\\campus_nav\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
-path.0=classes.dex
-renamed.0=classes.dex

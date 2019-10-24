@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:dynamic_theme/dynamic_theme.dart';
 import 'dart:async';
-import 'drawer.dart';
 import 'favourites.dart';
+import 'drawer.dart';
 import 'search.dart';
 import 'settings.dart';
 
@@ -11,13 +11,14 @@ import 'settings.dart';
 profile - Francisco Gonçalves
 settings - Joao Mota
 search conference - Martim
-Bluetooth - Luis/Matheus
+Bluetooth - Luis/Matheus  
 material_design_icons_flutter ? 
 */
 
 void main() => runApp(CampusNAV());
 
-class CampusNAV extends StatelessWidget {
+class CampusNAV extends StatelessWidget
+{
   @override
   Widget build(BuildContext context) {
     return new DynamicTheme(
@@ -37,7 +38,8 @@ class CampusNAV extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatelessWidget 
+{
   final title;
   MyHomePage({this.title});
 
@@ -92,9 +94,7 @@ class ConferenceList extends StatelessWidget {
       );
     }
 
-    return ListView(  
-        children: customWidgetList,
-    );
+    return ListView( children: customWidgetList, );
   }
 }
 
