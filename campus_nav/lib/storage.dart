@@ -5,8 +5,12 @@ readFavourites(String index) async {
   final favs = await SharedPreferences.getInstance();
   final key = "*fav:$index*";
   final value = favs.getString(key) ?? "0";
-  print('readFavourites: $value');
-  return value;
+  
+  if(value == "1") {
+    return 1;
+  }
+  else 
+    return 0;
 }
 
 writeFavourites(String index, String value) async {

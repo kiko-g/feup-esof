@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 //Stores fav's after each change in selected favourites
 import 'storage.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MyCustomWidget extends StatefulWidget {
   final name, theme, starts, ends;
@@ -54,22 +55,33 @@ class _MyCustomWidgetState extends State<MyCustomWidget> {
     this.index = index;
   }
 
+  readFavourites(String index) async {
+    final favs = await SharedPreferences.getInstance();
+    final key = "*fav:$index*";
+    final valueF = favs.getString(key) ?? "0";
+    
+    if(valueF == "1") {
+      value = "1";
+    }
+    else 
+      value = "0";
 
-  setData() {
-    readFavourites(index).then((futureVal) {
-      setState(() {
-        value = futureVal;
-      });
-    });
+    print("readFavourites: $value ; index: $index");
   }
 
-
+  writeFavourites(String index, String value) async {
+    final favs = await SharedPreferences.getInstance();
+    final key = "*fav:$index*";
+    favs.setString(key, value);
+    print('writeFavourites: $value ; index: $index');
+  }
 
   @override
   void initState() {
     super.initState();
-    setData();
-    print("widget: $value - $index");
+    readFavourites(index);
+    print("widget: $value ; index: $index");
+    readFavourites(index);
 
     if(value == "1")
       isFavourited = true;
