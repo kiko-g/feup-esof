@@ -1,15 +1,8 @@
-import 'dart:async';
+import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/material.dart';
 import 'main.dart';
 import 'drawer.dart';
 
-class Bloc {
-  final _themeController = StreamController<bool>();
-  get changeTheme => _themeController.sink.add;
-  get darkThemeEnabled => _themeController.stream;
-}
-
-final bloc = Bloc();
 
 class MySettings extends StatefulWidget {
   @override
@@ -18,11 +11,7 @@ class MySettings extends StatefulWidget {
 
 class MySettingsState extends State<MySettings> {
 
-  bool darkMode = false;
-
-  void onChanged() {
-    bloc.changeTheme;
-  }
+  void onSelectedTheme(theme) => DynamicTheme.of(context).setBrightness(theme);
 
   @override
   Widget build(BuildContext context) {
@@ -33,17 +22,48 @@ class MySettingsState extends State<MySettings> {
         padding: new EdgeInsets.all(32.0),
         child: new Column(
           children: <Widget>[
-            new SwitchListTile(
+            
+            //seletor horizontal
+            /*new SwitchListTile(
               title: Text('Dark Mode'),
               activeColor: Colors.white,
-              value: darkMode,
+              value: DynamicTheme.of(context).brightness == Brightness.light ? false : true,
               onChanged: (bool value) { 
                 setState(() {
-                  darkMode = value;
-                  onChanged();
+                  value ? DynamicTheme.of(context).setBrightness(Brightness.dark) : DynamicTheme.of(context).setBrightness(Brightness.light);
                 }); 
               },
             )
+            */
+            
+            //botoes verticais
+            Text(
+              'Theme',
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                color: (Theme.of(context).brightness == Brightness.light ? Colors.black : Colors.white),
+                fontWeight: FontWeight.bold,
+                height: 1,
+                fontSize: 24
+              ),
+
+            ),
+            RadioListTile<Brightness>(
+              value: Brightness.light,
+              groupValue: Theme.of(context).brightness,
+              onChanged: (Brightness value) {
+                onSelectedTheme(Brightness.light);
+              },
+              title: const Text('Light'),
+            ),
+            RadioListTile<Brightness>(
+              value: Brightness.dark,
+              groupValue: Theme.of(context).brightness,
+              onChanged: (Brightness value) {
+                onSelectedTheme(Brightness.dark);
+              },
+              title: const Text('Dark'),
+            ),  
           ],
         ),
       ),
