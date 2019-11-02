@@ -1,4 +1,4 @@
-# openCX-*your module name* Development Report
+# openCX-nav-inc Development Report
 
 Welcome to the documentation pages of the Campus NAV of **openCX**!
 
@@ -52,12 +52,8 @@ For this, the application needs to keep a stable connection with the various bea
 
 Both connection with the various beacons and the user location will be achieved using bluetooth in conjuction with open source APIs.
 
+An online database will need to be used to store conferences. To be maintained there must be a website to allow staff and developers change the information.
 
-bluetooth in  using open source APIs and user location will be triangulated using 
-
-In this section, you should describe all kinds of requirements for your module: functional and non-functional requirements.
-
-Start by contextualizing your module, describing the main concepts, terms, roles, scope and boundaries of the application domain addressed by the project.
 
 ### Use case diagram 
 
@@ -77,38 +73,109 @@ Briefly describe each use case mentioning the following:
 
 **Description**: After an attendee has arrived at a conference location, and has selected the conference, the application will guide him to the conference room.
 
-**Preconditions**: Attendee has selected the conference that he would like to go to.
+**Preconditions**: Attendee has selected the conference that he would like to go to and has bluetooth turned on.
 
-**Post-conditions**: The order will be placed in the system. The user will have a tracking ID for the order. The user will know the estimated delivery date for the order.
+**Post-conditions**: App will search for optimal route. Attendee will be directed to the conference room.
 
 **Normal Flow**:
+1. The attendee turns bluetooth on.
+2. The attendee will indicate that he wants to be guided to a conference he has selected.
+3. The system will search for optimal route.
+4. The attendee will follow directions given by the application.
+5. The attendee will reach the conference location.
+6. The application will issue a notification warning the user that he has arrived at the conference.
 
-The user will indicate that she wants to order the items that have already been selected.
-The system will present the billing and shipping information that the user previously stored.
-The user will confirm that the existing billing and shipping information should be used for this order.
-The system will present the amount that the order will cost, including applicable taxes and shipping charges.
-The user will confirm that the order information is accurate.
-The system will provide the user with a tracking ID for the order.
-The system will submit the order to the fulfillment system for evaluation.
-The fulfillment system will provide the system with an estimated delivery date.
-The system will present the estimated delivery date to the user.
-The user will indicate that the order should be placed.
-The system will request that the billing system should charge the user for the order.
-The billing system will confirm that the charge has been placed for the order.
-The system will submit the order to the fulfillment system for processing.
-The fulfillment system will confirm that the order is being processed.
-The system will indicate to the user that the user has been charged for the order.
-The system will indicate to the user that the order has been placed.
-The user will exit the system.
-**Alternate Flows**:
+**Alternate Flows and Exceptions**:
+The user goes off route -> The application must calculate new route.
+The user is not in FEUP -> The application must give a warning and not calcute.
+The user does not have bluetooth turned on -> The application needs to warn the user.
+
+* **Visualize map**
+
+**Actor**: Attendee
+
+**Description**: The attendee presses the map button and the map will pop up and show his location on the map.
+
+**Preconditions**: Attendee is in FEUP. Attendee has bluetooth turned on.
+
+**Post-conditions**: Attendee will know where he is.
+
+**Normal Flow**:
+1. The attendee turns bluetooth on.
+2. The attendee presses map button.
+3. The application aquires his position.
+4. The application shows the map.
+5. The attendee knows is postion.
+
+**Alternate Flows and Exceptions**:
+The user is not in FEUP -> The application must give a warning and show map without position.
+The user does not have bluetooth turned on -> The application needs to warn the user.
 
 
-* **Actor**. Name only the actor that will be initiating this use case, i.e. a person or other entity external to the software system being specified who interacts with the system and performs use cases to accomplish tasks. 
-* **Description**. Provide a brief description of the reason for and outcome of this use case, or a high-level description of the sequence of actions and the outcome of executing the use case. 
-* **Preconditions and Postconditions**. Include any activities that must take place, or any conditions that must be true, before the use case can be started (preconditions) and postconditions. Describe also the state of the system at the conclusion of the use case execution (postconditions). 
+* **Go to places of interest**
 
-* **Normal Flow**. Provide a detailed description of the user actions and system responses that will take place during execution of the use case under normal, expected conditions. This dialog sequence will ultimately lead to accomplishing the goal stated in the use case name and description. This is best done as a numbered list of actions performed by the actor, alternating with responses provided by the system. 
-* **Alternative Flows and Exceptions**. Document other, legitimate usage scenarios that can take place within this use case, stating any differences in the sequence of steps that take place. In addition, describe any anticipated error conditions that could occur during execution of the use case, and define how the system is to respond to those conditions. 
+**Actor**: Attendee
+
+**Description**: After an attendee has arrived at a conference location, and has selected a point of interest (bathroom, coffee machine, bar, etc.), the application will guide him to it.
+
+**Preconditions**: Attendee has selected a point of interest that he would like to go to and has bluetooth turned on.
+
+**Post-conditions**: App will search for optimal route. Attendee will be directed to the point of interest.
+
+**Normal Flow**:
+1. The attendee turns bluetooth on.
+2. The attendee will indicate that he wants to be guided to a point of interest he has selected.
+3. The application will search for optimal route.
+4. The attendee will follow directions given by the application.
+5. The attendee will reach the point of interest location.
+6. The application will issue a notification warning the user that he has arrived at the point of interest.
+
+**Alternate Flows and Exceptions**:
+The user goes off route -> The application must calculate new route.
+The user is not in FEUP -> The application must give a warning and not calcute a route.
+The user does not have bluetooth turned on -> The application needs to warn the user.
+
+* **Check conference data**
+
+**Actor**: Attendee
+
+**Description**: After an attendee has opened the application he will go to homepage and see all conferences, when he presses the one he wants to know more about it will show him all available information about it.
+
+**Preconditions**: Attendee has internet connection.
+
+**Post-conditions**: App will acquire data from the online database. App will show all conferences returned from the database.
+
+**Normal Flow**:
+1. The attendee connects to the internet.
+2. The attendee opens the application.
+3. The application will acquire data from online database.
+4. The application will show all conference data returned from database.
+5. The attendee will choose conference that he wishes to see more about.
+6. The application will show all data related to that conference.
+
+**Alternate Flows and Exceptions**:
+The user does not have internet connection -> The application needs to warn the user.
+
+* **Modify Conferences**
+
+**Actor**: Staff
+
+**Description**: A staff member changes conferences listed on the database.
+
+**Preconditions**: Staff has internet connection and is on the website.
+
+**Post-conditions**: Website communicates with database and updates it.
+
+**Normal Flow**:
+1. The staff connects to the internet.
+2. The staff goes to the database website.
+3. The webiste will acquire data from database.
+4. The staff will change conferences listed, possibly adding more or removing some.
+5. The attendee will submit changes to database.
+6. The website transmites changes to database.
+
+**Alternate Flows and Exceptions**:
+The information is not correct -> The website needs to warn the staff.
 
 ### User stories
 This section will contain the requirements of the product described as **user stories**, organized in a global **user story map** with **user roles** or **themes**.
@@ -167,9 +234,6 @@ In this subsection please describe in more detail which, and how, user(s) story(
 ---
 
 ## Implementation
-Saving preferences:
-> Storage ([storage.dart](https://github.com/softeng-feup/open-cx-nav-inc/blob/master/campus_nav/lib/storage.dart))\
-
 During implementation, while not necessary, it 
 
 It might be also useful to explain a few aspects of the code that have the greatest potential to confuse software engineers about how it works. 
