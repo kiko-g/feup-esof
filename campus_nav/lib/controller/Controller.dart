@@ -16,30 +16,28 @@ class Controller {
     return _instance;
   }
 
-  void addFavourite(int index){
-    _model.getFavourites().add(index);
-  }
+  //Conferences Functions
+  List getConferences() => _model.getConferencesList();
 
-  List getConferences(){
-    return _model.getConferencesList();
-  }
+  //Favourites Functions
+  readFavourites() => _model.readFavourites();
 
-  readFavourites(String index){
-    return _model.readFavourites(index);
-  }
+  saveFavourites() => _model.saveFavourites();
 
-  writeFavourites(String index, String value){
-    _model.writeFavourites(index, value);
-  }
+  void addFavourite(String name) => _model.getFavourites().add(name);
 
-  bool checkFavourite(String index) {
-    String fav = this.readFavourites(index);
-    print(fav);
-    
-    if(fav == "1")
-      return true;
-    else
-      return false;
-  }
+  void removeFavourite(String name){
+    List<String> favourites = _model.getFavourites();
+    favourites.removeWhere((item) => item == name);
+  } 
+
+  bool checkFavourite(String name) => _model.getFavourites().indexOf(name)!=-1?true:false;
+
+  //Settings Functions
+  getSettings() => _model.getSettings();
+
+  readSettings() => _model.readSettings();
+
+  saveSettings() => _model.saveSettings();
 
 }

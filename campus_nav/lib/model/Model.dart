@@ -3,7 +3,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 
 class Model{
-  List<int> _favourites = [];
+  List<String> _favourites;
+  Settings _settings;
+
   static final String _webSummitImg = 'assets/images/Web_Summit.png';
   static final String _icmlImg = 'assets/images/ICML.png';
   static final String _cesImg = 'assets/images/CES.png';
@@ -18,31 +20,59 @@ class Model{
     ["Inc. 5000", "Business", "15:30", "17:00", "B003", _inc5000Img, ["Lucas"]],
   ];
 
-  List<int> getFavourites() {
-    return _favourites;
+  Model(){
+    _favourites = new List<String>();
+    _settings = new Settings();
+
+    readSettings();
+    readFavourites();
   }
 
-  List getConferencesList(){
-    return _conferencesList;
+  List<String> getFavourites() => _favourites;
+
+  List getConferencesList() => _conferencesList;
+
+  readFavourites() async {
+    //Clear favourites List
+    _favourites.clear();
+
+    //Instance SharedPreferences
+    final cache = await SharedPreferences.getInstance();
+
+    //Get favourite conferences
+    _favourites  = cache.getStringList("fav:");
   }
 
-  readFavourites(String index) async {
-    final favs = await SharedPreferences.getInstance();
-    final key = "*fav:$index*";
-    final value = favs.getString(key) ?? "0";
-    
-    if(value == "1") {
-      return 1;
-    }
-    else 
-      return 0;
+  saveFavourites() async {
+    //Instance SharedPreferences
+    final cache = await SharedPreferences.getInstance();
+
+    //Save favourite conferences
+    cache.setStringList("fav:", _favourites);
   }
 
-  writeFavourites(String index, String value) async {
-    final favs = await SharedPreferences.getInstance();
-    final key = "*fav:$index*";
-    favs.setString(key, value);
-    print('writeFavourites: $value');
+  //Settings
+  getSettings() => _settings;
+
+  readSettings() async {
+    //Instance SharedPreferences
+    final cache = await SharedPreferences.getInstance();
+
+    //Get settings
+    _settings.darkMode = cache.getBool("darkmode:") ?? false;
   }
 
+
+  saveSettings() async {
+    //Instance SharedPreferences
+    final cache = await SharedPreferences.getInstance();
+
+    //Save settings
+    cache.setBool("darkmode:", _settings.darkMode);
+  }
+
+}
+
+class Settings {
+  bool darkMode = false;
 }

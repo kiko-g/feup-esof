@@ -37,7 +37,6 @@ class _MyCustomWidgetState extends State<MyCustomWidget> {
   var name, theme, starts, ends;
   var room, image, speakers, index;
   
-  bool isFavourited = false;
   String value;
 
   _MyCustomWidgetState({@required var name, @required var theme, 
@@ -58,30 +57,20 @@ class _MyCustomWidgetState extends State<MyCustomWidget> {
   @override
   void initState() {
     super.initState();
-    readFutureFavourites(index);
   }
 
-  readFutureFavourites(String index) {
-    Controller.instance().readFavourites(index).then((futureValue) {
-      setState(() {
-        value = futureValue; 
-        if(value == "1") 
-          isFavourited = true;
-        else             
-          isFavourited = false;
-      });
-    });
-  }
   
+  isFavourited () => Controller.instance().checkFavourite(name);
+
   updateFav() {
     setState(() {
-      if(isFavourited) {
-        isFavourited = false;
-        Controller.instance().writeFavourites("$index", "0");
+      if(isFavourited()) {
+        Controller.instance().removeFavourite(name);
+        Controller.instance().saveFavourites();
       }
       else {
-        isFavourited = true;
-        Controller.instance().writeFavourites("$index", "1");
+        Controller.instance().addFavourite(name);
+        Controller.instance().saveFavourites();
       }     
     });
   }
@@ -123,7 +112,7 @@ class _MyCustomWidgetState extends State<MyCustomWidget> {
           leading: IconButton(
             color: Colors.yellow,
             tooltip: "Add to  Myfavourites",
-            icon: (isFavourited ? Icon(Icons.star) : Icon(Icons.star_border)),
+            icon: (isFavourited() ? Icon(Icons.star) : Icon(Icons.star_border)),
             onPressed: updateFav,
           ),
           trailing: IconButton(

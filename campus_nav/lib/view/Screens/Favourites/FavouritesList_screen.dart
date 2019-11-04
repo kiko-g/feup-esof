@@ -6,35 +6,30 @@ import 'package:campus_nav/controller/Controller.dart';
 import 'package:campus_nav/view/widgets/MyCostumeWidget.dart';
 
 
-class FavouritesList extends StatefulWidget {
-  final list;
-  FavouritesList({@required this.list});
-  
+class FavouritesList extends StatefulWidget {  
   @override
-  State <StatefulWidget> createState() => FavouritesListState(list: list);
+  State <StatefulWidget> createState() => FavouritesListState();
 }
 
 class FavouritesListState extends State<FavouritesList> {
-  final list;
-  FavouritesListState({@required this.list});
-
   final customWidgetList = <Widget>[];
+  final conferences = Controller.instance().getConferences();
 
   @override
   Widget build(BuildContext context) {
     
-    for(var i=0; i<list.length; i++) {
-      if(Controller.instance().checkFavourite("$i")) {
+    for(var i=0; i<conferences.length; i++) {
+      if(Controller.instance().checkFavourite(conferences[i][0])) {
         customWidgetList.add(
           MyCustomWidget(
             index: i,
-            name: list[i][0],
-            theme: list[i][1],
-            starts: list[i][2],
-            ends: list[i][3],
-            room: list[i][4],
-            image: list[i][5],
-            speakers: list[i][6]
+            name: conferences[i][0],
+            theme: conferences[i][1],
+            starts: conferences[i][2],
+            ends: conferences[i][3],
+            room: conferences[i][4],
+            image: conferences[i][5],
+            speakers: conferences[i][6]
           )
         );
       }

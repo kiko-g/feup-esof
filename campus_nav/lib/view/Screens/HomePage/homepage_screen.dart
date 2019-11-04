@@ -1,7 +1,5 @@
 //Flutter widgets
 import 'package:flutter/material.dart';
-//Controller
-import 'package:campus_nav/controller/Controller.dart';
 //Side Menu
 import 'package:campus_nav/view/screens/SideMenu_screen.dart';
 //Conferece List
@@ -31,7 +29,7 @@ class MyHomePage extends StatelessWidget {
           )
         ],
       ),
-      body: ConferenceList(Controller.instance().getConferences()),
+      body: ConferenceList(),
       drawer: SideMenu(),
       bottomNavigationBar: BottomNavigationMenu(),
     );

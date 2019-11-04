@@ -2,16 +2,17 @@
 import 'package:flutter/material.dart';
 //MyCostumeWidget class
 import 'package:campus_nav/view/widgets/MyCostumeWidget.dart';
+//Controller
+import 'package:campus_nav/controller/Controller.dart';
 
 class ConferenceList extends StatelessWidget {
   
-  final conferencesList;
-  ConferenceList(this.conferencesList);
   
   final customWidgetList = <Widget>[];
 
   @override
   Widget build(BuildContext context) {
+  List conferencesList = Controller.instance().getConferences();
     
     for(var i=0; i<conferencesList.length; i++) {
       customWidgetList.add(
