@@ -6,6 +6,8 @@ import 'package:campus_nav/view/screens/SideMenu_screen.dart';
 import 'conference_screen.dart';
 //Bottom Navigation Menu
 import 'BottomNav_screen.dart';
+//Search Bar
+import 'package:campus_nav/view/Screens/HomePage/Search_screen.dart';
 
 class MyHomePage extends StatelessWidget {
   final title;
@@ -21,10 +23,10 @@ class MyHomePage extends StatelessWidget {
             icon: new Icon(Icons.search),
             tooltip: 'search',
             onPressed: () {
-              //showSearch(
-              //context: context,
-              //delegate: DataSearch(conferencesList)
-              //);
+              showSearch(
+              context: context,
+              delegate: DataSearch()
+              );
             },
           )
         ],
