@@ -32,48 +32,52 @@ class DataSearch extends SearchDelegate<String> {
   
   @override
   Widget buildResults(BuildContext context) {
-    List suggestionList = List.from(Controller.instance().getConferences());
+    final resultWidgetList = <Widget>[];
+    List resultList = List.from(Controller.instance().getConferences());
 
-    suggestionList.retainWhere((conference) => conference[0].contains(query));
+    resultList.retainWhere((conference) => conference[0].contains(query));
 
-    return ListView.builder(
-      itemBuilder: 
-        (context, index) => MyCustomWidget(
-          index: index,
-          name: suggestionList[index][0],
-          theme: suggestionList[index][1],
-          starts: suggestionList[index][2],
-          ends: suggestionList[index][3],
-          room: suggestionList[index][4],
-          image: suggestionList[index][5],
-          speakers: suggestionList[index][6]
+    for(var i=0; i<resultList.length; i++) {
+      resultWidgetList.add(
+        MyCustomWidget(
+          index: i,
+          name: resultList[i][0],
+          theme: resultList[i][1],
+          starts: resultList[i][2],
+          ends: resultList[i][3],
+          room: resultList[i][4],
+          image: resultList[i][5],
+          speakers: resultList[i][6]
+        )
+      );
+    }
 
-        ),
-        itemCount: suggestionList.length,
-    );
+
+    return ListView(children: resultWidgetList);
   }
 
   @override
   Widget buildSuggestions(BuildContext context) {
+    final suggestionWidgetList = <Widget>[];
     List suggestionList = List.from(Controller.instance().getConferences());
 
     suggestionList.retainWhere((conference) => conference[0].contains(query));
 
-    
-    return ListView.builder(
-      itemBuilder: 
-        (context, index) => MyCustomWidget(
-          index: index,
-          name: suggestionList[index][0],
-          theme: suggestionList[index][1],
-          starts: suggestionList[index][2],
-          ends: suggestionList[index][3],
-          room: suggestionList[index][4],
-          image: suggestionList[index][5],
-          speakers: suggestionList[index][6]
-        ),
-        itemCount: suggestionList.length,
-    );
-  }
+    for(var i=0; i<suggestionList.length; i++) {
+      suggestionWidgetList.add(
+        MyCustomWidget(
+          index: i,
+          name: suggestionList[i][0],
+          theme: suggestionList[i][1],
+          starts: suggestionList[i][2],
+          ends: suggestionList[i][3],
+          room: suggestionList[i][4],
+          image: suggestionList[i][5],
+          speakers: suggestionList[i][6]
+        )
+      );
+    }
 
+    return ListView(children: suggestionWidgetList);
+  }
 }

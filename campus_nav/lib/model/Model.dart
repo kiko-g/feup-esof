@@ -40,7 +40,7 @@ class Model{
     final cache = await SharedPreferences.getInstance();
 
     //Get favourite conferences
-    _favourites  = cache.getStringList("fav:");
+    _favourites  = cache.getStringList("fav:") ?? List<String>();
   }
 
   saveFavourites() async {
