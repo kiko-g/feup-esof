@@ -11,6 +11,7 @@ import 'BottomNav_screen.dart';
 
 class MyHomePage extends StatelessWidget {
   final title;
+  final DataSearch searchWidget = DataSearch();
   MyHomePage({this.title});
   
   @override
@@ -22,7 +23,9 @@ class MyHomePage extends StatelessWidget {
           new IconButton(
             icon: new Icon(Icons.search),
             tooltip: 'search',
-            onPressed: () => showSearch(context: context, delegate: DataSearch())
+            onPressed: () {
+              showSearch(context: context, delegate: searchWidget);
+            }
           )
         ],
       ),

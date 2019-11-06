@@ -12,6 +12,7 @@ class DataSearch extends SearchDelegate<String> {
         icon: Icon(Icons.clear),
         onPressed: () {
           query = "";
+          showSuggestions(context);
         })
       ];
   }
