@@ -1,7 +1,7 @@
 //Flutter Widgets
 import 'package:flutter/material.dart';
-
-import 'package:campus_nav/view/screens/SideMenu_screen.dart';
+//Controller
+import 'package:campus_nav/controller/Controller.dart';
 
 class MyProfile extends StatefulWidget {
   @override
@@ -39,7 +39,7 @@ class MyProfileState extends State<MyProfile>
             centerTitle: false,
             elevation: 0.0,
           ),
-          drawer: SideMenu(),
+          drawer: Controller.instance().getSideMenu(),
           body: new Center(
             child: new Column(
               children: <Widget>[

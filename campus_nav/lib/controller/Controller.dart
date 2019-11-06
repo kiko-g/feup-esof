@@ -16,6 +16,9 @@ class Controller {
     return _instance;
   }
 
+  //Side Menu
+  getSideMenu() => _model.getSideMenu(); 
+
   //Conferences Functions
   List getConferences() => _model.getConferencesList();
 

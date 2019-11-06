@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 //Themes
 import 'package:dynamic_theme/dynamic_theme.dart';
-//Side Menu
-import 'package:campus_nav/view/screens/SideMenu_screen.dart';
+//Controller
+import 'package:campus_nav/controller/Controller.dart';
 
 class MySettings extends StatefulWidget {
   @override
@@ -18,7 +18,7 @@ class MySettingsState extends State<MySettings> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(title: Text('Settings'),),
-      drawer: SideMenu(),
+      drawer: Controller.instance().getSideMenu(),
       body: Container(
         padding: new EdgeInsets.all(32.0),
         child: new Column(

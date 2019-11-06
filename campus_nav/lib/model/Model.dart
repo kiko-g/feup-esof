@@ -1,10 +1,12 @@
 //Save and read data of user preferences
+import 'package:campus_nav/view/Screens/SideMenu_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 
 class Model{
   List<String> _favourites;
   Settings _settings;
+  SideMenu _sideMenu;
 
   static final String _webSummitImg = 'assets/images/Web_Summit.png';
   static final String _icmlImg = 'assets/images/ICML.png';
@@ -20,9 +22,11 @@ class Model{
     ["Inc. 5000", "Business", "15:30", "17:00", "B003", _inc5000Img, ["Lucas"]],
   ];
 
+
   Model(){
     _favourites = new List<String>();
     _settings = new Settings();
+    _sideMenu = SideMenu();
 
     readSettings();
     readFavourites();
@@ -31,6 +35,11 @@ class Model{
   List<String> getFavourites() => _favourites;
 
   List getConferencesList() => _conferencesList;
+
+  //Settings
+  getSettings() => _settings;
+
+  getSideMenu() => _sideMenu;
 
   readFavourites() async {
     //Clear favourites List
@@ -51,8 +60,6 @@ class Model{
     cache.setStringList("fav:", _favourites);
   }
 
-  //Settings
-  getSettings() => _settings;
 
   readSettings() async {
     //Instance SharedPreferences

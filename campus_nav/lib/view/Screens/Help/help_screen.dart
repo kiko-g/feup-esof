@@ -1,7 +1,8 @@
 //Widgets
 import 'package:flutter/material.dart';
-//Side Menu
-import 'package:campus_nav/view/screens/SideMenu_screen.dart';
+//Controller
+import 'package:campus_nav/controller/Controller.dart';
+
 
 class Help extends StatelessWidget {
   @override
@@ -9,7 +10,7 @@ class Help extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(title: Text("Help"),),
         body: Text("Help!\n"),
-        drawer: SideMenu(),
+        drawer: Controller.instance().getSideMenu(),
     );
   }
 }

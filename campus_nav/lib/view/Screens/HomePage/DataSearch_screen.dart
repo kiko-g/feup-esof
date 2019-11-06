@@ -52,7 +52,6 @@ class DataSearch extends SearchDelegate<String> {
       );
     }
 
-
     return ListView(children: resultWidgetList);
   }
 
@@ -65,15 +64,12 @@ class DataSearch extends SearchDelegate<String> {
 
     for(var i=0; i<suggestionList.length; i++) {
       suggestionWidgetList.add(
-        MyCustomWidget(
-          index: i,
-          name: suggestionList[i][0],
-          theme: suggestionList[i][1],
-          starts: suggestionList[i][2],
-          ends: suggestionList[i][3],
-          room: suggestionList[i][4],
-          image: suggestionList[i][5],
-          speakers: suggestionList[i][6]
+        GestureDetector(
+          onTap: () {
+              query = suggestionList[i][0]; 
+              showResults(context);
+          },
+          child: Text(suggestionList[i][0]),
         )
       );
     }
