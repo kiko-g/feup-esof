@@ -4,8 +4,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 //Image picker to select photo from camera
 import 'package:image_picker/image_picker.dart';
-//Flutter slidable widget
-import 'package:flutter_slidable/flutter_slidable.dart';
+
 
 class MyProfileWidget extends StatefulWidget {
   final name, interests, gender;
@@ -29,6 +28,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
   var name, interests, gender;
   File img;
   final defaultProfile = "assets/images/profileDefault.png";
+  bool sports = false, science = false, tech = false, softw = false, bussiness = false;
 
   _MyProfileWidgetState({
     @required this.name, 
@@ -55,6 +55,40 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
     img = await ImagePicker.pickImage(source: ImageSource.camera);
   }
 
+  updateGender() {
+    setState(() {
+      gender == "Male" ? gender = "Female" : gender = "Male";
+    });
+  }
+
+  updateSports() {
+    setState(() {
+      sports == false ? sports = true : sports = false;
+    });
+  }
+  updateScience() {
+    setState(() {
+      science == false ? science = true : science = false;
+    });
+  }
+  updateTech() {
+    setState(() {
+      tech == false ? tech = true : tech = false;
+    });
+  }
+  updateSoftw() {
+    setState(() {
+      softw == false ? softw = true : softw = false;
+    });
+  }
+  updateBussiness() {
+    setState(() {
+      bussiness == false ? bussiness = true : bussiness = false;
+    });
+  }
+
+  //PROBLEMA QUANDO MECHO NO TICK SPORTS AFETA BUSSINESS
+
   @override
   Widget build(BuildContext context){
     return new Column(
@@ -64,7 +98,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
           children: <Widget>[
             Container(
               width: 350,
-              height: 300,
+              height: 200,
               child: Align(
                 alignment: Alignment.centerRight,
                 child: IconButton(
@@ -75,14 +109,14 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
             ),
             Container(
               width: 400,
-              height: 300,
+              height: 200,
               child: Align(
                 alignment: Alignment.center,
                 child: ClipOval(
                   child: Image.asset(img==null?defaultProfile:img.path,
                     fit: BoxFit.fitWidth,
-                    width: 180.0,
-                    height: 180.0,
+                    width: 150.0,
+                    height: 150.0,
                   )
                 ),
               ),
@@ -91,24 +125,73 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
         ),
 
         Container(
-          width: 1000,
-          height: 200,
+          width: 500,
+          height: 50,
           child: Align(
             alignment: Alignment.topCenter,
             child: Text(name,
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 40,
+                fontSize: 30,
                 fontWeight: FontWeight.bold
               ),
             ),
           ),
         ),
-                  /*Positioned(
-                    right: 20,
-                    top: 20,
-                    child: Icon(Icons.edit),
-                  ),*/
+        //Gender
+        ListTile(
+          trailing: IconButton(
+            tooltip: "Edit attribute",
+            icon: Icon(Icons.edit),
+            onPressed: updateGender,
+          ),
+          title: Text('Gender: ' + gender),
+        ),
+        ExpansionTile(
+          title: Text("My Interests"),
+          children: <Widget>[
+            ListTile(
+              trailing: IconButton(
+                tooltip: "Edit attribute",
+                icon: Icon(sports == true ? Icons.check_circle : Icons.check_circle_outline),
+                onPressed: updateSports,
+              ),
+              title: Text('Sports', style: TextStyle(decoration: TextDecoration.underline),),
+            ),
+            ListTile(
+              trailing: IconButton(
+                tooltip: "Edit attribute",
+                icon: Icon(science == true ? Icons.check_circle : Icons.check_circle_outline),
+                onPressed: updateScience,
+              ),
+              title: Text('Science', style: TextStyle(decoration: TextDecoration.underline),),
+            ),
+            ListTile(
+              trailing: IconButton(
+                tooltip: "Edit attribute",
+                icon: Icon(tech == true ? Icons.check_circle : Icons.check_circle_outline),
+                onPressed: updateTech,
+              ),
+              title: Text('Tech', style: TextStyle(decoration: TextDecoration.underline),),
+            ),
+            ListTile(
+              trailing: IconButton(
+                tooltip: "Edit attribute",
+                icon: Icon(softw == true ? Icons.check_circle : Icons.check_circle_outline),
+                onPressed: updateSoftw,
+              ),
+              title: Text('Software Engineering', style: TextStyle(decoration: TextDecoration.underline),),
+            ),
+            ListTile(
+              trailing: IconButton(
+                tooltip: "Edit attribute",
+                icon: Icon(sports == bussiness ? Icons.check_circle : Icons.check_circle_outline),
+                onPressed: updateBussiness,
+              ),
+              title: Text('Business', style: TextStyle(decoration: TextDecoration.underline),),
+            ),
+          ],
+        )
       ],
     );
   }
