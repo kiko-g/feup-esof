@@ -15,10 +15,15 @@ class MyProfileWidget extends StatefulWidget {
 }
 
 class _MyProfileWidgetState extends State<MyProfileWidget> {
+  Image image;
 
   @override
   void initState() {
     super.initState();
+    image = Image.asset(Controller.instance().getProfile().image,
+                      fit: BoxFit.fitWidth,
+                      width: 150.0,
+                      height: 150.0);
   }
 
   // Picks image from source
@@ -26,16 +31,18 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
     try{
       final img = await (ImagePicker.pickImage(source: source) ?? null);
       Controller.instance().getProfile().image = (img==null?Controller.instance().getProfile().image:img.path);
-      Controller.instance().saveProfile();  
+      Controller.instance().saveProfile(); 
+      if(img != null)
+        image = Image.file(img, fit: BoxFit.fitWidth, width: 150.0, height: 150.0); 
     }
     catch (_) {}
   }
 
   // Picks image
-  updateImage(ImageSource source) => setState(() { 
-      updateImageSource(source);
-    }
-  );
+  updateImage(ImageSource source) async{
+    await updateImageSource(source);
+    setState(() {});
+  } 
 
   //Updates user name
   updateName(text) {
@@ -110,7 +117,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                 child: Align(
                   alignment: Alignment.bottomRight,
                   child: IconButton(
-                    onPressed: () => updateImage(ImageSource.gallery),
+                    onPressed: () async => await updateImage(ImageSource.gallery),
                     icon: Icon(Icons.photo)
                   ), 
                 ),  
@@ -122,7 +129,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                 child: Align(
                   alignment: Alignment.centerRight,
                   child: IconButton(
-                    onPressed: () => updateImage(ImageSource.camera),
+                    onPressed: () async => await updateImage(ImageSource.camera),
                     icon: Icon(Icons.photo_camera)
                   ), 
                 ),  
@@ -134,11 +141,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                 child: Align(
                   alignment: Alignment.center,
                   child: ClipOval(
-                    child: new Image.asset(Controller.instance().getProfile().image,
-                      fit: BoxFit.fitWidth,
-                      width: 150.0,
-                      height: 150.0,
-                    )
+                    child: image
                   ),
                 ),
               ),
