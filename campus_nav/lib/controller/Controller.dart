@@ -90,7 +90,7 @@ class Controller {
     //Read profile
     profile.name = cache.getString('name:') ?? 'User';
     profile.isMale = cache.getBool('isMale:') ?? false;
-    profile.image = cache.getString('image') ?? '';
+    profile.image = cache.getString('image:') ?? 'assets/images/profileDefault.png';
     //Read profile interests
     profile.science = cache.getBool('science:') ?? false;
     profile.tech = cache.getBool('tech:') ?? false;

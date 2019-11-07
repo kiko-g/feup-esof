@@ -48,6 +48,6 @@ class Settings {
 }
 
 class Profile {
-  String name, image;
-  bool isMale, sports, science, tech, softw, business;
+  String name = 'User', image = 'assets/images/profileDefault.png';
+  bool isMale = true, sports = false, science = false, tech = false, softw = false, business = false;
 }
