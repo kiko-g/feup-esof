@@ -17,6 +17,7 @@ class MyProfileWidget extends StatefulWidget {
 class _MyProfileWidgetState extends State<MyProfileWidget> {
   File img;
   final defaultProfile = 'assets/images/profileDefault.png';
+  bool isDark = Controller.instance().getSettings().darkMode;
   
   var name, imagePath;
   bool sports = false, science = false, tech = false, softw = false, business = false;
@@ -37,12 +38,16 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
   // Picks image from gallery
   updateImageGallery() async{
     img = await ImagePicker.pickImage(source: ImageSource.gallery);
+    Controller.instance().getProfile().image = img.path;
+    Controller.instance().saveProfile();
     imagePath = img.path;
   }
 
   // Picks image from phone camera
   updateImageCamera() async{
     img = await ImagePicker.pickImage(source: ImageSource.camera);
+    Controller.instance().getProfile().image = img.path;
+    Controller.instance().saveProfile();
     imagePath = img.path;
   }
 
@@ -125,6 +130,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
     });
   }
 
+  //Custom Profile Widget build method
   @override
   Widget build(BuildContext context){
     return new SingleChildScrollView(
@@ -191,7 +197,6 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                 updateName(text);
               },
               style: TextStyle(
-                color: Colors.white,
                 fontSize: 30,
                 fontWeight: FontWeight.bold
               ),
