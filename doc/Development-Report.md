@@ -177,9 +177,12 @@ The user does not have internet connection -> The application needs to warn the 
 **Alternate Flows and Exceptions**:
 The information is not correct -> The website needs to warn the staff.
 
+---
 ### User stories
-This section will contain the requirements of the product described as **user stories**, organized in a global **user story map** with **user roles** or **themes**.
+!**[Link to User Stories markdown](https://github.com/softeng-feup/open-cx-nav-inc/blob/master/doc/user_stories.md)**
 
+This section will contain the requirements of the product described as **user stories**, organized in a global **user story map** with **user roles** or **themes**.
+--- 
 For each theme, or role, you may add a small description. User stories should be detailed in the tool you decided to use for project management (e.g. trello or github projects).
 
 A user story is a description of desired functionality told from the perspective of the user or customer. A starting template for the description of a user story is 
