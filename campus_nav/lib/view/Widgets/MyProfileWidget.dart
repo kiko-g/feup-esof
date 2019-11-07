@@ -19,20 +19,18 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
   final defaultProfile = 'assets/images/profileDefault.png';
   bool isDark = Controller.instance().getSettings().darkMode;
   
-  var name, imagePath;
-  bool sports = false, science = false, tech = false, softw = false, business = false;
+  String name = Controller.instance().getProfile().name;
+  String imagePath = Controller.instance().getProfile().image;
+  bool sports = Controller.instance().getProfile().sports;
+  bool science = Controller.instance().getProfile().science;
+  bool tech = Controller.instance().getProfile().tech;
+  bool softw = Controller.instance().getProfile().softw;
+  bool business = Controller.instance().getProfile().business;
+
 
   @override
   void initState() {
     super.initState();
-    
-    name = Controller.instance().getProfile().name;
-    imagePath = Controller.instance().getProfile().image;
-    sports = Controller.instance().getProfile().sports;
-    science = Controller.instance().getProfile().science;
-    tech = Controller.instance().getProfile().tech;
-    softw = Controller.instance().getProfile().softw;
-    business = Controller.instance().getProfile().business;
   }
 
   // Picks image from gallery
