@@ -1,14 +1,14 @@
 //IO operations and variables
 import 'dart:io';
-import 'dart:math';
 //Flutter widgets 
 import 'package:flutter/material.dart';
 //Image picker to select photo from camera
 import 'package:image_picker/image_picker.dart';
+//Controller
+import 'package:campus_nav/controller/Controller.dart';
 
 
 class MyProfileWidget extends StatefulWidget {
-
   @override
   _MyProfileWidgetState createState() => 
   _MyProfileWidgetState();
@@ -16,65 +16,112 @@ class MyProfileWidget extends StatefulWidget {
 
 class _MyProfileWidgetState extends State<MyProfileWidget> {
   File img;
-  final defaultProfile = "assets/images/profileDefault.png";
+  final defaultProfile = 'assets/images/profileDefault.png';
   
-  var name="Martim", gender="Male", image="";
+  var name, imagePath;
   bool sports = false, science = false, tech = false, softw = false, business = false;
 
   @override
   void initState() {
     super.initState();
+    
+    name = Controller.instance().getProfile().name;
+    imagePath = Controller.instance().getProfile().image;
+    sports = Controller.instance().getProfile().sports;
+    science = Controller.instance().getProfile().science;
+    tech = Controller.instance().getProfile().tech;
+    softw = Controller.instance().getProfile().softw;
+    business = Controller.instance().getProfile().business;
   }
 
-  updatePhoto() {
-    setState(() {
-      updateImageGallery();
-    });
-  }
-
+  // Picks image from gallery
   updateImageGallery() async{
     img = await ImagePicker.pickImage(source: ImageSource.gallery);
-    image = img.path;
+    imagePath = img.path;
   }
 
+  // Picks image from phone camera
   updateImageCamera() async{
     img = await ImagePicker.pickImage(source: ImageSource.camera);
-    image = img.path;
+    imagePath = img.path;
   }
 
+  //Updates user name
+  updateName(text) {
+    setState(() {
+      Controller.instance().getProfile().name = text;
+      Controller.instance().saveProfile();
+    });
+  }
+
+  //Updates user gender
   updateGender() {
     setState(() {
-      gender == "Male" ? gender = "Female" : gender = "Male";
+      Controller.instance().getProfile().isMale == false ? 
+        Controller.instance().getProfile().isMale = true : 
+        Controller.instance().getProfile().isMale = false;
+
+      Controller.instance().saveProfile();
     });
   }
 
+  //Updates specific interest of the user
   updateSports() {
     setState(() {
-      sports == false ? sports = true : sports = false;
+      Controller.instance().getProfile().sports == false ? 
+        Controller.instance().getProfile().sports = true : 
+        Controller.instance().getProfile().sports = false;
+      
+      sports = Controller.instance().getProfile().sports;
+      Controller.instance().saveProfile();
     });
   }
 
+  //Updates specific interest of the user
   updateScience() {
     setState(() {
-      science == false ? science = true : science = false;
+      Controller.instance().getProfile().science == false ? 
+        Controller.instance().getProfile().science = true : 
+        Controller.instance().getProfile().science = false;
+      
+      science = Controller.instance().getProfile().science;
+      Controller.instance().saveProfile();
     });
   }
 
+  //Updates specific interest of the user
   updateTech() {
     setState(() {
-      tech == false ? tech = true : tech = false;
+      Controller.instance().getProfile().tech == false ? 
+        Controller.instance().getProfile().tech = true : 
+        Controller.instance().getProfile().tech = false;
+      
+      tech = Controller.instance().getProfile().tech;
+      Controller.instance().saveProfile();
     });
   }
 
+  //Updates specific interest of the user
   updateSoftw() {
     setState(() {
-      softw == false ? softw = true : softw = false;
+      Controller.instance().getProfile().softw == false ? 
+        Controller.instance().getProfile().softw = true : 
+        Controller.instance().getProfile().softw = false;
+      
+      softw = Controller.instance().getProfile().softw;
+      Controller.instance().saveProfile();
     });
   }
 
+  //Updates specific interest of the user
   updateBusiness() {
     setState(() {
-      business == false ? business = true : business = false;
+      Controller.instance().getProfile().business == false ? 
+        Controller.instance().getProfile().business = true : 
+        Controller.instance().getProfile().business = false;
+      
+      business = Controller.instance().getProfile().business;
+      Controller.instance().saveProfile();
     });
   }
 
@@ -94,7 +141,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                 child: Align(
                   alignment: Alignment.bottomRight,
                   child: IconButton(
-                    onPressed: updatePhoto,
+                    onPressed: updateImageGallery,
                     icon: Icon(Icons.photo)
                   ), 
                 ),  
@@ -106,7 +153,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                 child: Align(
                   alignment: Alignment.centerRight,
                   child: IconButton(
-                    onPressed: updatePhoto,
+                    onPressed: updateImageCamera,
                     icon: Icon(Icons.photo_camera)
                   ), 
                 ),  
@@ -118,7 +165,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
                 child: Align(
                   alignment: Alignment.center,
                   child: ClipOval(
-                    child: Image.asset(image==""?defaultProfile:image,
+                    child: Image.asset(imagePath==''?defaultProfile:imagePath,
                       fit: BoxFit.fitWidth,
                       width: 150.0,
                       height: 150.0,
@@ -134,9 +181,14 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
             height: 100,
             alignment: Alignment.center,
             child: TextFormField(
-              initialValue: name,
+              initialValue: Controller.instance().getProfile().name,
               onSaved: (text) {
-                name = text;
+                debugPrint("--->: " + text);
+                Controller.instance().getProfile().name = text;
+                Controller.instance().saveProfile();
+              },
+              onChanged: (text) {
+                updateName(text);
               },
               style: TextStyle(
                 color: Colors.white,
@@ -148,18 +200,21 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
           //Interests and gender
           ListTile(
             trailing: IconButton(
-              tooltip: "Edit attribute",
+              tooltip: 'Edit attribute',
               icon: Icon(Icons.edit),
               onPressed: updateGender,
             ),
-            title: Text('Gender: ' + gender),
+            title: Text(
+              Controller.instance().getProfile().isMale == false ? 
+                'Gender: Female' : 'Gender: Male'
+            ),
           ),
           ExpansionTile(
-            title: Text("My Interests"),
+            title: Text('My Interests'),
             children: <Widget>[
               ListTile(
                 trailing: IconButton(
-                  tooltip: "Edit attribute",
+                  tooltip: 'Edit attribute',
                   icon: Icon(sports == true ? Icons.check_circle : Icons.check_circle_outline),
                   onPressed: updateSports,
                 ),
@@ -167,7 +222,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
               ),
               ListTile(
                 trailing: IconButton(
-                  tooltip: "Edit attribute",
+                  tooltip: 'Edit attribute',
                   icon: Icon(science == true ? Icons.check_circle : Icons.check_circle_outline),
                   onPressed: updateScience,
                 ),
@@ -175,7 +230,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
               ),
               ListTile(
                 trailing: IconButton(
-                  tooltip: "Edit attribute",
+                  tooltip: 'Edit attribute',
                   icon: Icon(tech == true ? Icons.check_circle : Icons.check_circle_outline),
                   onPressed: updateTech,
                 ),
@@ -183,7 +238,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
               ),
               ListTile(
                 trailing: IconButton(
-                  tooltip: "Edit attribute",
+                  tooltip: 'Edit attribute',
                   icon: Icon(softw == true ? Icons.check_circle : Icons.check_circle_outline),
                   onPressed: updateSoftw,
                 ),
@@ -191,7 +246,7 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
               ),
               ListTile(
                 trailing: IconButton(
-                  tooltip: "Edit attribute",
+                  tooltip: 'Edit attribute',
                   icon: Icon(business == true ? Icons.check_circle : Icons.check_circle_outline),
                   onPressed: updateBusiness,
                 ),

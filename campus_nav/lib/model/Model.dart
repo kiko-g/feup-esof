@@ -15,11 +15,11 @@ class Model{
   static final String _inc5000Img = 'assets/images/inc-5000.png';
 
   static List _conferencesList = [
-    ["Web Summit", "Tech", "10:30", "11:30", "B201", _webSummitImg, ["John", "Lucas"]],
-    ["ICML", "Science", "15:00", "17:30", "B314", _icmlImg, ["Lucas"]],
-    ["CES", "Tech",  "10:30", "12:30", "B112", _cesImg, ["Lucas"]],
-    ["Dreamforce", "Business", "16:30", "18:00", "B207", _dreamForceImg, ["Lucas"]],
-    ["Inc. 5000", "Business", "15:30", "17:00", "B003", _inc5000Img, ["Lucas"]],
+    ['Web Summit', 'Tech', '10:30', '11:30', 'B201', _webSummitImg, ['John', 'Lucas']],
+    ['ICML', 'Science', '15:00', '17:30', 'B314', _icmlImg, ['Lucas']],
+    ['CES', 'Tech',  '10:30', '12:30', 'B112', _cesImg, ['Lucas']],
+    ['Dreamforce', 'Business', '16:30', '18:00', 'B207', _dreamForceImg, ['Lucas']],
+    ['Inc. 5000', 'Business', '15:30', '17:00', 'B003', _inc5000Img, ['Lucas']],
   ];
 
 
@@ -49,5 +49,5 @@ class Settings {
 
 class Profile {
   String name, image;
-  bool science, tech, sports, software, business, genderMale;
+  bool isMale, sports, science, tech, softw, business;
 }

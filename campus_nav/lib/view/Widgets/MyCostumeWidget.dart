@@ -29,7 +29,7 @@ class MyCustomWidget extends StatefulWidget {
     room: room,
     image: image,
     speakers: speakers,
-    index: "$index",
+    index: '$index',
   );
 }
 
@@ -82,12 +82,12 @@ class _MyCustomWidgetState extends State<MyCustomWidget> {
   }
 
   String printSpeakers() {
-    String speakersString="";
+    String speakersString='';
 
     for(var i=0; i<speakers.length; i++) {
       speakersString += speakers[i];
       if(i != (speakers.length -1)) {
-        speakersString += " ; ";
+        speakersString += ' ; ';
       }
     }
     return speakersString;
@@ -110,12 +110,12 @@ class _MyCustomWidgetState extends State<MyCustomWidget> {
         ListTile(
           leading: IconButton(
             color: Colors.yellow,
-            tooltip: "Add to  Myfavourites",
+            tooltip: 'Add to  Myfavourites',
             icon: (isFavourited() ? Icon(Icons.star) : Icon(Icons.star_border)),
             onPressed: updateFav,
           ),
           trailing: IconButton(
-            tooltip: "Go to conference room",
+            tooltip: 'Go to conference room',
             icon: Icon(Icons.directions_run),
             onPressed: updateGo,
           ),

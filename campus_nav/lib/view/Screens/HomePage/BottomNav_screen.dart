@@ -8,15 +8,15 @@ class BottomNavigationMenu extends StatelessWidget {
     return BottomNavigationBar(
       items: [
         BottomNavigationBarItem(
-        title: Text("WC\n"),
+        title: Text('WC\n'),
         icon: Image.asset('assets/images/toilets.png'),
         ),
         BottomNavigationBarItem(
-          title: Text("Vending Machine\n"),
+          title: Text('Vending Machine\n'),
           icon: Image.asset('assets/images/machine.png'),
         ),
         BottomNavigationBarItem(
-          title: Text("Coffe Machine\n"),
+          title: Text('Coffe Machine\n'),
           icon: Image.asset('assets/images/coffee-machine.png'),
         ),
        

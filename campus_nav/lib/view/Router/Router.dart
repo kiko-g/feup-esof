@@ -17,7 +17,7 @@ class Router {
     static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case homeRoute:
-        return MaterialPageRoute(builder: (_) => MyHomePage(title: "Campus NAV",));
+        return MaterialPageRoute(builder: (_) => MyHomePage(title: 'Campus NAV',));
       case settingsRoute:
         return MaterialPageRoute(builder: (_) => MySettings());
       case favouritesRoute:

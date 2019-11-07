@@ -40,7 +40,7 @@ class Controller {
     final cache = await SharedPreferences.getInstance();
 
     //Get favourite conferences
-     favourites = cache.getStringList("fav:") ?? List<String>();
+     favourites = cache.getStringList('fav:') ?? List<String>();
   }
 
   saveFavourites() async {
@@ -48,7 +48,7 @@ class Controller {
     final cache = await SharedPreferences.getInstance();
 
     //Save favourite conferences
-    cache.setStringList("fav:", _model.getFavourites());
+    cache.setStringList('fav:', _model.getFavourites());
   }
 
   void addFavourite(String name) => _model.getFavourites().add(name);
@@ -68,17 +68,16 @@ class Controller {
     final cache = await SharedPreferences.getInstance();
 
     //Get settings
-    _model.getSettings().darkMode = cache.getBool("darkmode:") ?? false;
+    _model.getSettings().darkMode = cache.getBool('darkmode:') ?? false;
   }
 
   saveSettings() async {
     //Instance SharedPreferences
     final cache = await SharedPreferences.getInstance();
-
+    
     //Save settings
-    cache.setBool("darkmode:", _model.getSettings().darkMode);
+    cache.setBool('darkmode:', _model.getSettings().darkMode);
   }
-
 
   //Profile Functions
   getProfile() => _model.getProfile();
@@ -89,33 +88,33 @@ class Controller {
     final cache = await SharedPreferences.getInstance();
 
     //Read profile
-    profile.name = cache.getString("name:") ?? 'User';
+    profile.name = cache.getString('name:') ?? 'User';
+    profile.isMale = cache.getBool('isMale:') ?? false;
+    profile.image = cache.getString('image') ?? '';
+    //Read profile interests
+    profile.science = cache.getBool('science:') ?? false;
+    profile.tech = cache.getBool('tech:') ?? false;
+    profile.sports = cache.getBool('sports:') ?? false;
+    profile.softw = cache.getBool('softw:') ?? false;
+    profile.business = cache.getBool('business:') ?? false;
 
-    profile.image = cache.getString("image") ?? '';
-
-    profile.science = cache.getBool("science:") ?? false;
-    profile.tech = cache.getBool("tech:") ?? false;
-    profile.sports = cache.getBool("sports:") ?? false;
-    profile.software = cache.getBool("software:") ?? false;
-    profile.business = cache.getBool("business:") ?? false;
-
-    profile.genderMale = cache.getBool("genderMale:") ?? false;
   }
-
+  
   saveProfile() async {
     Profile profile = _model.getProfile();
     //Instance SharedPreferences
     final cache = await SharedPreferences.getInstance();
 
-    //Save settings
-    cache.setString("name:", profile.name);
-    cache.setString("image:", profile.image);
-    cache.setBool("sports:", profile.sports);
-    cache.setBool("science:", profile.science);
-    cache.setBool("tech:", profile.tech);
-    cache.setBool("sports:", profile.sports);
-    cache.setBool("software:", profile.software);
-    cache.setBool("genderMale:", profile.genderMale);
+    //Save profile settings
+    cache.setString('name:', profile.name);
+    cache.setBool('isMale:', profile.isMale);
+    cache.setString('image:', profile.image);
+    //Save profile interests
+    cache.setBool('sports:', profile.sports);
+    cache.setBool('science:', profile.science);
+    cache.setBool('tech:', profile.tech);
+    cache.setBool('sports:', profile.sports);
+    cache.setBool('softw:', profile.softw);
   }
 
 }

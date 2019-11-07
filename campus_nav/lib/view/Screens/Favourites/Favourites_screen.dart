@@ -10,7 +10,7 @@ class MyFavourites extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("My Favourites")),
+        appBar: AppBar(title: Text('My Favourites')),
         body: FavouritesList(),
         drawer: Controller.instance().getSideMenu(),
     );

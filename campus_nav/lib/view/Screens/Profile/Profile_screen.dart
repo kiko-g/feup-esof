@@ -16,12 +16,12 @@ class MyProfileState extends State<MyProfile> {
     return  new Scaffold(
         appBar: new AppBar(
           title: new Text(
-            "MyProfile", style: 
+            'MyProfile', style: 
             new TextStyle()
             ),
         ),
         drawer: Controller.instance().getSideMenu(),
-        body: MyProfileWidget(name: 'Martim Pinto da Silva', gender: 'Male', interests: 'Science'),
+        body: MyProfileWidget(),
     );
   }
 }
