@@ -88,7 +88,7 @@ class Controller {
     //Instance SharedPreferences
     final cache = await SharedPreferences.getInstance();
 
-    //Get profile
+    //Read profile
     profile.name = cache.getString("name:") ?? 'User';
 
     profile.image = cache.getString("image") ?? '';
@@ -100,6 +100,22 @@ class Controller {
     profile.business = cache.getBool("business:") ?? false;
 
     profile.genderMale = cache.getBool("genderMale:") ?? false;
+  }
+
+  saveProfile() async {
+    Profile profile = _model.getProfile();
+    //Instance SharedPreferences
+    final cache = await SharedPreferences.getInstance();
+
+    //Save settings
+    cache.setString("name:", profile.name);
+    cache.setString("image:", profile.image);
+    cache.setBool("sports:", profile.sports);
+    cache.setBool("science:", profile.science);
+    cache.setBool("tech:", profile.tech);
+    cache.setBool("sports:", profile.sports);
+    cache.setBool("software:", profile.software);
+    cache.setBool("genderMale:", profile.genderMale);
   }
 
 }
