@@ -24,8 +24,9 @@ class Model{
 
 
   Model(){
-    _favourites = new List<String>();
-    _settings = new Settings();
+    _favourites = List<String>();
+    _settings = Settings();
+    _profile = Profile();
     _sideMenu = SideMenu();
   }
 

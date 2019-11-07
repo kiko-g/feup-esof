@@ -102,10 +102,9 @@ class _MyCustomWidgetState extends State<MyCustomWidget> {
           fit: BoxFit.fitWidth,
           width: 50.0,
           height: 50.0,
-      )
+        )
       ),
-      title: Text(name,
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+      title: Text(name, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
       initiallyExpanded: false,
       children: <Widget>[
         ListTile(
