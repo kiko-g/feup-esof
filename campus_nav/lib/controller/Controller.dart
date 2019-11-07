@@ -1,10 +1,17 @@
+//Model
 import 'package:campus_nav/model/Model.dart';
+//Shared Preferences
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Controller {
   Model _model;
 
   Controller(){
     _model = new Model();
+
+    readSettings();
+    readFavourites();
+    readProfile();
   }
 
   static Controller _instance;
@@ -23,9 +30,26 @@ class Controller {
   List getConferences() => _model.getConferencesList();
 
   //Favourites Functions
-  readFavourites() => _model.readFavourites();
+  readFavourites() async {
+    //Clear favourites List
+    List favourites = _model.getFavourites();
 
-  saveFavourites() => _model.saveFavourites();
+    favourites.clear();
+
+    //Instance SharedPreferences
+    final cache = await SharedPreferences.getInstance();
+
+    //Get favourite conferences
+     favourites = cache.getStringList("fav:") ?? List<String>();
+  }
+
+  saveFavourites() async {
+    //Instance SharedPreferences
+    final cache = await SharedPreferences.getInstance();
+
+    //Save favourite conferences
+    cache.setStringList("fav:", _model.getFavourites());
+  }
 
   void addFavourite(String name) => _model.getFavourites().add(name);
 
@@ -39,8 +63,43 @@ class Controller {
   //Settings Functions
   getSettings() => _model.getSettings();
 
-  readSettings() => _model.readSettings();
+  readSettings() async {
+    //Instance SharedPreferences
+    final cache = await SharedPreferences.getInstance();
 
-  saveSettings() => _model.saveSettings();
+    //Get settings
+    _model.getSettings().darkMode = cache.getBool("darkmode:") ?? false;
+  }
+
+  saveSettings() async {
+    //Instance SharedPreferences
+    final cache = await SharedPreferences.getInstance();
+
+    //Save settings
+    cache.setBool("darkmode:", _model.getSettings().darkMode);
+  }
+
+
+  //Profile Functions
+  getProfile() => _model.getProfile();
+
+  readProfile() async {
+    Profile profile = _model.getProfile();
+    //Instance SharedPreferences
+    final cache = await SharedPreferences.getInstance();
+
+    //Get profile
+    profile.name = cache.getString("name:") ?? 'User';
+
+    profile.image = cache.getString("image") ?? '';
+
+    profile.science = cache.getBool("science:") ?? false;
+    profile.tech = cache.getBool("tech:") ?? false;
+    profile.sports = cache.getBool("sports:") ?? false;
+    profile.software = cache.getBool("software:") ?? false;
+    profile.business = cache.getBool("business:") ?? false;
+
+    profile.genderMale = cache.getBool("genderMale:") ?? false;
+  }
 
 }

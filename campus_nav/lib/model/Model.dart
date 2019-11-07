@@ -1,12 +1,12 @@
-//Save and read data of user preferences
+//Side Menu
 import 'package:campus_nav/view/Screens/SideMenu_screen.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 
 class Model{
   List<String> _favourites;
   Settings _settings;
   SideMenu _sideMenu;
+  Profile _profile;
 
   static final String _webSummitImg = 'assets/images/Web_Summit.png';
   static final String _icmlImg = 'assets/images/ICML.png';
@@ -27,9 +27,6 @@ class Model{
     _favourites = new List<String>();
     _settings = new Settings();
     _sideMenu = SideMenu();
-
-    readSettings();
-    readFavourites();
   }
 
   List<String> getFavourites() => _favourites;
@@ -41,45 +38,15 @@ class Model{
 
   getSideMenu() => _sideMenu;
 
-  readFavourites() async {
-    //Clear favourites List
-    _favourites.clear();
-
-    //Instance SharedPreferences
-    final cache = await SharedPreferences.getInstance();
-
-    //Get favourite conferences
-    _favourites  = cache.getStringList("fav:") ?? List<String>();
-  }
-
-  saveFavourites() async {
-    //Instance SharedPreferences
-    final cache = await SharedPreferences.getInstance();
-
-    //Save favourite conferences
-    cache.setStringList("fav:", _favourites);
-  }
-
-
-  readSettings() async {
-    //Instance SharedPreferences
-    final cache = await SharedPreferences.getInstance();
-
-    //Get settings
-    _settings.darkMode = cache.getBool("darkmode:") ?? false;
-  }
-
-
-  saveSettings() async {
-    //Instance SharedPreferences
-    final cache = await SharedPreferences.getInstance();
-
-    //Save settings
-    cache.setBool("darkmode:", _settings.darkMode);
-  }
+  getProfile() => _profile;
 
 }
 
 class Settings {
   bool darkMode = false;
+}
+
+class Profile {
+  String name, image;
+  bool science, tech, sports, software, business, genderMale;
 }

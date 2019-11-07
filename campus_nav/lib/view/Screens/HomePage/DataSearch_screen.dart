@@ -70,7 +70,11 @@ class DataSearch extends SearchDelegate<String> {
               query = suggestionList[i][0]; 
               showResults(context);
           },
-          child: Text(suggestionList[i][0]),
+          
+          child: Container(
+            padding: EdgeInsets.all(10),
+            child: Text(suggestionList[i][0], style: TextStyle(fontSize: 20, fontFamily: 'Montserrat'))
+          ),
         )
       );
     }
