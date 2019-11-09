@@ -12,15 +12,4 @@
 > Martim Silva ([motapinto](https://github.com/motapinto))\
 > Matheus Alves ([matheusstiehler](https://github.com/matheusstiehler))
 
-
-**App content TO DO:**
-
-- [ ] Fazer modulo do drawer profile.
-- [ ] Fazer modulo do drawer favorites.
-- [ ] Fazer modulo do drawer settings
-
-
- 
-
-
 **Disclaimer** - This repository was created for educational purposes and we do not take any responsibility for anything related to its content. You are free to use any code or algorithm you find, but do so at your own risk.
