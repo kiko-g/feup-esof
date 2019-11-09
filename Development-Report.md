@@ -23,10 +23,14 @@ You can find here detailed about the (sub)product, hereby mentioned as module, f
 So far, contributions are exclusively made by the initial team, but we hope to open them to the community, in all areas and topics: requirements, technologies, development, experimentation, testing, etc.
 
 Please contact us! 
-
 Thank you!
 
-Francisco Gonçalves, João Mota, Luís Ramos, Martim Pinto Silva, Matheus Stiehler
+> **Project developed by:**\
+> Francisco Gonçalves ([kiko-g](https://github.com/kiko-g))\
+> João Mota ([jppm99](https://github.com/jppm99))\
+> Luís Ramos ([luispvramos](https://github.com/))\
+> Martim Silva ([motapinto](https://github.com/motapinto))\
+> Matheus Alves ([matheusstiehler](https://github.com/matheusstiehler))
 
 ---
 
