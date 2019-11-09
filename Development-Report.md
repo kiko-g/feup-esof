@@ -44,7 +44,7 @@ Campus NAV will allow its users to explore freely without any boundaries in an u
 
 ## Elevator Pitch
 
-Campus NAV is a mobile application that helps conferences attendants navigating inside buildings. This results in the use of less manpower to help attendants, and gives them a better overall experience.
+Campus NAV is a mobile application that helps conferences attendants navigating inside buildings and give all sort of information about those conferences. This results in the use of less manpower to help attendants, and gives them a better overall experience.
 
 ---
 
