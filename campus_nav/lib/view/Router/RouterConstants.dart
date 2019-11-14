@@ -5,3 +5,4 @@ const String favouritesRoute = '/favourites';
 const String searchRoute = '/search';
 const String settingsRoute = '/settings';
 const String helpRoute = '/help';
+const String mapRoute = '/map';

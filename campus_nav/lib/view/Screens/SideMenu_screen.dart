@@ -1,7 +1,7 @@
 //Flutter widgets
 import 'package:flutter/material.dart';
 //Router Constants
-import 'package:campus_nav/view/router/RouterConstants.dart';
+import 'package:campus_nav/view/Router/RouterConstants.dart';
 
 class SideMenu extends StatelessWidget {
   @override
@@ -24,6 +24,15 @@ class SideMenu extends StatelessWidget {
                   leading: Icon(Icons.home),
                   onTap: () {
                     Navigator.pushNamed(context, homeRoute);
+                  },  
+                ),
+                Divider(thickness: 5,),
+                
+                ListTile(
+                  title: Text('Map'),
+                  leading: Icon(Icons.map),
+                  onTap: () {
+                    Navigator.pushNamed(context, mapRoute);
                   },  
                 ),
                 Divider(thickness: 5,),

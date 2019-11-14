@@ -1,5 +1,5 @@
 //Constants used in Route
-import 'package:campus_nav/view/router/RouterConstants.dart';
+import 'package:campus_nav/view/Router/RouterConstants.dart';
 //Widgets
 import 'package:flutter/material.dart';
 //Home Page
@@ -12,6 +12,8 @@ import 'package:campus_nav/view/screens/Settings/Settings.dart';
 import 'package:campus_nav/view/screens/Favourites/Favourites_screen.dart';
 //Profile Page
 import 'package:campus_nav/view/screens/Profile/Profile_screen.dart';
+//Map Page
+import 'package:campus_nav/view/Screens/Map/MyMap.dart';
 
 class Router {
     static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -26,6 +28,8 @@ class Router {
         return MaterialPageRoute(builder: (_) => MyProfile());
       case helpRoute:
         return MaterialPageRoute(builder: (_) => Help());
+      case mapRoute:
+        return MaterialPageRoute(builder: (_) => MyMap());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
