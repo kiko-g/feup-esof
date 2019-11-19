@@ -1,3 +1,14 @@
+### TO DO
+
+- [ ] github flow - email prof.
+- [ ] acabar report.
+- [ ] por a nav a dar -> salas, snacks, cafe, quartos de banho
+- [ ] trello -> + user stories? atualizar one doing etc
+- [ ] help module ; gherkin TDD tests ; corrigir codigo a bugar no profile
+
+
+
+
 # openCX-nav-inc Development Report
 
 Welcome to the documentation pages of the Campus NAV of **openCX**!
