@@ -212,6 +212,10 @@ In this subsection please describe in more detail which, and how, user(s) story(
 ---
 
 ## Implementation
+The aplication is currently being implemented using a MVC model coupled with a Router that changes the pages. This allows a better team management overall due to the fragmentation of the code in smaller sections and making different pages independent from one another.
+
+The Map view is currently being developed as a WebView with the aid of a already developed platform called MapWize that has a fully functional Web Map but does not have a flutter implementation.
+
 During implementation, while not necessary, it 
 
 It might be also useful to explain a few aspects of the code that have the greatest potential to confuse software engineers about how it works. 
