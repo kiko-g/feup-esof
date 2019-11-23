@@ -1,11 +1,7 @@
-//IO operations and variables
-import 'dart:io';
-//Flutter widgets 
-import 'package:flutter/material.dart';
-//Image picker to select photo from camera
-import 'package:image_picker/image_picker.dart';
-//Controller
-import 'package:campus_nav/controller/Controller.dart';
+import 'dart:io';                                         //IO operations and variables
+import 'package:flutter/material.dart';                   //Flutter widgets 
+import 'package:image_picker/image_picker.dart';          //Image picker to select photo from camera
+import 'package:campus_nav/controller/Controller.dart';   //Controller
 
 
 class MyProfileWidget extends StatefulWidget {
