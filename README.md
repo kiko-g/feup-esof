@@ -187,7 +187,7 @@ The information is not correct -> The website needs to warn the staff.
 
 ---
 ### User stories
->**[(Trello --> Github) synced stories](https://github.com/kiko-g/feup-esof/issues/)**
+>**[(Trello / Github) synced user stories](https://github.com/kiko-g/feup-esof/issues?utf8=%E2%9C%93&q=is%3Aissue)**
 <!-- >**[Link](https://github.com/softeng-feup/open-cx-nav-inc/blob/master/doc/user_stories.md)** -->
 ---
 ### Domain Model
