@@ -24,12 +24,12 @@ class Router {
         return MaterialPageRoute(builder: (_) => MySettings());
       case favouritesRoute:
         return MaterialPageRoute(builder: (_) => MyFavourites());
+      case mapRoute:
+        return MaterialPageRoute(builder: (_) => MyMap());
       case profileRoute:
         return MaterialPageRoute(builder: (_) => MyProfile());
       case helpRoute:
         return MaterialPageRoute(builder: (_) => Help());
-      case mapRoute:
-        return MaterialPageRoute(builder: (_) => MyMap());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

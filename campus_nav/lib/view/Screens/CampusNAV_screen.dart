@@ -10,16 +10,13 @@ import 'package:campus_nav/view/router/RouterConstants.dart';
 import 'package:campus_nav/controller/Controller.dart';
 
 
-class CampusNAV extends StatelessWidget {
-
+class CampusNAV extends StatelessWidget 
+{
   @override
   Widget build(BuildContext context) {
         return new DynamicTheme(
           defaultBrightness: Controller.instance().getSettings().darkMode?Brightness.dark:Brightness.light,
-          data: (defaultBrightness) => new ThemeData(
-            // primarySwatch: Colors.indigo,
-            brightness: defaultBrightness,
-          ),
+          data: (defaultBrightness) => new ThemeData( brightness: defaultBrightness, ),
           themedWidgetBuilder: (context, theme) {
             return new MaterialApp(
               theme: theme,

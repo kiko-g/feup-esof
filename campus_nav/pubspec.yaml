@@ -20,15 +20,24 @@ dependencies:
   color: any
   flutter:
     sdk: flutter
+  cupertino_icons: ^0.1.2    
+  flutter_launcher_icons: ^0.7.4
   webview_flutter: ^0.3.14+1
   material_design_icons_flutter: 3.2.3695
   dynamic_theme: ^1.0.1
+  flutter_gherkin: ^1.1.4
   image_picker: 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-    
+
+
+flutter_icons:
+  image_path: assets/images/logo.png
+  android: true
+  ios: true
+
 flutter:
   assets:
     - assets/images/
