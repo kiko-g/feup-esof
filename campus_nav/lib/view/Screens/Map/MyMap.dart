@@ -24,7 +24,7 @@ class MyMapState extends State<MyMap> {
     return Scaffold(
         appBar: AppBar( title: Text(title), ),
         body: GoogleMap(
-          mapType: MapType.hybrid,
+          mapType: MapType.terrain,
           initialCameraPosition: _feup,
           onMapCreated: (GoogleMapController controller) {
             _controller.complete(controller);
