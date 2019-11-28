@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 //Home Page
 import 'package:campus_nav/view/screens/HomePage/homepage_screen.dart';
 //Help Page
-import 'package:campus_nav/view/screens/Help/help_screen.dart';
+import 'package:campus_nav/view/Screens/Help/help_screen.dart';
 //Settings Page
 import 'package:campus_nav/view/screens/Settings/Settings.dart';
 //Favourites Page
@@ -29,7 +29,7 @@ class Router {
       case profileRoute:
         return MaterialPageRoute(builder: (_) => MyProfile());
       case helpRoute:
-        return MaterialPageRoute(builder: (_) => Help());
+        return MaterialPageRoute(builder: (_) => HelpScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
