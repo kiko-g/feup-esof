@@ -1,6 +1,6 @@
-import 'package:campus_nav/main.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_driver/driver_extension.dart';
+import 'package:campus_nav/view/Screens/CampusNAV_screen.dart';
 
 void main() {
   // This line enables the extension

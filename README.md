@@ -39,7 +39,7 @@ Thank you!
 > **Project developed by:**\
 > Francisco Gonçalves ([kiko-g](https://github.com/kiko-g))\
 > João Mota ([jppm99](https://github.com/jppm99))\
-> Luís Ramos ([luispvramos](https://github.com/))\
+> Luís Ramos ([luispvramos](https://github.com/LuisPRamos))\
 > Martim Silva ([motapinto](https://github.com/motapinto))\
 > Matheus Alves ([matheusstiehler](https://github.com/matheusstiehler))
 
