@@ -1,4 +1,5 @@
 //Flutter widgets
+import 'package:campus_nav/controller/Controller.dart';
 import 'package:flutter/material.dart';
 
 import 'dart:async';
@@ -28,6 +29,9 @@ class MyMap extends StatelessWidget {
           onWebViewCreated: (WebViewController webViewController) {
             _controller.complete(webViewController);
           },
-        ));
+        ),
+        drawer: Controller.instance().getSideMenu()
+
+    );
   }
 }
