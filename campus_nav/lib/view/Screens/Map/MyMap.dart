@@ -1,4 +1,5 @@
 //Flutter widgets
+import 'package:campus_nav/controller/Controller.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -17,11 +18,14 @@ class MyMap extends StatelessWidget {
     return Scaffold(
         appBar: AppBar( title: Text(title), ),
         body: WebView(
-          initialUrl: 'https://maps.mapwize.io/#/v/venue_feup?k=7df55016372497ab&u=ESOF&l=pt&z=15&embed=true',
+          initialUrl: 'https://maps.mapwize.io/#/v/venue_feup?k=7df55016372497ab&u=ESOF&l=pt&z=15&embed=true&?follow=true/idk',
           javascriptMode: JavascriptMode.unrestricted,
           onWebViewCreated: (WebViewController webViewController) {
             _controller.complete(webViewController);
           },
-        ));
+        ),
+        drawer: Controller.instance().getSideMenu()
+
+    );
   }
 }
