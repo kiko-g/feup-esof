@@ -1,4 +1,5 @@
 //Flutter widgets
+import 'package:campus_nav/view/Router/RouterConstants.dart';
 import 'package:flutter/material.dart';
 //Controller
 import 'package:campus_nav/controller/Controller.dart';
@@ -77,7 +78,8 @@ class _MyCustomWidgetState extends State<MyCustomWidget> {
 
   updateGo() {
     setState(() {
-      print('GO GO GO\n');   
+      Controller.instance().addHasDestination(this.name);
+      Navigator.pushNamed(context, mapRoute);
     });
   }
 

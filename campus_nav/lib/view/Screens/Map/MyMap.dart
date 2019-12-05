@@ -19,10 +19,49 @@ class MyMapState extends State<MyMap> {
       zoom: 19.89,
   );
 
+  Set markers = <Marker>{};
+
   @override
   void initState() {
     
     super.initState();
+
+    var positions = Controller.instance().getRooms();
+
+    for(var conf in Controller.instance().getConferences()) {
+      var room = conf[4];
+      LatLng pos = new LatLng(positions[room][0], positions[room][1]);
+      var id = new MarkerId(conf[0]);
+      var icon;
+
+      if(Controller.instance().getHasDestination() != 'false'){
+        if(Controller.instance().getHasDestination() != conf[0]){
+          icon = BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure);
+        }
+        else{
+          icon = BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed);
+        }
+      }
+      else{
+        if(!Controller.instance().checkFavourite(conf[0])){
+          icon = BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure);
+        }
+        else{
+          icon = BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed);
+        }
+      }
+      
+      Marker marker = new Marker(
+        markerId: id,
+        icon: icon,
+        position: pos
+      );
+
+      markers.add(marker);
+    }
+
+    Controller.instance().removeHasDestination();
+
   }
 
   @override
@@ -35,7 +74,7 @@ class MyMapState extends State<MyMap> {
           onMapCreated: (GoogleMapController controller) {
             _controller.complete(controller);
           }, 
-          // markers: Controller.instance().getConferences(),
+          markers: markers,
           indoorViewEnabled: true,
           myLocationEnabled: true,       
         ),

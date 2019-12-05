@@ -7,6 +7,8 @@ class Model {
   SideMenu _sideMenu;
   Profile _profile;
 
+  String hasDestination = 'false';
+
   static final String _webSummitImg = 'assets/images/Web_Summit.png';
   static final String _icmlImg = 'assets/images/ICML.png';
   static final String _cesImg = 'assets/images/CES.png';
@@ -88,6 +90,12 @@ class Model {
   getProfile() => _profile;
 
   getRooms() => _rooms;
+
+  getHasDestination() => hasDestination;
+
+  removeHasDestination() => hasDestination = 'false';
+
+  addHasDestination(String nome) => hasDestination = nome;
 }
 
 class Settings {
