@@ -28,7 +28,9 @@ class MyMapState extends State<MyMap> {
           initialCameraPosition: _feup,
           onMapCreated: (GoogleMapController controller) {
             _controller.complete(controller);
-          },        
+          }, 
+          indoorViewEnabled: true,
+          myLocationEnabled: true,       
         ),
         drawer: Controller.instance().getSideMenu()
 
