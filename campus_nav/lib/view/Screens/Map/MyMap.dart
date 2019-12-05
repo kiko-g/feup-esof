@@ -2,7 +2,6 @@
 import 'package:campus_nav/controller/Controller.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'package:webview_flutter/webview_flutter.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 
@@ -24,7 +23,7 @@ class MyMapState extends State<MyMap> {
     return Scaffold(
         appBar: AppBar( title: Text(title), ),
         body: GoogleMap(
-          mapType: MapType.terrain,
+          mapType: MapType.normal,
           initialCameraPosition: _feup,
           onMapCreated: (GoogleMapController controller) {
             _controller.complete(controller);
