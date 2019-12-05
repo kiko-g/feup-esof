@@ -18,17 +18,25 @@ class MyMapState extends State<MyMap> {
   static final CameraPosition _feup = CameraPosition(
       target: LatLng(41.1777116, -8.5956333),
       zoom: 19.89,
-    );
+  );
+
+  @override
+  void initState() {
+    
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar( title: Text(title), ),
         body: GoogleMap(
-          mapType: MapType.terrain,
+          mapType: MapType.normal,
           initialCameraPosition: _feup,
           onMapCreated: (GoogleMapController controller) {
             _controller.complete(controller);
           }, 
+          // markers: Controller.instance().getConferences(),
           indoorViewEnabled: true,
           myLocationEnabled: true,       
         ),

@@ -1,8 +1,7 @@
 //Side Menu
 import 'package:campus_nav/view/Screens/SideMenu_screen.dart';
 
-
-class Model{
+class Model {
   List<String> _favourites;
   Settings _settings;
   SideMenu _sideMenu;
@@ -15,15 +14,62 @@ class Model{
   static final String _inc5000Img = 'assets/images/inc-5000.png';
 
   static List _conferencesList = [
-    ['Web Summit', 'Tech', '10:30', '11:30', 'B201', _webSummitImg, ['John', 'Lucas']],
-    ['ICML', 'Science', '15:00', '17:30', 'B314', _icmlImg, ['Lucas']],
-    ['CES', 'Tech',  '10:30', '12:30', 'B112', _cesImg, ['Lucas']],
-    ['Dreamforce', 'Business', '16:30', '18:00', 'B207', _dreamForceImg, ['Lucas']],
-    ['Inc. 5000', 'Business', '15:30', '17:00', 'B003', _inc5000Img, ['Lucas']],
+    [
+      'Web Summit',
+      'Tech',
+      '10:30',
+      '11:30',
+      'B001',
+      _webSummitImg,
+      ['John', 'Lucas']
+    ],
+    [
+      'ICML',
+      'Science',
+      '15:00',
+      '17:30',
+      'B002',
+      _icmlImg,
+      ['Lucas']
+    ],
+    [
+      'CES',
+      'Tech',
+      '10:30',
+      '12:30',
+      'B003',
+      _cesImg,
+      ['Lucas']
+    ],
+    [
+      'Dreamforce',
+      'Business',
+      '16:30',
+      '18:00',
+      'B004',
+      _dreamForceImg,
+      ['Lucas']
+    ],
+    [
+      'Inc. 5000',
+      'Business',
+      '15:30',
+      '17:00',
+      'B005',
+      _inc5000Img,
+      ['Lucas']
+    ],
   ];
 
+  static Map _rooms = {
+    'B001': [41.177831, -8.595771],
+    'B002': [41.177773, -8.595635],
+    'B003': [41.177714, -8.595541],
+    'B004': [41.177368, -8.595121],
+    'B005': [41.177250, -8.595163],
+  };
 
-  Model(){
+  Model() {
     _favourites = List<String>();
     _settings = Settings();
     _profile = Profile();
@@ -41,6 +87,7 @@ class Model{
 
   getProfile() => _profile;
 
+  getRooms() => _rooms;
 }
 
 class Settings {
@@ -49,5 +96,10 @@ class Settings {
 
 class Profile {
   String name = 'User', image = 'assets/images/profileDefault.png';
-  bool isMale = true, sports = false, science = false, tech = false, softw = false, business = false;
+  bool isMale = true,
+      sports = false,
+      science = false,
+      tech = false,
+      softw = false,
+      business = false;
 }

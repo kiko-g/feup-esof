@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class Controller {
   Model _model;
 
-  Controller(){
+  Controller() {
     _model = new Model();
 
     readSettings();
@@ -16,15 +16,14 @@ class Controller {
 
   static Controller _instance;
 
-  static Controller instance (){
-    if(_instance == null)
-      _instance = new Controller();
+  static Controller instance() {
+    if (_instance == null) _instance = new Controller();
 
     return _instance;
   }
 
   //Side Menu
-  getSideMenu() => _model.getSideMenu(); 
+  getSideMenu() => _model.getSideMenu();
 
   //Conferences Functions
   List getConferences() => _model.getConferencesList();
@@ -40,7 +39,7 @@ class Controller {
     final cache = await SharedPreferences.getInstance();
 
     //Get favourite conferences
-     favourites = cache.getStringList('fav:') ?? List<String>();
+    favourites = cache.getStringList('fav:') ?? List<String>();
   }
 
   saveFavourites() async {
@@ -53,12 +52,13 @@ class Controller {
 
   void addFavourite(String name) => _model.getFavourites().add(name);
 
-  void removeFavourite(String name){
+  void removeFavourite(String name) {
     List<String> favourites = _model.getFavourites();
     favourites.removeWhere((item) => item == name);
-  } 
+  }
 
-  bool checkFavourite(String name) => _model.getFavourites().indexOf(name)!=-1?true:false;
+  bool checkFavourite(String name) =>
+      _model.getFavourites().indexOf(name) != -1 ? true : false;
 
   //Settings Functions
   getSettings() => _model.getSettings();
@@ -74,7 +74,7 @@ class Controller {
   saveSettings() async {
     //Instance SharedPreferences
     final cache = await SharedPreferences.getInstance();
-    
+
     //Save settings
     cache.setBool('darkmode:', _model.getSettings().darkMode);
   }
@@ -90,16 +90,16 @@ class Controller {
     //Read profile
     profile.name = cache.getString('name:') ?? 'User';
     profile.isMale = cache.getBool('isMale:') ?? false;
-    profile.image = cache.getString('image:') ?? 'assets/images/profileDefault.png';
+    profile.image =
+        cache.getString('image:') ?? 'assets/images/profileDefault.png';
     //Read profile interests
     profile.science = cache.getBool('science:') ?? false;
     profile.tech = cache.getBool('tech:') ?? false;
     profile.sports = cache.getBool('sports:') ?? false;
     profile.softw = cache.getBool('softw:') ?? false;
     profile.business = cache.getBool('business:') ?? false;
-
   }
-  
+
   saveProfile() async {
     Profile profile = _model.getProfile();
     //Instance SharedPreferences
@@ -117,4 +117,6 @@ class Controller {
     cache.setBool('softw:', profile.softw);
   }
 
+  // Rooms functions
+  Map getRooms() => _model.getRooms();
 }
