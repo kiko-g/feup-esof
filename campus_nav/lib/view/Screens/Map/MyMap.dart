@@ -2,7 +2,6 @@
 import 'package:campus_nav/controller/Controller.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'package:webview_flutter/webview_flutter.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 
