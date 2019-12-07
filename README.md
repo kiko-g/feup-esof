@@ -55,9 +55,7 @@ This way you can focus on the important things, connecting and learning.
 ```
 The application should give the user a realiable realtime location and provide up to date information about conference schedules.
 
-For this, the application needs to keep a stable connection with the various beacons scaterred through the buildings.
-
-Both connection with the various beacons and the user location will be achieved using bluetooth in conjuction with open source APIs.
+For this, the application needs to keep a stable Internet and GPS connection.
 
 An online database will need to be used to store conferences. To be maintained there must be a website to allow staff and developers change the information.
 ```
@@ -180,6 +178,7 @@ The information is not correct -> The website needs to warn the staff.
 ---
 ### User stories :arrow_double_down:
 >**[(Trello / Github) synced user stories](https://github.com/kiko-g/feup-esof/issues?utf8=%E2%9C%93&q=is%3Aissue)**
+>
 >**[Trello Link](https://trello.com/b/XgQ9OzGB)**
 ---
 ### Domain Model :link:
