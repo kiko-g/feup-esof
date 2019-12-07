@@ -187,7 +187,7 @@ The information is not correct -> The website needs to warn the staff.
 ## Architecture and Design :office:
 ### Logical architecture
 
-![Logical diagram](doc/UML/Code_structure/architecture.svg)
+![Logical diagram](doc/UML/Code_structure/architecture.jpg)
 
 ### Physical architecture
 
