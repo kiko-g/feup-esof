@@ -51,7 +51,7 @@ to the nearest routes to bathrooms, coffe machines, snack machines and even near
 This way you can focus on the important things, connecting and learning.
 ```
 ---
-## Requirements :satellite:
+## Requirements :signal_strength:
 ```
 The application should give the user a realiable realtime location and provide up to date information about conference schedules.
 
@@ -207,7 +207,7 @@ In this subsection please describe in more detail which, and how, user(s) story(
 
 ---
 
-## Implementation
+## Implementation :information_source:
 During implementation, while not necessary, it 
 
 It might be also useful to explain a few aspects of the code that have the greatest potential to confuse software engineers about how it works. 
@@ -217,7 +217,7 @@ Since the code should speak by itself, try to keep this section as short and sim
 Use cross-links to the code repository and only embed real fragments of code when strictly needed, since they tend to become outdated very soon.
 
 ---
-## Test
+## Test :ballot_box_with_check:
 
 #### Acceptance Tests
 We have defined some acceptance tests using Gherkin, which can be found in our [Trello board](https://trello.com/b/XgQ9OzGB).
@@ -226,7 +226,7 @@ They are located in each user story (description).
 For now they are only defined. The goal is for them to be automated in our application.
 
 ---
-## Configuration and change management
+## Configuration and change management :arrows_counterclockwise:
 
 Configuration and change management are key activities to control change to, and maintain the integrity of, a project’s artifacts (code, models, documents).
 
