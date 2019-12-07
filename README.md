@@ -208,13 +208,9 @@ In this subsection please describe in more detail which, and how, user(s) story(
 ---
 
 ## Implementation :information_source:
-During implementation, while not necessary, it 
+The aplication is currently being implemented using a MVC model coupled with a Router that changes the pages. This allows a better team management overall due to the fragmentation of the code in smaller sections and making different pages independent from one another.
 
-It might be also useful to explain a few aspects of the code that have the greatest potential to confuse software engineers about how it works. 
-
-Since the code should speak by itself, try to keep this section as short and simple as possible.
-
-Use cross-links to the code repository and only embed real fragments of code when strictly needed, since they tend to become outdated very soon.
+The map view is currently being developed with GoogleMaps.
 
 ---
 ## Test :ballot_box_with_check:
