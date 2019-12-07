@@ -231,11 +231,9 @@ Use cross-links to the code repository and only embed real fragments of code whe
 ---
 ## Test
 
-### Automated Tests
-
 #### Acceptance Tests
 We have defined some acceptance tests using Gherkin, which can be found in our [Trello board](https://trello.com/b/XgQ9OzGB).
-They are located in each user story (description)
+They are located in each user story (description).
 
 For now they are only defined. The goal is for them to be automated in our application.
 
