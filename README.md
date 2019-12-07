@@ -47,7 +47,10 @@ Navigational application that focuses on helping attendees navigating in confere
 ## Elevator Pitch
 
 ```
-What is the most annoying thing when going to a conference meeting? Of course it is to find the places you want to go.
+What is the most annoying thing when going to a conference meeting? 
+
+Of course it is to find the places you want to go.
+
 With Campus NAV you have a variaty of different information about the conference building you are in. You have 
 access to all information about any conference taking place there (path, room, speakers, duration, ...) and also 
 to the nearest routes to bathrooms, coffe machines, snack machines and even nearby bar's and restaurants. This way 
