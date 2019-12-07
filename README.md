@@ -38,16 +38,21 @@ Thank you!
 
 ## Product Vision
 
-Campus NAV is a navigational application for mobile that focuses on conferences and more importantly helping attendees navigating in unknown buildings that house theese conferences.
-
-Campus NAV will allow its users to explore freely without any boundaries in an unknown environment and also provide extra information about the conferences currently taking place aswell as other scheduled conferences. The application will also allow the users to know a litle bit more about the building itself, giving attendees more freedom and thus a better overall experience.
+```
+Navigational application that focuses on helping attendees navigating in conference buildings.
+```
 
 ---
 
 ## Elevator Pitch
 
-Campus NAV is a mobile application that helps conferences attendants navigating inside buildings and give all sort of information about those conferences. This results in the use of less manpower to help attendants, and gives them a better overall experience.
-
+```
+What is the most annoying thing when going to a conference meeting? Of course it is to find the places you want to go.
+With Campus NAV you have a variaty of different information about the conference building you are in. You have 
+access to all information about any conference taking place there (path, room, speakers, duration, ...) and also 
+to the nearest routes to bathrooms, coffe machines, snack machines and even nearby bar's and restaurants. This way 
+you can focus on the important things, connecting and learning.
+```
 ---
 
 ## Requirements
