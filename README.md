@@ -1,5 +1,3 @@
-### TO DO
-
 # openCX-nav-inc Development Report
 
 Welcome to the documentation pages of the Campus NAV of **openCX**!
@@ -54,7 +52,7 @@ This way you can focus on the important things, connecting and learning.
 ```
 ---
 ## Requirements
-
+```
 The application should give the user a realiable realtime location and provide up to date information about conference schedules.
 
 For this, the application needs to keep a stable connection with the various beacons scaterred through the buildings.
@@ -62,7 +60,7 @@ For this, the application needs to keep a stable connection with the various bea
 Both connection with the various beacons and the user location will be achieved using bluetooth in conjuction with open source APIs.
 
 An online database will need to be used to store conferences. To be maintained there must be a website to allow staff and developers change the information.
-
+```
 
 ### Use case diagram 
 
