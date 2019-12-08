@@ -58,12 +58,15 @@ For this, the application needs to keep a stable Internet and GPS connection.
 
 An online database will need to be used to store conferences. To be maintained there must be a website to allow staff and developers change the information.
 ```
+---
 
-### Use case diagram :sparkler:  
+### **Use case diagram** :sparkler:  
 
 ![Use case diagram](/doc/useCases.jpg)
 
-### Use Cases
+ ---
+
+### **Use Cases**
 * **Go to Conference**
 
 **Actor**: Attendee
@@ -153,15 +156,11 @@ The user does not have internet and gps connection turned on -> The application 
 **Alternate Flows and Exceptions**:
 The user does not have internet connection -> The application needs to warn the user.
 
-* **Modify Conferences**
-
-**Actor**: Staff
-
-**Description**: A staff member changes conferences listed on the database.
-
-**Preconditions**: Staff has internet connection and is on the website.
-
-**Post-conditions**: Website communicates with database and updates it.
+**Modify Conferences**
+> **Actor**: Staff\
+> **Description**: A staff member changes conferences listed on the database.\
+> **Preconditions**: Staff has internet connection and is on the website.\
+> **Post-conditions**: Website communicates with database and updates it.
 
 **Normal Flow**:
 1. The staff connects to the internet.
@@ -175,16 +174,18 @@ The user does not have internet connection -> The application needs to warn the 
 The information is not correct -> The website needs to warn the staff.
 
 ---
-### User stories :arrow_double_down:
->**[(Trello / Github) synced user stories](https://github.com/kiko-g/feup-esof/issues?utf8=%E2%9C%93&q=is%3Aissue)**
->
+
+### **User stories** :arrow_double_down:
+>**[Trello to github synced user stories](https://github.com/kiko-g/feup-esof/issues?utf8=%E2%9C%93&q=is%3Aissue)**\
 >**[Trello Link](https://trello.com/b/XgQ9OzGB)**
 ---
-### Domain Model :link:
+### **Domain Model** :link:
 >**[UML diagram](https://www.draw.io/?lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Domain%20Model.drawio#R7Vxbb%2BMoFP41eVmpke%2BXxyadzjx0pGrb1ew8rUhMYnZsY2HSpPPrF2xIbJMmnoTEE62rSjXHgPH5zoHvHHBH9jTdfCYgj7%2FiCCYjy4g2I%2FthZFmm4xrsD5e8V5IwtCrBkqBIVNoJXtBPKISi3XKFIlg0KlKME4rypnCOswzOaUMGCMHrZrUFTppPzcESKoKXOUhU6TcU0biSBpa%2Fk3%2BBaBnLJ5teWN1Jgaws3qSIQYTXNZH9aWRPCca0uko3U5hw5Um9VO0eP7i7HRiBGe3S4OU5%2FHszIV%2BK1xT8823x6vwbB3cCjDeQrMQLT3G2gKzPORTDpu9SF8UapQnIWGmywBl9EXcMVp7HKImewDte8bEUFMx%2FyNIkxgT9ZPVBwm6ZTMBuEyqgtjzeG0qSKU4wYYIMlw%2FYNXrhnYnHEFiwZs%2Fync2W6CvYNCo%2BgYLKAeIkAXmBZuWQecMUkCXKJphSnIpKqkqFlt8goXBTEwkVf4Y4hZS8syrirmcIuIW9%2B7K83lmP6QhZXLccWwiBsNjltu8dqOxC4PoLGNsKxiUACrzsDWmJDsE%2FYAuOPQiBBC0zVkzggjfjKkLMb%2B6FmOKcd5aDOcqWT2WdB2cn%2BVO8ORdh1naRlL4RoyiCGQcQU0DBbGtgOUYZLTXjTtgv09XUGLsjlw18ysrmrsx%2BeXVCmSWzdwGoxBIyU1hDbg57UD7oGsehF1AzU%2B6EtKynHWhHARpm0QCzZphdq2eYXQVmtoikA86acfaDnnH21YmbUaE5QTlFOBvw1oy3aTg9A%2B4peCsgswn9nrPaGlGiqeRVMGLUVdRlCozxEmcg%2BbSTfkxweNODSiIwARS9NVnxPg2Ips8c8B0tMv0mLXIDu9lFgVdkDkWrOottdWQbRzpi1GYJqdJRCcj2fc5wSgUjUwGpJJ81469BdMTrZoKNThIwg8mEEd8lwasskr47suxF%2BSMpeEWizf3k9ZCRiXhJjHIbPPwC070TL97ZMs7yjUDRuzEen6R6UnnyTev%2BqqoPFdX%2FVUCiqH6IDo%2FjZrcmL6djcCi5iHZsZZqlBm4GUjX0H8jFXpe4ndjQNBWgeeZrwFkvzr0Hh6YaNDzAN5jgfJiyT5uyzeac7XRN6ElT0A%2BxykGfGJ1YkQHhExflVsrW7hthT6Vcw6p8fLbeOsbtLMuWmsy7p5RF%2BXDYftHhy67bty87KvFSkK1ldSIEUpxFrzHiPsVuPCL%2BvFI%2FrCRhc1qZn4wN9W9ejXmUKH7ftmKFh02j9H5M41UW5ZDhjrrljep694Tez8wlOU47BdTaOeuaS2rv1bl%2B2Ozog1wSwwq816qJme7DAXtK8quxU8suqh61JqoclSUcsrtTsok1qzMMr2F3Yy%2BwjtheWXqGBLE3heRsg3Q6GqRm4%2FP9E43P9bnWdj%2Fm4W4vnNZ01PyaOR7%2FoVjMb53alCZ%2Fa7lNR6V7pyq%2Fx%2BSmPu1fVfmuGjC%2FxjCFxcC%2FTuBfVnN2DKyO9Mt0L7Zbrp6KKHisoeI7RFP7HeN2oilXjaYonMcD0rqR7j3N6ap75bNVgTJYDH6tHe3eT8K4Kjst5qg8ozq1RvfGALluyPs%2FDOOqpDjHCWLADB6uH%2B6uKe%2FLnX1SN6IVmPWlK66UJJNAXDopERpjy3cDzzK8IPRcOV0KcD2zdXqga4oiDMa%2B7VqhY5q%2B5%2FiG3%2BjWt9yxb7hBYFV1WglUTbmzsBlQeK5xeMgHq18m0%2BapGd4bS5xI5%2BshcbIfxrvWpmvbgvFiUcCLJMI8SwHzBnMx%2BgC9ai7G2%2FOpiojVjbsRH7yXcI3O2MWSX7wSVs96fARJAbc3ibwrJazGtkUVD%2FLePJDydT6bFXmt7hldywDkEn0LunuJriWrOq3vek9Kg24DUHyriEEOy0We8nV7HSMKXxj54rI1AXnT3QrhHs6HVK41wQoe98rvPdx5ehJfpuE2ZqzQ28Oo7D2Mqr15pc%2BZ1MTXxRjVdg%2Fye5Ne6WdU3nUYld%2FaGgzaX%2Bd15VBbXrQNrOzLEKX2iENx4u%2By1EdNuN0a9XF%2Bd%2BrTirguSH3UnNotUh9tgOrBs7UjcmdeC07%2FqhE138BurgFWcGQV0HwAQB6au%2FanTJ554tLQDlb9dkeaVgYWn%2B8d8IfjatWXZxE6v4d%2FhaDbV4PuUz8I6m%2Fx8fuLu8%2F7MlUNkm%2Fwayx92r%2Bu8lVe%2F3sv06YuNTtec6JRzuvp07HKa%2F8nOvaC1urWPojWgfE0j7JZzvmMhxV3%2Fyinqr77d0P2p%2F8A)**
+
 ---
-## Architecture and Design :office:
-### Logical architecture
+
+## **Architecture and Design** :office:
+### **Logical architecture**
 
 ![Logical diagram](doc/UML/Code_structure/architecture.svg)
 
@@ -195,7 +196,7 @@ The information is not correct -> The website needs to warn the staff.
 ![Deployment diagram](doc/UML/Deployment_diagram/Deployment_diagram.svg)
 
 ---
-### <span style="color:#23356d"> **Prototype** </span>
+### **Prototype**
 In the initial prototype phase, we only had a sketch of the app and not many user stories had their implementations met. The main concerns were around what tecnologies and programming languages we would be using to develop the app itself, which led to realizing the best option available was Flutter/Dart. 
 
 In addition to this, we spent some time discussing what would be the general logical architecture of the app as well as what external devices and technologies were going to be put to use in aid of the smartphone, which then led to the decision of using bluetooth beacons (with the purpose of helping with the campus navigation).
@@ -211,16 +212,15 @@ The aplication is currently being implemented using a MVC model coupled with a R
 The map view is currently being developed with GoogleMaps.
 
 ---
-## Test :ballot_box_with_check:
-
-#### Acceptance Tests
+## **Test** :ballot_box_with_check:
+### **Acceptance Tests**
 We have defined some acceptance tests using Gherkin, which can be found in our [Trello board](https://trello.com/b/XgQ9OzGB).
 They are located in each user story (description).
 
 For now they are only defined. The goal is for them to be automated in our application.
 
 ---
-## Configuration and change management :arrows_counterclockwise:
+## **Configuration and change management** :arrows_counterclockwise:
 
 Configuration and change management are key activities to control change to, and maintain the integrity of, a project’s artifacts (code, models, documents).
 
@@ -229,17 +229,13 @@ For the purpose of ESOF, we will use a very simple approach, just to manage feat
 
 ---
 
-## Project management :video_camera:
+## **Project management** :video_camera:
 
 **[Trello Link](https://trello.com/b/XgQ9OzGB)**
 
 The project management is done using [Trello](https://trello.com) with the following structure:
-
-**BackLog**: User stories planned for the project that are not yet done.
-
-**To Do**: User stories to be done in the upcoming weeks.
-
-**Doing**: User stories that are currently being worked on.
-
-**Done**: User stories that have already been done and successfully tested.
+> **BackLog**: User stories planned for the project that are not yet done.\
+> **To Do**: User stories to be done in the upcoming weeks.\
+> **Doing**: User stories that are currently being worked on.\
+> **Done**: User stories that have already been done and successfully tested.
 
