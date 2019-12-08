@@ -189,19 +189,24 @@ The information is not correct -> The website needs to warn the staff.
 
 ![Logical diagram](doc/UML/Code_structure/architecture.svg)
 
+---
+
 ### Physical architecture
 
 ![Deployment diagram](doc/UML/Deployment_diagram/Deployment_diagram.svg)
 
+---
+### <span style="color:#23356d"> **Prototype** </span>
+In the initial prototype phase, we only had a sketch of the app and not many user stories had their implementations met. The main concerns were around what tecnologies and programming languages we would be using to develop the app itself, which led to realizing the best option available was Flutter/Dart. 
 
-### Prototype
-To help on validating all the architectural, design and technological decisions made, we usually implement a vertical prototype, a thin vertical slice of the system.
+In addition to this, we spent some time discussing what would be the general logical architecture of the app as well as what external devices and technologies were going to be put to use in aid of the smartphone, which then led to the decision of using bluetooth beacons (with the purpose of helping with the campus navigation).
 
-In this subsection please describe in more detail which, and how, user(s) story(ies) were implemented.
+In terms of the status of the app we had an initial sketch of the main page and navigation side bar, showcasing buttons to select each of the conference's available.
+
+**PROTOTYPE IMAGE LINK HERE**
 
 ---
-
-## Implementation :information_source:
+## **Implementation** :information_source:
 The aplication is currently being implemented using a MVC model coupled with a Router that changes the pages. This allows a better team management overall due to the fragmentation of the code in smaller sections and making different pages independent from one another.
 
 The map view is currently being developed with GoogleMaps.
