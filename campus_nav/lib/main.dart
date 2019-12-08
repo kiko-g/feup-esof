@@ -1,7 +1,7 @@
 //Flutter widgets
 import 'package:flutter/material.dart';
 //Campus NAV start screen
-import 'package:campus_nav/view/screens/CampusNAV_screen.dart';
+import 'package:campus_nav/view/Screens/CampusNAV_screen.dart';
 
 
 

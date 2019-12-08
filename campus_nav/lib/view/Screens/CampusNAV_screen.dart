@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 //Flutter Themes
 import 'package:dynamic_theme/dynamic_theme.dart';
 //Router
-import 'package:campus_nav/view/router/Router.dart';
+import 'package:campus_nav/view/Router/Router.dart';
 //Router constants
-import 'package:campus_nav/view/router/RouterConstants.dart';
+import 'package:campus_nav/view/Router/RouterConstants.dart';
 //Controller
 import 'package:campus_nav/controller/Controller.dart';
 

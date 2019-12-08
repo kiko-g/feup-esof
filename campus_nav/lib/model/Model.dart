@@ -63,12 +63,15 @@ class Model {
     ],
   ];
 
-  static Map _rooms = {
-    'B001': [41.177831, -8.595771],
-    'B002': [41.177773, -8.595635],
-    'B003': [41.177714, -8.595541],
-    'B004': [41.177368, -8.595121],
-    'B005': [41.177250, -8.595163],
+  static Map _locations = {
+    'B001'    : [[41.177831, -8.595771]],
+    'B002'    : [[41.177773, -8.595635]],
+    'B003'    : [[41.177714, -8.595541]],
+    'B004'    : [[41.177368, -8.595121]],
+    'B005'    : [[41.177250, -8.595163]],
+    'wc'      : [[41.177831, -8.595771],[41.177773, -8.595635]], //estao mal, so meti para testar
+    'machine' : [[41.177831, -8.595771],[41.177714, -8.595541]], //estao mal, so meti para testar
+    'coffee'  : [[41.177368, -8.595121]] //estao mal, so meti para testar
   };
 
   Model() {
@@ -89,7 +92,7 @@ class Model {
 
   getProfile() => _profile;
 
-  getRooms() => _rooms;
+  getDestinations() => _locations;
 
   getHasDestination() => hasDestination;
 

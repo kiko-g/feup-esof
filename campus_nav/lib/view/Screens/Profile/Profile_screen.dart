@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';                         //Flutter Widgets
 import 'package:campus_nav/controller/Controller.dart';         //Controller
-import 'package:campus_nav/view/widgets/MyProfileWidget.dart';  //Get custom profile widget
+import 'package:campus_nav/view/Widgets/MyProfileWidget.dart';  //Get custom profile widget
 
 class MyProfile extends StatefulWidget {
   @override

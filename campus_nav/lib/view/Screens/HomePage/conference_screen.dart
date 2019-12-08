@@ -1,7 +1,7 @@
 //Flutter widgets
 import 'package:flutter/material.dart';
 //MyCostumeWidget class
-import 'package:campus_nav/view/widgets/MyCostumeWidget.dart';
+import 'package:campus_nav/view/Widgets/MyCostumeWidget.dart';
 //Controller
 import 'package:campus_nav/controller/Controller.dart';
 
