@@ -67,98 +67,99 @@ An online database will need to be used to store conferences. To be maintained t
  ---
 
 ### **Use Cases**
-- **Go to Conference**
+* **Go to Conference**
 
-**Actor**: Attendee\
-**Description**: After an attendee has arrived at a conference location, and has selected the option to be directed to a conference, the application will guide him to the conference room.\
-**Preconditions**: Attendee has selected the conference that he would like to go to and has internet and gps connection turned on.\
-**Post-conditions**: App will search for optimal route. Attendee will be directed to the conference room.
+> **Actor**: Attendee\
+> **Description**: After an attendee has arrived at a conference location, and has selected the option to be directed to a conference, the application will guide him to the conference room.\
+> **Preconditions**: Attendee has selected the conference that he would like to go to and has internet and gps connection turned on.\
+> **Post-conditions**: App will search for optimal route. Attendee will be directed to the conference room.
+> 
+> **Normal Flow**:
+> 1. The attendee turns internet and gps connection on.
+> 2. The attendee will indicate that he wants to be guided to a conference he has selected.
+> 3. The system will search for optimal route.
+> 4. The attendee will follow directions given by the application.
+> 5. The attendee will reach the conference location.
+> 6. The application will issue a notification warning the user that he has arrived at the conference.
 
-**Normal Flow**:
-1. The attendee turns internet and gps connection on.
-2. The attendee will indicate that he wants to be guided to a conference he has selected.
-3. The system will search for optimal route.
-4. The attendee will follow directions given by the application.
-5. The attendee will reach the conference location.
-6. The application will issue a notification warning the user that he has arrived at the conference.
-
-**Alternate Flows and Exceptions**:
-The user goes off route -> The application must calculate new route.
-The user is not in FEUP -> The application must give a warning and not calcute.
-The user does not have internet and gps connection turned on -> The application needs to warn the user.
+> **Alternate Flows and Exceptions**:
+> The user goes off route -> The application must calculate new route.
+> The user is not in FEUP -> The application must give a warning and not calcute.
+> The user does not have internet and gps connection turned on -> The application needs to warn the user.
 
 * **Visualize map**
 
-**Actor**: Attendee\
-**Description**: The attendee presses the map button and the map will pop up and show his location on the map.\
-**Preconditions**: Attendee is in FEUP. Attendee has internet and gps connection turned on.\
-**Post-conditions**: Attendee will know where he is.
-
-**Normal Flow**:
-1. The attendee turns internet and gps connection on.
-2. The attendee presses map button.
-3. The application aquires his position.
-4. The application shows the map.
-5. The attendee knows is postion.
-
-**Alternate Flows and Exceptions**:
-The user is not in FEUP -> The application must give a warning and show map without position.
-The user does not have internet and gps connection turned on -> The application needs to warn the user.
+> **Actor**: Attendee\
+> **Description**: The attendee presses the map button and the map will pop up and show his location on the map.\
+> **Preconditions**: Attendee is in FEUP. Attendee has internet and gps connection turned on.\
+> **Post-conditions**: Attendee will know where he is.
+> 
+> **Normal Flow**:
+> 1. The attendee turns internet and gps connection on.
+> 2. The attendee presses map button.
+> 3. The application aquires his position.
+> 4. The application shows the map.
+> 5. The attendee knows is postion.
+> 
+> **Alternate Flows and Exceptions**:
+> The user is not in FEUP -> The application must give a warning and show map without position.
+> The user does not have internet and gps connection turned on -> The application needs to warn the user.
 
 * **Go to places of interest**
 
-**Actor**: Attendee\
-**Description**: After an attendee has arrived at a conference location, and has selected a point of interest (bathroom, coffee machine, bar, etc.), the application will guide him to it.\
-**Preconditions**: Attendee has selected a point of interest that he would like to go to and has bluetooth turned on.\
-**Post-conditions**: App will search for optimal route. Attendee will be directed to the point of interest.
-
-**Normal Flow**:
-1. The attendee turns internet and gps connection on.
-2. The attendee will indicate that he wants to be guided to a point of interest he has selected.
-3. The application will search for optimal route.
-4. The attendee will follow directions given by the application.
-5. The attendee will reach the point of interest location.
-6. The application will issue a notification warning the user that he has arrived at the point of interest.
-
-**Alternate Flows and Exceptions**:
-The user goes off route -> The application must calculate new route.
-The user is not in FEUP -> The application must give a warning and not calcute a route. The user does not have internet and gps connection turned on -> The application needs to warn the user.
+> **Actor**: Attendee\
+> **Description**: After an attendee has arrived at a conference location, and has selected a point of interest (bathroom, coffee machine, bar, etc.), the application will guide him to it.\
+> **Preconditions**: Attendee has selected a point of interest that he would like to go to and has bluetooth turned on.\
+> **Post-conditions**: App will search for optimal route. Attendee will be directed to the point of interest.
+> 
+> **Normal Flow**:
+> 1. The attendee turns internet and gps connection on.
+> 2. The attendee will indicate that he wants to be guided to a point of interest he has selected.
+> 3. The application will search for optimal route.
+> 4. The attendee will follow directions given by the application.
+> 5. The attendee will reach the point of interest location.
+> 6. The application will issue a notification warning the user that he has arrived at the point of interest.
+> 
+> **Alternate Flows and Exceptions**:
+> The user goes off route -> The application must calculate new route.
+> The user is not in FEUP -> The application must give a warning and not calcute a route. 
+> The user does not have internet and gps connection turned on -> The application needs to warn the user.
 
 * **Check conference data**
 
-**Actor**: Attendee\
-**Description**: After an attendee has opened the application he will go to homepage and see all conferences, when he presses the one he wants to know more about it will show him all available information about it.\
-**Preconditions**: Attendee has internet connection.\
-**Post-conditions**: App will acquire data from the online database. App will show all conferences returned from the database.
-
-**Normal Flow**:
-1. The attendee connects to the internet.
-2. The attendee opens the application.
-3. The application will acquire data from online database.
-4. The application will show all conference data returned from database.
-5. The attendee will choose conference that he wishes to see more about.
-6. The application will show all data related to that conference.
-
-**Alternate Flows and Exceptions**:
-The user does not have internet connection -> The application needs to warn the user.
+> **Actor**: Attendee\
+> **Description**: After an attendee has opened the application he will go to homepage and see all conferences, when he presses the one he wants to know more about it will show him all available information about it.\
+> **Preconditions**: Attendee has internet connection.\
+> **Post-conditions**: App will acquire data from the online database. App will show all conferences returned from the database.
+> 
+> **Normal Flow**:
+> 1. The attendee connects to the internet.
+> 2. The attendee opens the application.
+> 3. The application will acquire data from online database.
+> 4. The application will show all conference data returned from database.
+> 5. The attendee will choose conference that he wishes to see more about.
+> 6. The application will show all data related to that conference.
+> 
+> **Alternate Flows and Exceptions**:
+> The user does not have internet connection -> The application needs to warn the user.
 
 * **Modify Conferences**
 
-**Actor**: Staff\
-**Description**: A staff member changes conferences listed on the database.\
-**Preconditions**: Staff has internet connection and is on the website.\
-**Post-conditions**: Website communicates with database and updates it.
-
-**Normal Flow**:
-1. The staff connects to the internet.
-2. The staff goes to the database website.
-3. The webiste will acquire data from database.
-4. The staff will change conferences listed, possibly adding more or removing some.
-5. The attendee will submit changes to database.
-6. The website transmites changes to database.
-
-**Alternate Flows and Exceptions**:
-The information is not correct -> The website needs to warn the staff.
+> **Actor**: Staff\
+> **Description**: A staff member changes conferences listed on the database.\
+> **Preconditions**: Staff has internet connection and is on the website.\
+> **Post-conditions**: Website communicates with database and updates it.
+> 
+> **Normal Flow**:
+> 1. The staff connects to the internet.
+> 2. The staff goes to the database website.
+> 3. The webiste will acquire data from database.
+> 4. The staff will change conferences listed, possibly adding more or removing some.
+> 5. The attendee will submit changes to database.
+> 6. The website transmites changes to database.
+> 
+> **Alternate Flows and Exceptions**:
+> The information is not correct -> The website needs to warn the staff.
 
 ---
 
