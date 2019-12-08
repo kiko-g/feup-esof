@@ -67,8 +67,7 @@ An online database will need to be used to store conferences. To be maintained t
  ---
 
 ### **Use Cases**
-
-**Go to Conference**
+#### **Go to Conference**
 
 > **Actor**: Attendee\
 > **Description**: After an attendee has arrived at a conference location, and has selected the option to be directed to a conference, the application will guide him to the conference room.\
@@ -88,7 +87,9 @@ An online database will need to be used to store conferences. To be maintained t
 > The user is not in FEUP -> The application must give a warning and not calcute.
 > The user does not have internet and gps connection turned on -> The application needs to warn the user.
 
-* **Visualize map**
+
+
+#### **Visualize map**
 
 > **Actor**: Attendee\
 > **Description**: The attendee presses the map button and the map will pop up and show his location on the map.\
@@ -106,7 +107,10 @@ An online database will need to be used to store conferences. To be maintained t
 > The user is not in FEUP -> The application must give a warning and show map without position.
 > The user does not have internet and gps connection turned on -> The application needs to warn the user.
 
-**Go to places of interest**
+
+
+
+#### **Go to places of interest**
 
 > **Actor**: Attendee\
 > **Description**: After an attendee has arrived at a conference location, and has selected a point of interest (bathroom, coffee machine, bar, etc.), the application will guide him to it.\
@@ -126,7 +130,10 @@ An online database will need to be used to store conferences. To be maintained t
 > The user is not in FEUP -> The application must give a warning and not calcute a route. 
 > The user does not have internet and gps connection turned on -> The application needs to warn the user.
 
-**Check conference data**
+
+
+
+#### **Check conference data**
 
 > **Actor**: Attendee\
 > **Description**: After an attendee has opened the application he will go to homepage and see all conferences, when he presses the one he wants to know more about it will show him all available information about it.\
@@ -144,7 +151,10 @@ An online database will need to be used to store conferences. To be maintained t
 > **Alternate Flows and Exceptions**:
 > The user does not have internet connection -> The application needs to warn the user.
 
-**Modify Conferences**
+
+
+
+#### **Modify Conferences**
 
 > **Actor**: Staff\
 > **Description**: A staff member changes conferences listed on the database.\
