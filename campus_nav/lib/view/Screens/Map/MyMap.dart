@@ -26,38 +26,63 @@ class MyMapState extends State<MyMap> {
     
     super.initState();
 
-    var positions = Controller.instance().getRooms();
+    var positions = Controller.instance().getDestiantions();
+    var destination = Controller.instance().getHasDestination();
 
-    for(var conf in Controller.instance().getConferences()) {
-      var room = conf[4];
-      LatLng pos = new LatLng(positions[room][0], positions[room][1]);
-      var id = new MarkerId(conf[0]);
-      var icon;
-
-      if(Controller.instance().getHasDestination() != 'false'){
-        if(Controller.instance().getHasDestination() != conf[0]){
-          icon = BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure);
-        }
-        else{
-          icon = BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed);
-        }
-      }
-      else{
-        if(!Controller.instance().checkFavourite(conf[0])){
-          icon = BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure);
-        }
-        else{
-          icon = BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed);
-        }
-      }
+    // Executes when user opens map through lower homepage destination shortcuts
+    if(destination == 'wc' || destination == 'machine' || destination == 'coffee'){
       
-      Marker marker = new Marker(
-        markerId: id,
-        icon: icon,
-        position: pos
-      );
+      var coordList = positions[destination];
+      
+      for(var coords in coordList){
+        LatLng pos = new LatLng(coords[0], coords[1]);
+        var id = new MarkerId(destination);
+        var icon = BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed);
 
-      markers.add(marker);
+        Marker marker = new Marker(
+          markerId: id,
+          icon: icon,
+          position: pos
+        );
+
+        markers.add(marker);
+      }
+    }
+    else{
+      for(var conf in Controller.instance().getConferences()) {
+        var room = conf[4];
+        LatLng pos = new LatLng(positions[room][0][0], positions[room][0][1]);
+        var id = new MarkerId(conf[0]);
+        var icon;
+
+        // Executes when map destination is a conference
+        if(destination != 'false'){
+          if(destination != conf[0]){
+            icon = BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure);
+          }
+          else{
+            icon = BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed);
+          }
+        }
+        // Executes when map is opened by router aka no destination set
+        else{
+          if(!Controller.instance().checkFavourite(conf[0])){
+            icon = BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure);
+          }
+          else{
+            icon = BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed);
+          }
+        }
+        
+        Marker marker = new Marker(
+          markerId: id,
+          icon: icon,
+          position: pos
+        );
+
+        markers.add(marker);
+      }
+
     }
 
     Controller.instance().removeHasDestination();

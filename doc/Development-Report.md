@@ -205,9 +205,46 @@ In this section you should start by briefly describing the overall components of
 
 
 ### Prototype
-To help on validating all the architectural, design and technological decisions made, we usually implement a vertical prototype, a thin vertical slice of the system.
+<!-- To help on validating all the architectural, design and technological decisions made, we usually implement a vertical prototype, a thin vertical slice of the system.
 
-In this subsection please describe in more detail which, and how, user(s) story(ies) were implemented.
+In this subsection please describe in more detail which, and how, user(s) story(ies) were implemented. -->
+This section describes each product iteration alongside with the user stories associated with them. 
+
+In iteration 1, we dedicated some time to learning Flutter/Dart and built the core and barebones of our application. We focused on developping:
+ * The home page interface, which contains dropdowns of the available conferences.
+ * The side bar to work essentially as a navigation tool for the app.
+ * The option to switch between dark and light theme on the settings page.
+
+In addition to the description of each product iteration we are going to leave links to the user stories associated with each iteration. Also, our trello board highlights which User Stories refer to each Release. 
+> **Release 1 User Stories**\
+> [#1 - Easy access menu](https://trello.com/c/ZsxXb9Ym/36-as-a-user-i-want-a-menu-with-easy-access)\
+> [#2 - Theme colour](https://trello.com/c/leKYoqCg/32-as-a-user-i-want-to-change-the-theme-colour-of-my-application)\
+> [#3 - Scheduled conferences](https://trello.com/c/LuM6ZLkv/33-as-a-user-i-want-to-see-all-conferences-that-are-scheduled)\
+> [#4 - Conference details](https://trello.com/c/cAzBrjiF/31-as-a-user-i-want-to-know-any-details-of-the-conferences-i-am-attending)
+
+In iteration 2, we focused on implementing:
+ * The favorites section, which will allow the user to store their favorite conferences of the ones available (user story **#1** below)
+ * Settings saving upon user input, for instance favoriting a conference, changing profile username, etc. (user story **#2** below)
+ * The search engine, which allows the user to search for an existing conference via string input (user story **#3** below)
+ * The profile page, which allows the user to have their own section with their preferences (user stories **#4**, **#5** and **#6** below)
+> **Release 2 User Stories**\
+> [#1 - Favorite conferences](https://trello.com/c/jJni8J0k/57-as-a-user-i-want-to-add-any-conference-to-my-favourites-and-save-it-for-later)\
+> [#2 - Save settings](https://trello.com/c/iFGGFHX5/37-as-a-user-i-want-my-settings-to-be-saved)\
+> [#3 - Search engine](https://trello.com/c/4b9X7xLY/41-as-a-user-i-want-to-search-for-a-specific-conference)\
+> [#4 - Profile page](https://trello.com/c/Axll25zP/55-as-a-user-i-want-to-have-a-profile)\
+> [#5 - Interests in profile page](https://trello.com/c/p40lCV38/54-as-a-user-i-want-to-store-my-profile-and-save-my-interests)\
+> [#6 - Changing Profile picture](https://trello.com/c/3VjmtjeS/56-as-a-user-i-want-to-change-my-profile-picture-using-the-gallery-or-the-phone-camera-and-store-it)
+
+In iteration 3, our main focuses were:
+ * Help and About Page (user story **#1**)
+ * Implementing the map system (user stories **#2** to **#5** below)
+> **Release 3 User Stories**\
+> [#1 - About Page](https://trello.com/c/N07qrt9I/59-as-a-user-i-want-to-see-a-help-about-page)\
+> [#2 - Map guiding to conference](https://trello.com/c/nDhrlslB/39-as-a-user-i-want-to-be-guided-to-a-conference)\
+> [#3 - Map guiding to vending machines](https://trello.com/c/pb3l2oYx/44-as-a-user-i-want-to-be-guided-to-the-coffee-and-snack-machines)\
+> [#4 - Map guiding to bar](https://trello.com/c/ykpkgqpG/45-as-a-user-i-want-to-know-to-be-guided-to-a-bar)\
+> [#5 - Map guiding to bathroom](https://trello.com/c/nRLgEPtV/46-as-a-user-i-want-to-be-guided-to-the-mens-womens-and-differently-abled-restrooms-based-on-the-selected-gender-on-the-profile)
+
 
 ---
 

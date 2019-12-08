@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 //Controller
 import 'package:campus_nav/controller/Controller.dart';
 //My Costume Widget
-import 'package:campus_nav/view/widgets/MyCostumeWidget.dart';
+import 'package:campus_nav/view/Widgets/MyCostumeWidget.dart';
 
 
 class FavouritesList extends StatefulWidget {  

@@ -3,15 +3,15 @@ import 'package:campus_nav/view/Router/RouterConstants.dart';
 //Widgets
 import 'package:flutter/material.dart';
 //Home Page
-import 'package:campus_nav/view/screens/HomePage/homepage_screen.dart';
+import 'package:campus_nav/view/Screens/HomePage/homepage_screen.dart';
 //Help Page
 import 'package:campus_nav/view/Screens/Help/help_screen.dart';
 //Settings Page
-import 'package:campus_nav/view/screens/Settings/Settings.dart';
+import 'package:campus_nav/view/Screens/Settings/Settings.dart';
 //Favourites Page
-import 'package:campus_nav/view/screens/Favourites/Favourites_screen.dart';
+import 'package:campus_nav/view/Screens/Favourites/Favourites_screen.dart';
 //Profile Page
-import 'package:campus_nav/view/screens/Profile/Profile_screen.dart';
+import 'package:campus_nav/view/Screens/Profile/Profile_screen.dart';
 //Map Page
 import 'package:campus_nav/view/Screens/Map/MyMap.dart';
 
