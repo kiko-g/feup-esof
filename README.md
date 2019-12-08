@@ -34,9 +34,8 @@ Thank you!
 
 ---
 ## Product Vision :hourglass_flowing_sand:
-```
 Navigational application that focuses on helping attendees navigating in conference buildings.
-```
+
 ---
 ## Elevator Pitch :iphone:
 
@@ -69,14 +68,14 @@ An online database will need to be used to store conferences. To be maintained t
 
 **Actor**: Attendee
 
-**Description**: After an attendee has arrived at a conference location, and has selected the conference, the application will guide him to the conference room.
+**Description**: After an attendee has arrived at a conference location, and has selected the option to be directed to a conference, the application will guide him to the conference room.
 
-**Preconditions**: Attendee has selected the conference that he would like to go to and has bluetooth turned on.
+**Preconditions**: Attendee has selected the conference that he would like to go to and has internet and gps connection turned on.
 
 **Post-conditions**: App will search for optimal route. Attendee will be directed to the conference room.
 
 **Normal Flow**:
-1. The attendee turns bluetooth on.
+1. The attendee turns internet and gps connection on.
 2. The attendee will indicate that he wants to be guided to a conference he has selected.
 3. The system will search for optimal route.
 4. The attendee will follow directions given by the application.
@@ -86,7 +85,7 @@ An online database will need to be used to store conferences. To be maintained t
 **Alternate Flows and Exceptions**:
 The user goes off route -> The application must calculate new route.
 The user is not in FEUP -> The application must give a warning and not calcute.
-The user does not have bluetooth turned on -> The application needs to warn the user.
+The user does not have internet and gps connection turned on -> The application needs to warn the user.
 
 * **Visualize map**
 
@@ -94,12 +93,12 @@ The user does not have bluetooth turned on -> The application needs to warn the 
 
 **Description**: The attendee presses the map button and the map will pop up and show his location on the map.
 
-**Preconditions**: Attendee is in FEUP. Attendee has bluetooth turned on.
+**Preconditions**: Attendee is in FEUP. Attendee has internet and gps connection turned on.
 
 **Post-conditions**: Attendee will know where he is.
 
 **Normal Flow**:
-1. The attendee turns bluetooth on.
+1. The attendee turns internet and gps connection on.
 2. The attendee presses map button.
 3. The application aquires his position.
 4. The application shows the map.
@@ -107,7 +106,7 @@ The user does not have bluetooth turned on -> The application needs to warn the 
 
 **Alternate Flows and Exceptions**:
 The user is not in FEUP -> The application must give a warning and show map without position.
-The user does not have bluetooth turned on -> The application needs to warn the user.
+The user does not have internet and gps connection turned on -> The application needs to warn the user.
 
 
 * **Go to places of interest**
@@ -121,7 +120,7 @@ The user does not have bluetooth turned on -> The application needs to warn the 
 **Post-conditions**: App will search for optimal route. Attendee will be directed to the point of interest.
 
 **Normal Flow**:
-1. The attendee turns bluetooth on.
+1. The attendee turns internet and gps connection on.
 2. The attendee will indicate that he wants to be guided to a point of interest he has selected.
 3. The application will search for optimal route.
 4. The attendee will follow directions given by the application.
@@ -131,7 +130,7 @@ The user does not have bluetooth turned on -> The application needs to warn the 
 **Alternate Flows and Exceptions**:
 The user goes off route -> The application must calculate new route.
 The user is not in FEUP -> The application must give a warning and not calcute a route.
-The user does not have bluetooth turned on -> The application needs to warn the user.
+The user does not have internet and gps connection turned on -> The application needs to warn the user.
 
 * **Check conference data**
 
