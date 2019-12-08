@@ -207,24 +207,30 @@ In terms of the status of the app we had an initial sketch of the main page and 
 ---
 ## **Implementation** :information_source:
 The aplication is currently being implemented using a MVC model coupled with a Router that changes the pages. This allows a better team management overall due to the fragmentation of the code in smaller sections and making different pages independent from one another.
-
 The map view is currently being developed with GoogleMaps.
 
-This section describes each product iteration alongside with the user stories associated with them. 
+The section below describes each product iteration alongside with the user stories associated with them. 
 
-In iteration 1, we dedicated some time to learning Flutter/Dart and built the core and barebones of our application. We focused on developping:
+In addition to the description of each product iteration we are going to leave links to the user stories associated with each iteration. Also, our trello board highlights which User Stories refer to each Release.
+
+---
+
+In **iteration 1**, we dedicated some time to learning Flutter/Dart and built the core and barebones of our application. We focused on developping:
  * The home page interface, which contains dropdowns of the available conferences.
  * The side bar to work essentially as a navigation tool for the app.
  * The option to switch between dark and light theme on the settings page.
 
-In addition to the description of each product iteration we are going to leave links to the user stories associated with each iteration. Also, our trello board highlights which User Stories refer to each Release. 
+
 > **Release 1 User Stories**\
 > [#1 - Easy access menu](https://trello.com/c/ZsxXb9Ym/36-as-a-user-i-want-a-menu-with-easy-access)\
-> [#2 - Theme colour](https://trello.com/c/leKYoqCg/32-as-a-user-i-want-to-change-the-theme-colour-of-my-application)\
+> [#2 - Theme color](https://trello.com/c/leKYoqCg/32-as-a-user-i-want-to-change-the-theme-colour-of-my-application)\
 > [#3 - Scheduled conferences](https://trello.com/c/LuM6ZLkv/33-as-a-user-i-want-to-see-all-conferences-that-are-scheduled)\
 > [#4 - Conference details](https://trello.com/c/cAzBrjiF/31-as-a-user-i-want-to-know-any-details-of-the-conferences-i-am-attending)
 
-In iteration 2, we focused on implementing:
+
+
+
+In **iteration 2**, we focused on implementing:
  * The favorites section, which will allow the user to store their favorite conferences of the ones available (user story **#1** below)
  * Settings saving upon user input, for instance favoriting a conference, changing profile username, etc. (user story **#2** below)
  * The search engine, which allows the user to search for an existing conference via string input (user story **#3** below)
@@ -237,9 +243,14 @@ In iteration 2, we focused on implementing:
 > [#5 - Interests in profile page](https://trello.com/c/p40lCV38/54-as-a-user-i-want-to-store-my-profile-and-save-my-interests)\
 > [#6 - Changing Profile picture](https://trello.com/c/3VjmtjeS/56-as-a-user-i-want-to-change-my-profile-picture-using-the-gallery-or-the-phone-camera-and-store-it)
 
-In iteration 3, our main focuses were:
+
+
+
+In **iteration 3**, our main focuses were:
  * Help and About Page (user story **#1**)
  * Implementing the map system (user stories **#2** to **#5** below)
+
+User stories between #2 and #5 could not be finished until the due date of the iteration 3 so they are also a work in progress in iteration 4
 > **Release 3 User Stories**\
 > [#1 - About Page](https://trello.com/c/N07qrt9I/59-as-a-user-i-want-to-see-a-help-about-page)\
 > [#2 - Map guiding to conference](https://trello.com/c/nDhrlslB/39-as-a-user-i-want-to-be-guided-to-a-conference)\
@@ -247,8 +258,23 @@ In iteration 3, our main focuses were:
 > [#4 - Map guiding to bar](https://trello.com/c/ykpkgqpG/45-as-a-user-i-want-to-know-to-be-guided-to-a-bar)\
 > [#5 - Map guiding to bathroom](https://trello.com/c/nRLgEPtV/46-as-a-user-i-want-to-be-guided-to-the-mens-womens-and-differently-abled-restrooms-based-on-the-selected-gender-on-the-profile)
 
-In iteration 4, 
+
+In **iteration 4**, we focused on finishing what we had projected for iteration 3 and left some user stories in the [backlog](#Project-management) section of our trello board, to save some features we would like to implement in the future.
 > **Release 4 User Stories**\
+> [#1 - Map guiding to conference](https://trello.com/c/nDhrlslB/39-as-a-user-i-want-to-be-guided-to-a-conference)\
+> [#2 - Map guiding to vending machines](https://trello.com/c/pb3l2oYx/44-as-a-user-i-want-to-be-guided-to-the-coffee-and-snack-machines)\
+> [#3 - Map guiding to bar](https://trello.com/c/ykpkgqpG/45-as-a-user-i-want-to-know-to-be-guided-to-a-bar)\
+> [#4 - Map guiding to bathroom](https://trello.com/c/nRLgEPtV/46-as-a-user-i-want-to-be-guided-to-the-mens-womens-and-differently-abled-restrooms-based-on-the-selected-gender-on-the-profile)
+
+> **Backlog user stories**\
+> [#1](https://trello.com/c/banCBzK0/52-as-a-user-i-want-to-know-when-can-i-go-to-those-places-of-interest-including-opening-and-closure-hours)\
+> [#2](https://trello.com/c/16Y19m9a/47-as-a-user-i-want-to-know-the-schedule-of-the-bar)\
+> [#3](https://trello.com/c/qwu1vUBz/48-as-a-developer-i-want-to-remove-and-add-conferences-to-the-conference-list-of-the-home-page)\
+> [#4](https://trello.com/c/ohe6eE3f/51-as-a-developer-i-want-to-update-the-number-of-attendees-of-each-conference-and-the-availability-left-for-those-conferences)\
+> [#5](https://trello.com/c/2SZ2VWLM/42-as-a-user-i-want-to-know-about-any-potential-changes-that-affect-the-conferences)\
+> [#6](https://trello.com/c/o1atCQDc/49-as-a-developer-i-want-to-change-the-date-theme-and-speakers-of-any-given-conference)\
+> [#7](https://trello.com/c/dtq6srR1/50-as-a-developer-i-want-to-inform-every-user-that-subscribed-to-that-conference-about-the-changes)\
+> [#8](https://trello.com/c/rFuPEfVX/60-as-a-developer-i-want-to-have-automatic-tests-to-checks-if-all-features-are-working)
 
 ---
 ## **Test** :ballot_box_with_check:
@@ -267,7 +293,6 @@ For the purpose of ESOF, we will use a very simple approach, just to manage feat
 
 
 ---
-
 ## **Project management** :video_camera:
 
 **[Trello Link](https://trello.com/b/XgQ9OzGB)**
