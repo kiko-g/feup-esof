@@ -67,7 +67,7 @@ An online database will need to be used to store conferences. To be maintained t
  ---
 
 ### **Use Cases**
-#### **Go to Conference**
+**Go to Conference**
 
 > **Actor**: Attendee\
 > **Description**: After an attendee has arrived at a conference location, and has selected the option to be directed to a conference, the application will guide him to the conference room.\
@@ -110,7 +110,7 @@ An online database will need to be used to store conferences. To be maintained t
 
 
 
-#### **Go to places of interest**
+**Go to places of interest**
 
 > **Actor**: Attendee\
 > **Description**: After an attendee has arrived at a conference location, and has selected a point of interest (bathroom, coffee machine, bar, etc.), the application will guide him to it.\
@@ -133,7 +133,7 @@ An online database will need to be used to store conferences. To be maintained t
 
 
 
-#### **Check conference data**
+**Check conference data**
 
 > **Actor**: Attendee\
 > **Description**: After an attendee has opened the application he will go to homepage and see all conferences, when he presses the one he wants to know more about it will show him all available information about it.\
@@ -154,7 +154,7 @@ An online database will need to be used to store conferences. To be maintained t
 
 
 
-#### **Modify Conferences**
+**Modify Conferences**
 
 > **Actor**: Staff\
 > **Description**: A staff member changes conferences listed on the database.\
@@ -195,6 +195,7 @@ An online database will need to be used to store conferences. To be maintained t
 ![Deployment diagram](doc/UML/Deployment_diagram/Deployment_diagram.svg)
 
 ---
+
 ### **Prototype**
 In the initial prototype phase, we only had a sketch of the app and not many user stories had their implementations met. The main concerns were around what tecnologies and programming languages we would be using to develop the app itself, which led to realizing the best option available was Flutter/Dart. 
 
@@ -205,6 +206,7 @@ In terms of the status of the app we had an initial sketch of the main page and 
 **PROTOTYPE IMAGE LINK HERE**
 
 ---
+
 ### **Implementation** :information_source:
 The aplication is currently being implemented using a MVC model coupled with a Router that changes the pages. This allows a better team management overall due to the fragmentation of the code in smaller sections and making different pages independent from one another.
 The map view is currently being developed with GoogleMaps.
