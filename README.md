@@ -205,7 +205,7 @@ In terms of the status of the app we had an initial sketch of the main page and 
 **PROTOTYPE IMAGE LINK HERE**
 
 ---
-## **Implementation** :information_source:
+### **Implementation** :information_source:
 The aplication is currently being implemented using a MVC model coupled with a Router that changes the pages. This allows a better team management overall due to the fragmentation of the code in smaller sections and making different pages independent from one another.
 The map view is currently being developed with GoogleMaps.
 
