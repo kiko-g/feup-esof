@@ -1,13 +1,20 @@
 //Flutter widgets
+import 'dart:convert';
+
 import 'package:campus_nav/controller/Controller.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:permission/permission.dart';
+import 'package:http/http.dart' as http;
+import 'package:geolocator/geolocator.dart';
 
 class MyMap extends StatefulWidget {
+  final String destination;
+
+  MyMap({this.destination});
   @override
-  State<MyMap> createState() => MyMapState();
+  State<MyMap> createState() => MyMapState(destination: destination);
 }
 
 class MyMapState extends State<MyMap> {
@@ -17,15 +24,57 @@ class MyMapState extends State<MyMap> {
     zoom: 19.89,
   );
 
-  Set markers = <Marker>{};
+  String destination;
+
+  Set<Marker> markers = {};
+
+  Set<Polyline> lines = {};
 
   getPermissions() async {
-    var permissions = await Permission.getPermissionsStatus(
+    await Permission.getPermissionsStatus(
         [PermissionName.Storage, PermissionName.Location]);
 
-    var permissionsNames = await Permission.requestPermissions(
+    await Permission.requestPermissions(
         [PermissionName.Storage, PermissionName.Location]);
   }
+
+  Future<Post> getRoute(double destinationLat, double destinationLon) async {
+    Position position = await Geolocator()
+        .getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+
+    if (position == null) return null;
+
+    double posLatitude = position.latitude;
+    double posLongitude = position.longitude;
+
+    var response = await http.get(
+        'https://maps.googleapis.com/maps/api/directions/json?origin=$posLatitude,$posLongitude&destination=$destinationLat,$destinationLon&key=AIzaSyADUbOWG6DGbd6-ugkm5vhm1Fvgmbz3SVA&mode=walking');
+
+    if (response.statusCode != 200) return null;
+
+    return Post.fromJson(jsonDecode(response.body));
+  }
+
+  Polyline getLine(Post route) {
+    if (route == null) return null;
+
+    List<LatLng> points;
+    LatLng end;
+    for (Map step in route.routes['legs']['steps']) {
+      points.add(
+          LatLng(step['start_location']['lat'], step['start_location']['lng']));
+      end = LatLng(step['end_location']['lat'], step['end_location']['lng']);
+    }
+
+    points.add(end);
+
+    return Polyline(
+      points: points,
+      polylineId: new PolylineId('path'),
+    );
+  }
+
+  MyMapState({this.destination});
 
   @override
   void initState() {
@@ -34,7 +83,6 @@ class MyMapState extends State<MyMap> {
     getPermissions();
 
     var positions = Controller.instance().getDestiantions();
-    var destination = Controller.instance().getHasDestination();
 
     // Executes when user opens map through lower homepage destination shortcuts
     if (destination == 'wc' ||
@@ -61,12 +109,22 @@ class MyMapState extends State<MyMap> {
 
         // Executes when map destination is a conference
         if (destination != 'false') {
-          if (destination != conf[0]) {
-            icon = BitmapDescriptor.defaultMarkerWithHue(
-                BitmapDescriptor.hueAzure);
-          } else {
+          if (destination == conf[4]) {
             icon =
                 BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed);
+
+            Marker marker = new Marker(markerId: id, icon: icon, position: pos);
+
+            markers.add(marker);
+
+            var route = getRoute(pos.latitude, pos.longitude).then((route) {
+              return getLine(route);
+            });
+            if (route != null) {
+              route.then((route) {
+                lines.add(route);
+              });
+            }
           }
         }
         // Executes when map is opened by router aka no destination set
@@ -78,11 +136,10 @@ class MyMapState extends State<MyMap> {
             icon =
                 BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed);
           }
+          Marker marker = new Marker(markerId: id, icon: icon, position: pos);
+
+          markers.add(marker);
         }
-
-        Marker marker = new Marker(markerId: id, icon: icon, position: pos);
-
-        markers.add(marker);
       }
     }
 
@@ -102,9 +159,26 @@ class MyMapState extends State<MyMap> {
             Completer().complete(controller);
           },
           markers: markers,
+          polylines: lines,
           indoorViewEnabled: true,
           myLocationEnabled: true,
         ),
         drawer: Controller.instance().getSideMenu());
+  }
+}
+
+class Post {
+  final Map<String, dynamic> geocodedWaypoints;
+  final Map<String, dynamic> routes;
+  final String status;
+
+  Post({this.geocodedWaypoints, this.routes, this.status});
+
+  factory Post.fromJson(Map<String, dynamic> json) {
+    return Post(
+      geocodedWaypoints: json['geocoded_waypoints'],
+      routes: json['routes'],
+      status: json['status'],
+    );
   }
 }

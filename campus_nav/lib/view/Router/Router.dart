@@ -19,17 +19,17 @@ class Router {
     static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case homeRoute:
-        return MaterialPageRoute(builder: (_) => MyHomePage(title: 'Campus NAV',));
+        return MaterialPageRoute(builder: (context) => MyHomePage(title: 'Campus NAV',));
       case settingsRoute:
-        return MaterialPageRoute(builder: (_) => MySettings());
+        return MaterialPageRoute(builder: (context) => MySettings());
       case favouritesRoute:
-        return MaterialPageRoute(builder: (_) => MyFavourites());
+        return MaterialPageRoute(builder: (context) => MyFavourites());
       case mapRoute:
-        return MaterialPageRoute(builder: (_) => MyMap());
+        return MaterialPageRoute(builder: (context) => MyMap(destination: settings.arguments));
       case profileRoute:
-        return MaterialPageRoute(builder: (_) => MyProfile());
+        return MaterialPageRoute(builder: (context) => MyProfile());
       case helpRoute:
-        return MaterialPageRoute(builder: (_) => HelpScreen());
+        return MaterialPageRoute(builder: (context) => HelpScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

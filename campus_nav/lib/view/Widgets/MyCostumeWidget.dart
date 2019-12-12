@@ -76,13 +76,6 @@ class _MyCustomWidgetState extends State<MyCustomWidget> {
     });
   }
 
-  updateGo() {
-    setState(() {
-      Controller.instance().addHasDestination(this.name);
-      Navigator.pushNamed(context, mapRoute);
-    });
-  }
-
   String printSpeakers() {
     String speakersString='';
 
@@ -119,7 +112,7 @@ class _MyCustomWidgetState extends State<MyCustomWidget> {
           trailing: IconButton(
             tooltip: 'Go to conference room',
             icon: Icon(Icons.directions_run),
-            onPressed: updateGo,
+            onPressed: () => Navigator.pushNamed(context, mapRoute, arguments: room),
           ),
           title: Text('Theme: ' + theme + '\nStarts: ' + starts + '\nEnds: ' + ends + 
             '\nRoom: ' + room + '\nSpeakers: ' + printSpeakers(),
