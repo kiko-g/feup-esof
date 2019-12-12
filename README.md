@@ -5,22 +5,22 @@ Welcome to the documentation pages of the Campus NAV of **openCX**!
 
 You can find here detailed about the (sub)product, hereby mentioned as module, from a high-level vision to low-level implementation decisions, a kind of Software Development Report (see [template](https://github.com/softeng-feup/open-cx/blob/master/docs/templates/Development-Report.md)), organized by discipline (as of RUP): 
 
-* Business Modelling
-  * [Product Vision](#Product-Vision)
-  * [Elevator Pitch](#Elevator-Pitch)
-* Requirements
-  * [Use Case Diagram](#Use-case-diagram)
-  * [Use Cases](#Use-cases)
-  * [User stories](#User-stories)
+* [Business Modelling](#business-modelling)
+  * [Product Vision](#product-vision)
+  * [Elevator Pitch](#elevator-pitch)
+* [Requirements](#requirements)
+  * [Use Case Diagram](#use-case-diagram)
+  * [Use Cases](#use-cases)
+  * [User stories](#user-stories)
   * [Domain model](#domain-model)
-* Architecture and Design
-  * [Logical architecture](#Logical-architecture)
-  * [Physical architecture](#Physical-architecture)
-  * [Prototype](#Prototype)
-* [Implementation](#Implementation)
-* [Test](#Test)
-* [Configuration and change management](#Configuration-and-change-management)
-* [Project management](#Project-management)
+* [Architecture and Design](#architecture-and-design)
+  * [Logical architecture](#logical-architecture)
+  * [Physical architecture](#physical-architecture)
+  * [Prototype](#prototype)
+* [Implementation](#implementation)
+* [Test](#test)
+* [Configuration and change management](#configuration-and-change-management)
+* [Project Management](#project-management)
 
 So far, contributions are exclusively made by the initial team, but we hope to open them to the community, in all areas and topics: requirements, technologies, development, experimentation, testing, etc.
 
@@ -306,6 +306,8 @@ For now they are only defined. The goal is for them to be automated in our appli
 
 ---
 ## ***Configuration and change management***
+**TO DO**
+- Falar sobre 4 branches e pull requests
 :arrows_counterclockwise: Configuration and change management are key activities to control change to, and maintain the integrity of, a project’s artifacts (code, models, documents).
 
 For the purpose of ESOF, we will use a very simple approach, just to manage feature requests, bug fixes, and improvements, using GitHub issues and following the [GitHub flow](https://guides.github.com/introduction/flow/).
