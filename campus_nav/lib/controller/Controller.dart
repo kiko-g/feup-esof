@@ -118,7 +118,7 @@ class Controller {
   }
 
   // Rooms functions
-  Map getRooms() => _model.getRooms();
+  Map getDestiantions() => _model.getDestinations();
 
   getHasDestination() => _model.getHasDestination();
 
