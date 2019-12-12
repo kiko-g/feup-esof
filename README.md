@@ -1,16 +1,18 @@
+
 # openCX-nav-inc Development Report
 
 Welcome to the documentation pages of the Campus NAV of **openCX**!
 
 You can find here detailed about the (sub)product, hereby mentioned as module, from a high-level vision to low-level implementation decisions, a kind of Software Development Report (see [template](https://github.com/softeng-feup/open-cx/blob/master/docs/templates/Development-Report.md)), organized by discipline (as of RUP): 
 
-* Business modeling 
+* Business Modelling
   * [Product Vision](#Product-Vision)
   * [Elevator Pitch](#Elevator-Pitch)
 * Requirements
   * [Use Case Diagram](#Use-case-diagram)
+  * [Use Cases](#Use-cases)
   * [User stories](#User-stories)
-  * [Domain model](#Domain-model)
+  * [Domain model](#domain-model)
 * Architecture and Design
   * [Logical architecture](#Logical-architecture)
   * [Physical architecture](#Physical-architecture)
@@ -33,11 +35,19 @@ Thank you!
 > :mortar_board: Matheus Alves ([matheusstiehler](https://github.com/matheusstiehler))
 
 ---
-## Product Vision :hourglass_flowing_sand:
+
+## ***Business Modelling***
+## Product Vision
+:hourglass_flowing_sand:
+
 Navigational application that focuses on helping attendees navigating in conference buildings.
 
+ssese.
+
 ---
-## Elevator Pitch :iphone:
+
+## Elevator Pitch
+:iphone:
 
 What is the most annoying thing when going to a conference meeting? 
 
@@ -49,26 +59,30 @@ to the nearest routes to bathrooms, coffe machines, snack machines and even near
 
 This way you can focus on the important things, connecting and learning.
 
+
 ---
-## Requirements :signal_strength:
-```
+
+## ***Requirements***
+:signal_strength:
+
 The application should give the user a realiable realtime location and provide up to date information about conference schedules.
 
-For this, the application needs to keep a stable Internet and GPS connection.
+For this, the application needs to keep a stable connection with the various beacons scaterred through the buildings.
+
+Both connection with the various beacons and the user location will be achieved using bluetooth in conjuction with open source APIs.
 
 An online database will need to be used to store conferences. To be maintained there must be a website to allow staff and developers change the information.
-```
----
 
-### **Use case diagram** :sparkler:  
+
+
+## Use case diagram
+:sparkler:
 
 ![Use case diagram](/doc/useCases.jpg)
 
- ---
+## Use Cases
 
-### **Use Cases**
-**Go to Conference**
-
+-  **Go to Conference**
 > **Actor**: Attendee\
 > **Description**: After an attendee has arrived at a conference location, and has selected the option to be directed to a conference, the application will guide him to the conference room.\
 > **Preconditions**: Attendee has selected the conference that he would like to go to and has internet and gps connection turned on.\
@@ -89,7 +103,7 @@ An online database will need to be used to store conferences. To be maintained t
 
 
 
-#### **Visualize map**
+- **Visualize map**
 
 > **Actor**: Attendee\
 > **Description**: The attendee presses the map button and the map will pop up and show his location on the map.\
@@ -110,7 +124,7 @@ An online database will need to be used to store conferences. To be maintained t
 
 
 
-**Go to places of interest**
+- **Go to places of interest**
 
 > **Actor**: Attendee\
 > **Description**: After an attendee has arrived at a conference location, and has selected a point of interest (bathroom, coffee machine, bar, etc.), the application will guide him to it.\
@@ -133,7 +147,7 @@ An online database will need to be used to store conferences. To be maintained t
 
 
 
-**Check conference data**
+- **Check conference data**
 
 > **Actor**: Attendee\
 > **Description**: After an attendee has opened the application he will go to homepage and see all conferences, when he presses the one he wants to know more about it will show him all available information about it.\
@@ -154,7 +168,7 @@ An online database will need to be used to store conferences. To be maintained t
 
 
 
-**Modify Conferences**
+- **Modify Conferences**
 
 > **Actor**: Staff\
 > **Description**: A staff member changes conferences listed on the database.\
@@ -174,29 +188,36 @@ An online database will need to be used to store conferences. To be maintained t
 
 ---
 
-### **User stories** :arrow_double_down:
+## User stories
+:arrow_double_down:
+
 >**[Trello to github synced user stories](https://github.com/kiko-g/feup-esof/issues?utf8=%E2%9C%93&q=is%3Aissue)**\
 >**[Trello Link](https://trello.com/b/XgQ9OzGB)**
+
 ---
-### **Domain Model** :link:
+
+## Domain Model
+:link:
+
 >**[UML diagram](https://www.draw.io/?lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Domain%20Model.drawio#R7Vxbb%2BMoFP41eVmpke%2BXxyadzjx0pGrb1ew8rUhMYnZsY2HSpPPrF2xIbJMmnoTEE62rSjXHgPH5zoHvHHBH9jTdfCYgj7%2FiCCYjy4g2I%2FthZFmm4xrsD5e8V5IwtCrBkqBIVNoJXtBPKISi3XKFIlg0KlKME4rypnCOswzOaUMGCMHrZrUFTppPzcESKoKXOUhU6TcU0biSBpa%2Fk3%2BBaBnLJ5teWN1Jgaws3qSIQYTXNZH9aWRPCca0uko3U5hw5Um9VO0eP7i7HRiBGe3S4OU5%2FHszIV%2BK1xT8823x6vwbB3cCjDeQrMQLT3G2gKzPORTDpu9SF8UapQnIWGmywBl9EXcMVp7HKImewDte8bEUFMx%2FyNIkxgT9ZPVBwm6ZTMBuEyqgtjzeG0qSKU4wYYIMlw%2FYNXrhnYnHEFiwZs%2Fync2W6CvYNCo%2BgYLKAeIkAXmBZuWQecMUkCXKJphSnIpKqkqFlt8goXBTEwkVf4Y4hZS8syrirmcIuIW9%2B7K83lmP6QhZXLccWwiBsNjltu8dqOxC4PoLGNsKxiUACrzsDWmJDsE%2FYAuOPQiBBC0zVkzggjfjKkLMb%2B6FmOKcd5aDOcqWT2WdB2cn%2BVO8ORdh1naRlL4RoyiCGQcQU0DBbGtgOUYZLTXjTtgv09XUGLsjlw18ysrmrsx%2BeXVCmSWzdwGoxBIyU1hDbg57UD7oGsehF1AzU%2B6EtKynHWhHARpm0QCzZphdq2eYXQVmtoikA86acfaDnnH21YmbUaE5QTlFOBvw1oy3aTg9A%2B4peCsgswn9nrPaGlGiqeRVMGLUVdRlCozxEmcg%2BbSTfkxweNODSiIwARS9NVnxPg2Ips8c8B0tMv0mLXIDu9lFgVdkDkWrOottdWQbRzpi1GYJqdJRCcj2fc5wSgUjUwGpJJ81469BdMTrZoKNThIwg8mEEd8lwasskr47suxF%2BSMpeEWizf3k9ZCRiXhJjHIbPPwC070TL97ZMs7yjUDRuzEen6R6UnnyTev%2BqqoPFdX%2FVUCiqH6IDo%2FjZrcmL6djcCi5iHZsZZqlBm4GUjX0H8jFXpe4ndjQNBWgeeZrwFkvzr0Hh6YaNDzAN5jgfJiyT5uyzeac7XRN6ElT0A%2BxykGfGJ1YkQHhExflVsrW7hthT6Vcw6p8fLbeOsbtLMuWmsy7p5RF%2BXDYftHhy67bty87KvFSkK1ldSIEUpxFrzHiPsVuPCL%2BvFI%2FrCRhc1qZn4wN9W9ejXmUKH7ftmKFh02j9H5M41UW5ZDhjrrljep694Tez8wlOU47BdTaOeuaS2rv1bl%2B2Ozog1wSwwq816qJme7DAXtK8quxU8suqh61JqoclSUcsrtTsok1qzMMr2F3Yy%2BwjtheWXqGBLE3heRsg3Q6GqRm4%2FP9E43P9bnWdj%2Fm4W4vnNZ01PyaOR7%2FoVjMb53alCZ%2Fa7lNR6V7pyq%2Fx%2BSmPu1fVfmuGjC%2FxjCFxcC%2FTuBfVnN2DKyO9Mt0L7Zbrp6KKHisoeI7RFP7HeN2oilXjaYonMcD0rqR7j3N6ap75bNVgTJYDH6tHe3eT8K4Kjst5qg8ozq1RvfGALluyPs%2FDOOqpDjHCWLADB6uH%2B6uKe%2FLnX1SN6IVmPWlK66UJJNAXDopERpjy3cDzzK8IPRcOV0KcD2zdXqga4oiDMa%2B7VqhY5q%2B5%2FiG3%2BjWt9yxb7hBYFV1WglUTbmzsBlQeK5xeMgHq18m0%2BapGd4bS5xI5%2BshcbIfxrvWpmvbgvFiUcCLJMI8SwHzBnMx%2BgC9ai7G2%2FOpiojVjbsRH7yXcI3O2MWSX7wSVs96fARJAbc3ibwrJazGtkUVD%2FLePJDydT6bFXmt7hldywDkEn0LunuJriWrOq3vek9Kg24DUHyriEEOy0We8nV7HSMKXxj54rI1AXnT3QrhHs6HVK41wQoe98rvPdx5ehJfpuE2ZqzQ28Oo7D2Mqr15pc%2BZ1MTXxRjVdg%2Fye5Ne6WdU3nUYld%2FaGgzaX%2Bd15VBbXrQNrOzLEKX2iENx4u%2By1EdNuN0a9XF%2Bd%2BrTirguSH3UnNotUh9tgOrBs7UjcmdeC07%2FqhE138BurgFWcGQV0HwAQB6au%2FanTJ554tLQDlb9dkeaVgYWn%2B8d8IfjatWXZxE6v4d%2FhaDbV4PuUz8I6m%2Fx8fuLu8%2F7MlUNkm%2Fwayx92r%2Bu8lVe%2F3sv06YuNTtec6JRzuvp07HKa%2F8nOvaC1urWPojWgfE0j7JZzvmMhxV3%2Fyinqr77d0P2p%2F8A)**
 
 ---
 
-## **Architecture and Design** :office:
-### **Logical architecture**
+## ***Architecture and Design***
+:office:
+## Logical architecture
 
 ![Logical diagram](doc/UML/Code_structure/architecture.svg)
 
 ---
 
-### Physical architecture
+## Physical architecture
 
 ![Deployment diagram](doc/UML/Deployment_diagram/Deployment_diagram.svg)
 
 ---
 
-### **Prototype**
+## Prototype
 In the initial prototype phase, we only had a sketch of the app and not many user stories had their implementations met. The main concerns were around what tecnologies and programming languages we would be using to develop the app itself, which led to realizing the best option available was Flutter/Dart. 
 
 In addition to this, we spent some time discussing what would be the general logical architecture of the app as well as what external devices and technologies were going to be put to use in aid of the smartphone, which then led to the decision of using bluetooth beacons (with the purpose of helping with the campus navigation).
@@ -207,7 +228,8 @@ In terms of the status of the app we had an initial sketch of the main page and 
 
 ---
 
-### **Implementation** :information_source:
+## ***Implementation***
+:information_source:
 The aplication is currently being implemented using a MVC model coupled with a Router that changes the pages. This allows a better team management overall due to the fragmentation of the code in smaller sections and making different pages independent from one another.
 The map view is currently being developed with GoogleMaps.
 
@@ -215,7 +237,6 @@ The section below describes each product iteration alongside with the user stori
 
 In addition to the description of each product iteration we are going to leave links to the user stories associated with each iteration. Also, our trello board highlights which User Stories refer to each Release.
 
----
 
 In **iteration 1**, we dedicated some time to learning Flutter/Dart and built the core and barebones of our application. We focused on developping:
  * The home page interface, which contains dropdowns of the available conferences.
@@ -279,15 +300,17 @@ In **iteration 4**, we focused on finishing what we had projected for iteration 
 > [#8](https://trello.com/c/rFuPEfVX/60-as-a-developer-i-want-to-have-automatic-tests-to-checks-if-all-features-are-working)
 
 ---
-## **Test** :ballot_box_with_check:
-### **Acceptance Tests**
+## ***Test***
+:ballot_box_with_check:
+## Acceptance Tests
 We have defined some acceptance tests using Gherkin, which can be found in our [Trello board](https://trello.com/b/XgQ9OzGB).
 They are located in each user story (description).
 
 For now they are only defined. The goal is for them to be automated in our application.
 
 ---
-## **Configuration and change management** :arrows_counterclockwise:
+## ***Configuration and change management***
+:arrows_counterclockwise:
 
 Configuration and change management are key activities to control change to, and maintain the integrity of, a project’s artifacts (code, models, documents).
 
@@ -295,7 +318,8 @@ For the purpose of ESOF, we will use a very simple approach, just to manage feat
 
 
 ---
-## **Project management** :video_camera:
+## ***Project management***
+:video_camera:
 
 **[Trello Link](https://trello.com/b/XgQ9OzGB)**
 
