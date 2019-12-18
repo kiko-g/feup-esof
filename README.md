@@ -286,14 +286,8 @@ In **iteration 4**, we focused on finishing what we had projected for iteration 
 > [#4 - Path to location](https://trello.com/c/K2VlNtTz/63-as-a-user-i-want-to-see-the-path-that-will-guide-me-from-my-location-to-the-location-of-selected-conference-room)
 
 > **Backlog user stories**\
-> [#1](https://trello.com/c/banCBzK0/52-as-a-user-i-want-to-know-when-can-i-go-to-those-places-of-interest-including-opening-and-closure-hours)\
-> [#2](https://trello.com/c/16Y19m9a/47-as-a-user-i-want-to-know-the-schedule-of-the-bar)\
-> [#3](https://trello.com/c/qwu1vUBz/48-as-a-developer-i-want-to-remove-and-add-conferences-to-the-conference-list-of-the-home-page)\
-> [#4](https://trello.com/c/ohe6eE3f/51-as-a-developer-i-want-to-update-the-number-of-attendees-of-each-conference-and-the-availability-left-for-those-conferences)\
-> [#5](https://trello.com/c/2SZ2VWLM/42-as-a-user-i-want-to-know-about-any-potential-changes-that-affect-the-conferences)\
-> [#6](https://trello.com/c/o1atCQDc/49-as-a-developer-i-want-to-change-the-date-theme-and-speakers-of-any-given-conference)\
-> [#7](https://trello.com/c/dtq6srR1/50-as-a-developer-i-want-to-inform-every-user-that-subscribed-to-that-conference-about-the-changes)\
-> [#8](https://trello.com/c/rFuPEfVX/60-as-a-developer-i-want-to-have-automatic-tests-to-checks-if-all-features-are-working)
+> [#1](https://trello.com/c/2SZ2VWLM/42-as-a-user-i-want-to-know-about-any-potential-changes-that-affect-the-conferences)\
+> [#2](https://trello.com/c/ohe6eE3f/51-as-a-developer-i-want-to-test-automatically-every-feature-of-the-app)
 
 ---
 ## ***Test***
