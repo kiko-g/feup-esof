@@ -39,7 +39,7 @@ Thank you!
 ## ***Business Modelling***
 ## Product Vision
 :hourglass_flowing_sand:
-Navigational application between key spots that focuses on helping conference attendees.
+Navigation app designed to help attendees find key areas inside a conference building.
 
 ---
 
