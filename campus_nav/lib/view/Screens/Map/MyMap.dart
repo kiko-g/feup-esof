@@ -28,7 +28,7 @@ class MyMapState extends State<MyMap> {
 
   Set<Marker> markers = {};
 
-  Set<Polyline> lines = {};
+  List<Polyline> lines = [];
 
   getPermissions() async {
     await Permission.getPermissionsStatus(
@@ -52,18 +52,20 @@ class MyMapState extends State<MyMap> {
 
     if (response.statusCode != 200) return null;
 
-    return Post.fromJson(jsonDecode(response.body));
+    return new Post.fromJson(jsonDecode(response.body));
   }
 
   Polyline getLine(Post route) {
     if (route == null) return null;
 
-    List<LatLng> points;
+    List<LatLng> points = [];
     LatLng end;
-    for (Map step in route.routes['legs']['steps']) {
-      points.add(
-          LatLng(step['start_location']['lat'], step['start_location']['lng']));
-      end = LatLng(step['end_location']['lat'], step['end_location']['lng']);
+
+    for (Map step in route.steps) {
+      points.add(new LatLng(
+          step['start_location']['lat'], step['start_location']['lng']));
+      end =
+          new LatLng(step['end_location']['lat'], step['end_location']['lng']);
     }
 
     points.add(end);
@@ -71,6 +73,16 @@ class MyMapState extends State<MyMap> {
     return Polyline(
       points: points,
       polylineId: new PolylineId('path'),
+      jointType: JointType.bevel,
+      width: 2,
+      patterns: [
+        PatternItem.dash(40),
+        PatternItem.gap(10),
+      ],
+      endCap: Cap.buttCap,
+      startCap: Cap.roundCap,
+      geodesic: true,
+      color: Colors.blue,
     );
   }
 
@@ -79,7 +91,6 @@ class MyMapState extends State<MyMap> {
   @override
   void initState() {
     super.initState();
-
     getPermissions();
 
     var positions = Controller.instance().getDestiantions();
@@ -117,14 +128,11 @@ class MyMapState extends State<MyMap> {
 
             markers.add(marker);
 
-            var route = getRoute(pos.latitude, pos.longitude).then((route) {
-              return getLine(route);
-            });
-            if (route != null) {
-              route.then((route) {
-                lines.add(route);
+            getRoute(pos.latitude, pos.longitude).then((route) {
+              setState(() {
+                lines.add(getLine(route));                
               });
-            }
+            });
           }
         }
         // Executes when map is opened by router aka no destination set
@@ -148,6 +156,8 @@ class MyMapState extends State<MyMap> {
 
   @override
   Widget build(BuildContext context) {
+    Set<Polyline> polylines = Set<Polyline>.from(lines);
+
     return Scaffold(
         appBar: AppBar(
           title: Text(title),
@@ -159,7 +169,7 @@ class MyMapState extends State<MyMap> {
             Completer().complete(controller);
           },
           markers: markers,
-          polylines: lines,
+          polylines: polylines,
           indoorViewEnabled: true,
           myLocationEnabled: true,
         ),
@@ -168,17 +178,16 @@ class MyMapState extends State<MyMap> {
 }
 
 class Post {
-  final Map<String, dynamic> geocodedWaypoints;
-  final Map<String, dynamic> routes;
+  final List<dynamic> geocodedWaypoints;
+  final List<dynamic> steps;
   final String status;
 
-  Post({this.geocodedWaypoints, this.routes, this.status});
+  Post({this.geocodedWaypoints, this.steps, this.status});
 
   factory Post.fromJson(Map<String, dynamic> json) {
-    return Post(
-      geocodedWaypoints: json['geocoded_waypoints'],
-      routes: json['routes'],
-      status: json['status'],
-    );
+    return new Post(
+        geocodedWaypoints: json['geocoded_waypoints'],
+        steps: json['routes'][0]['legs'][0]['steps'],
+        status: json['status']);
   }
 }
