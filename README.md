@@ -304,12 +304,14 @@ For now they are only defined. The goal is for them to be automated in our appli
 
 ---
 ## ***Configuration and change management***
-**TO DO**
-- Falar sobre 4 branches e pull requests
-:arrows_counterclockwise: Configuration and change management are key activities to control change to, and maintain the integrity of, a project’s artifacts (code, models, documents).
 
-For the purpose of ESOF, we will use a very simple approach, just to manage feature requests, bug fixes, and improvements, using GitHub issues and following the [GitHub flow](https://guides.github.com/introduction/flow/).
+For the purpose of ESOF, we use a very simple approach, just to manage feature requests, bug fixes, and improvements, using GitHub issues and following the [GitHub flow](https://guides.github.com/introduction/flow/).
 
+* Use of **branches** for every new feature/change to the code, using easy-to-understand names
+* Use of **pull requests** when a certain branch was ready to be added to the master branch
+* Use of **releases** for each product iteration
+* Revision, discussion and testing of the code for those pull requests, in order to make sure that the pretended functionality was achieved
+* Controlled merge of branches to the master branch, so that everything that is implemented in the master branch is final and working correctly
 
 ---
 ## ***Project management***
