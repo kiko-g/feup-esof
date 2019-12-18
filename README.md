@@ -281,7 +281,8 @@ In **iteration 4**, we focused on finishing what we had projected for iteration 
 > [#1 - Map guiding to conference](https://trello.com/c/nDhrlslB/39-as-a-user-i-want-to-be-guided-to-a-conference)\
 > [#2 - Map guiding to vending machines](https://trello.com/c/pb3l2oYx/44-as-a-user-i-want-to-be-guided-to-the-coffee-and-snack-machines)\
 > [#3 - Map guiding to bar](https://trello.com/c/ykpkgqpG/45-as-a-user-i-want-to-know-to-be-guided-to-a-bar)\
-> [#4 - Map guiding to bathroom](https://trello.com/c/nRLgEPtV/46-as-a-user-i-want-to-be-guided-to-the-mens-womens-and-differently-abled-restrooms-based-on-the-selected-gender-on-the-profile)
+> [#4 - Map guiding to bathroom](https://trello.com/c/nRLgEPtV/46-as-a-user-i-want-to-be-guided-to-the-mens-womens-and-differently-abled-restrooms-based-on-the-selected-gender-on-the-profile)\
+> [#4 - Path to location](https://trello.com/c/K2VlNtTz/63-as-a-user-i-want-to-see-the-path-that-will-guide-me-from-my-location-to-the-location-of-selected-conference-room)
 
 > **Backlog user stories**\
 > [#1](https://trello.com/c/banCBzK0/52-as-a-user-i-want-to-know-when-can-i-go-to-those-places-of-interest-including-opening-and-closure-hours)\
