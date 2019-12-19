@@ -18,6 +18,10 @@ You can find here detailed about the (sub)product, hereby mentioned as module, f
   * [Physical architecture](#physical-architecture)
   * [Prototype](#prototype)
 * [Implementation](#implementation)
+  * [Iteration 1](#iteration-1)
+  * [Iteration 2](#iteration-2)
+  * [Iteration 3](#iteration-3)
+  * [Iteration 4](#iteration-4)
 * [Test](#test)
 * [Configuration and change management](#configuration-and-change-management)
 * [Project Management](#project-management)
@@ -232,12 +236,11 @@ The section below describes each product iteration alongside with the user stori
 
 In addition to the description of each product iteration we are going to leave links to the user stories associated with each iteration. Also, our trello board highlights which User Stories refer to each Release.
 
-
-In **iteration 1**, we dedicated some time to learning Flutter/Dart and built the core and barebones of our application. We focused on developping:
+#### Iteration 1
+On the first iteration we dedicated some time to learning Flutter/Dart and built the core and barebones of our application. We focused on developping:
  * The home page interface, which contains dropdowns of the available conferences.
  * The side bar to work essentially as a navigation tool for the app.
  * The option to switch between dark and light theme on the settings page.
-
 
 > **Release 1 User Stories**\
 > [#1 - Easy access menu](https://trello.com/c/ZsxXb9Ym/36-as-a-user-i-want-a-menu-with-easy-access)\
@@ -247,8 +250,8 @@ In **iteration 1**, we dedicated some time to learning Flutter/Dart and built th
 
 
 
-
-In **iteration 2**, we focused on implementing:
+#### Iteration 2
+On this iteration we focused on implementing:
  * The favorites section, which will allow the user to store their favorite conferences of the ones available (user story **#1** below)
  * Settings saving upon user input, for instance favoriting a conference, changing profile username, etc. (user story **#2** below)
  * The search engine, which allows the user to search for an existing conference via string input (user story **#3** below)
@@ -263,8 +266,8 @@ In **iteration 2**, we focused on implementing:
 
 
 
-
-In **iteration 3**, our main focuses were:
+#### Iteration 3
+On the third iteration our main focuses were:
  * Help and About Page (user story **#1**)
  * Implementing the map system (user stories **#2** to **#5** below)
 
@@ -277,13 +280,14 @@ User stories between #2 and #5 could not be finished until the due date of the i
 > [#5 - Map guiding to bathroom](https://trello.com/c/nRLgEPtV/46-as-a-user-i-want-to-be-guided-to-the-mens-womens-and-differently-abled-restrooms-based-on-the-selected-gender-on-the-profile)
 
 
-In **iteration 4**, we focused on finishing what we had projected for iteration 3 and left some user stories in the [backlog](#Project-management) section of our trello board, to save some features we would like to implement in the future.
+#### Iteration 4
+In the fourth and final iteration (for the purpose of ESOF) we focused on finishing what we had projected for iteration 3 and left some user stories in the [backlog](#Project-management) section of our trello board, to save some features we would like to implement in the future.
 > **Release 4 User Stories**\
 > [#1 - Map guiding to conference](https://trello.com/c/nDhrlslB/39-as-a-user-i-want-to-be-guided-to-a-conference)\
 > [#2 - Map guiding to vending machines](https://trello.com/c/pb3l2oYx/44-as-a-user-i-want-to-be-guided-to-the-coffee-and-snack-machines)\
 > [#3 - Map guiding to bar](https://trello.com/c/ykpkgqpG/45-as-a-user-i-want-to-know-to-be-guided-to-a-bar)\
 > [#4 - Map guiding to bathroom](https://trello.com/c/nRLgEPtV/46-as-a-user-i-want-to-be-guided-to-the-mens-womens-and-differently-abled-restrooms-based-on-the-selected-gender-on-the-profile)\
-> [#4 - Path to location](https://trello.com/c/K2VlNtTz/63-as-a-user-i-want-to-see-the-path-that-will-guide-me-from-my-location-to-the-location-of-selected-conference-room)
+> [#5 - Path to location](https://trello.com/c/K2VlNtTz/63-as-a-user-i-want-to-see-the-path-that-will-guide-me-from-my-location-to-the-location-of-selected-conference-room)
 
 > **Backlog user stories**\
 > [#1 - Changes in conferences](https://trello.com/c/2SZ2VWLM/42-as-a-user-i-want-to-know-about-any-potential-changes-that-affect-the-conferences)\
