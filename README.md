@@ -24,6 +24,7 @@ You can find here detailed about the (sub)product, hereby mentioned as module, f
   * [Iteration 4](#iteration-4)
 * [**Test**](#test)
   * [Acceptance tests](#acceptance-tests)
+  * [Test Plan](#test-plan)
   * [Automated tests](#automated-tests)
 * [**Configuration and change management**](#configuration-and-change-management)
 * [**Project Management**](#project-management)
@@ -301,11 +302,10 @@ The main focus of testing was to become more familiar with the concept of accept
 The features we chose for testing were **Main Page Drawer** and **AAA**
 
 ### Automated Tests
-:100:\
-**Main Page Drawer**: We decided to create a test case for each selectable option in the main page drawer (Home Page, Map, Profile, Favorites, Settings and Help).\
+:100: **Main Page Drawer**: We decided to create a test case for each selectable option in the main page drawer (Home Page, Map, Profile, Favorites, Settings and Help).\
 Every test, opens the drawer, taps the option of that test case  and checks if the title of the final screen is correct. This way we know for sure whether it corresponds to the expected page or not.
 
-**AAA**
+:100: **AAA**
 
 ---
 ## ***Configuration and change management***
