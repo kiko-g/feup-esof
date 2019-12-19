@@ -28,7 +28,7 @@ class MyMapState extends State<MyMap> {
 
   Set<Marker> markers = {};
 
-  List<Polyline> lines = [];
+  Set<Polyline> lines = {};
 
   getPermissions() async {
     await Permission.getPermissionsStatus(
@@ -86,6 +86,24 @@ class MyMapState extends State<MyMap> {
     );
   }
 
+  void calculateRoute(MarkerId id, LatLng destination) {
+    lines = {};
+    markers = {
+      new Marker(markerId: id,
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
+        position: destination,
+      ),
+    };
+
+    getRoute(destination.latitude, destination.longitude).then((route) {
+        setState(() {
+            lines.add(getLine(route));
+          }
+        );
+      }
+    );
+  }
+
   MyMapState({this.destination});
 
   @override
@@ -126,13 +144,18 @@ class MyMapState extends State<MyMap> {
             icon =
                 BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed);
 
-            Marker marker = new Marker(markerId: id, icon: icon, position: pos);
+            Marker marker = new Marker(
+              markerId: id,
+              icon: icon, 
+              position: pos,
+              onTap: () => calculateRoute(id, pos),
+            );
 
             markers.add(marker);
 
             getRoute(pos.latitude, pos.longitude).then((route) {
               setState(() {
-                lines.add(getLine(route));                
+                lines.add(getLine(route));
               });
             });
           }
@@ -146,7 +169,12 @@ class MyMapState extends State<MyMap> {
             icon =
                 BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed);
           }
-          Marker marker = new Marker(markerId: id, icon: icon, position: pos);
+          Marker marker = new Marker(
+            markerId: id,
+            icon: icon,
+            position: pos,
+            onTap: () => calculateRoute(id, pos),
+          );
 
           markers.add(marker);
         }
@@ -156,8 +184,6 @@ class MyMapState extends State<MyMap> {
 
   @override
   Widget build(BuildContext context) {
-    Set<Polyline> polylines = Set<Polyline>.from(lines);
-
     return Scaffold(
         appBar: AppBar(
           title: Text(title),
@@ -169,7 +195,7 @@ class MyMapState extends State<MyMap> {
             Completer().complete(controller);
           },
           markers: markers,
-          polylines: polylines,
+          polylines: lines,
           indoorViewEnabled: true,
           myLocationEnabled: true,
         ),
