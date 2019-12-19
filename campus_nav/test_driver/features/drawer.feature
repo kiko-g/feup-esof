@@ -3,5 +3,5 @@ Feature: Drawer
 
   Scenario: Selecting the first drawer option
     Given I open the drawer
-    When I tap the "Home Page" widget
-    Then I expect the "Screen title" to be "Campus NAV"
+    When I tap the "Map Button" widget
+    Then I expect the "Screen title" to be "Campus Nav Map"
