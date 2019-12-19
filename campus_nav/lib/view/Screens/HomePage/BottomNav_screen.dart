@@ -1,7 +1,6 @@
 //Flutter widgets
 import 'package:flutter/material.dart';
 
-import '../../../controller/Controller.dart';
 import '../../Router/RouterConstants.dart';
 
 class BottomNavigationMenu extends StatefulWidget{
@@ -13,17 +12,16 @@ class _BottomNavigationMenu extends State<StatefulWidget> {
     setState(() {
       switch (index) {
         case 0:
-          Controller.instance().addHasDestination("wc");
+          Navigator.pushNamed(context, mapRoute, arguments: "wc");
           break;
         case 1:
-          Controller.instance().addHasDestination("machine");
+          Navigator.pushNamed(context, mapRoute, arguments: "machine");
           break;
         case 2:
-          Controller.instance().addHasDestination("coffee");
+          Navigator.pushNamed(context, mapRoute, arguments: "coffee");
           break;
       }
       
-      Navigator.pushNamed(context, mapRoute);
     });
   }
   
