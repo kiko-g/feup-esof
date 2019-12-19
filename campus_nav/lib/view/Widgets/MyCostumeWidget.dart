@@ -103,10 +103,12 @@ class _MyCustomWidgetState extends State<MyCustomWidget> {
       initiallyExpanded: false,
       children: <Widget>[
         ListTile(
+          key: Key("conference$index"),
           leading: IconButton(
+            key: Key("conferenceStar$index"),
             color: Colors.yellow,
             tooltip: 'Add to  Myfavourites',
-            icon: (isFavourited() ? Icon(Icons.star) : Icon(Icons.star_border)),
+            icon: (isFavourited() ? Icon(Icons.star, key: Key('Favourite'),) : Icon(Icons.star_border, key: Key('NonFavourite'))),
             onPressed: updateFav,
           ),
           trailing: IconButton(

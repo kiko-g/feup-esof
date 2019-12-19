@@ -189,7 +189,7 @@ class MyMapState extends State<MyMap> {
     return Scaffold(
       key: Key('Map Page'),
       appBar: AppBar(
-        title: Text(title, key: Key('Screen Title'),),
+        title: Text(title, key: Key('Screen title'),),
       ),
       body: GoogleMap(
         mapType: MapType.normal,

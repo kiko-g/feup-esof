@@ -148,9 +148,9 @@ class _MyProfileWidgetState extends State<MyProfileWidget> {
             height: 100,
             alignment: Alignment.center,
             child: TextFormField(
+              key: Key('Profile name'),
               initialValue: Controller.instance().getProfile().name,
               onSaved: (text) {
-                debugPrint("--->: " + text);
                 Controller.instance().getProfile().name = text;
                 Controller.instance().saveProfile();
               },
