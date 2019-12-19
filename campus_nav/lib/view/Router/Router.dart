@@ -16,7 +16,7 @@ import 'package:campus_nav/view/Screens/Profile/Profile_screen.dart';
 import 'package:campus_nav/view/Screens/Map/MyMap.dart';
 
 class Router {
-    static Route<dynamic> generateRoute(RouteSettings settings) {
+  static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case homeRoute:
         return MaterialPageRoute(builder: (context) => MyHomePage(title: 'Campus NAV',));
@@ -38,6 +38,6 @@ class Router {
               
           )
         );
-      }
     }
+  }
 }

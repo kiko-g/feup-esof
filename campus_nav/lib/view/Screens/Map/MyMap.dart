@@ -18,7 +18,7 @@ class MyMap extends StatefulWidget {
 }
 
 class MyMapState extends State<MyMap> {
-  final String title = 'Campus NAV';
+  final String title = 'Campus NAV Map';
   static final CameraPosition _feup = CameraPosition(
     target: LatLng(41.1777116, -8.5956333),
     zoom: 19.89,
@@ -87,21 +87,20 @@ class MyMapState extends State<MyMap> {
   }
 
   void calculateRoute(MarkerId id, LatLng destination) {
-    lines = {};
-    markers = {
-      new Marker(markerId: id,
-        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
-        position: destination,
-      ),
-    };
-
     getRoute(destination.latitude, destination.longitude).then((route) {
-        setState(() {
-            lines.add(getLine(route));
-          }
-        );
-      }
-    );
+      setState(() {
+        markers = {
+          new Marker(
+            markerId: id,
+            icon:
+                BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed),
+            position: destination,
+          ),
+        };
+
+        lines = {getLine(route)};
+      });
+    });
   }
 
   MyMapState({this.destination});
@@ -111,14 +110,14 @@ class MyMapState extends State<MyMap> {
     super.initState();
     getPermissions();
 
-    destination = destination!=null?destination:'false';
+    destination = destination != null ? destination : 'false';
 
     var positions = Controller.instance().getDestiantions();
 
     // Executes when user opens map through lower homepage destination shortcuts
     if (destination == 'wc' ||
-        destination == 'machine' ||
-        destination == 'coffee') {
+        destination == 'machines' ||
+        destination == 'bar') {
       var coordList = positions[destination];
 
       for (var coords in coordList) {
@@ -127,7 +126,12 @@ class MyMapState extends State<MyMap> {
         var icon =
             BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed);
 
-        Marker marker = new Marker(markerId: id, icon: icon, position: pos);
+        Marker marker = new Marker(
+          markerId: id,
+          icon: icon,
+          position: pos,
+          onTap: () => calculateRoute(id, pos),
+        );
 
         markers.add(marker);
       }
@@ -146,9 +150,8 @@ class MyMapState extends State<MyMap> {
 
             Marker marker = new Marker(
               markerId: id,
-              icon: icon, 
+              icon: icon,
               position: pos,
-              onTap: () => calculateRoute(id, pos),
             );
 
             markers.add(marker);
@@ -169,14 +172,13 @@ class MyMapState extends State<MyMap> {
             icon =
                 BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed);
           }
-          Marker marker = new Marker(
+
+          markers.add(new Marker(
             markerId: id,
             icon: icon,
             position: pos,
             onTap: () => calculateRoute(id, pos),
-          );
-
-          markers.add(marker);
+          ));
         }
       }
     }
@@ -185,21 +187,23 @@ class MyMapState extends State<MyMap> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(title),
-        ),
-        body: GoogleMap(
-          mapType: MapType.normal,
-          initialCameraPosition: _feup,
-          onMapCreated: (GoogleMapController controller) {
-            Completer().complete(controller);
-          },
-          markers: markers,
-          polylines: lines,
-          indoorViewEnabled: true,
-          myLocationEnabled: true,
-        ),
-        drawer: Controller.instance().getSideMenu());
+      key: Key('Map Page'),
+      appBar: AppBar(
+        title: Text(title, key: Key('Screen Title'),),
+      ),
+      body: GoogleMap(
+        mapType: MapType.normal,
+        initialCameraPosition: _feup,
+        onMapCreated: (GoogleMapController controller) {
+          Completer().complete(controller);
+        },
+        markers: markers,
+        polylines: lines,
+        indoorViewEnabled: true,
+        myLocationEnabled: true,
+      ),
+      drawer: Controller.instance().getSideMenu()
+    );
   }
 }
 

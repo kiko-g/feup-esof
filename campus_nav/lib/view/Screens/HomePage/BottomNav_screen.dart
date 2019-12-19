@@ -15,13 +15,12 @@ class _BottomNavigationMenu extends State<StatefulWidget> {
           Navigator.pushNamed(context, mapRoute, arguments: "wc");
           break;
         case 1:
-          Navigator.pushNamed(context, mapRoute, arguments: "machine");
+          Navigator.pushNamed(context, mapRoute, arguments: "machines");
           break;
         case 2:
-          Navigator.pushNamed(context, mapRoute, arguments: "coffee");
+          Navigator.pushNamed(context, mapRoute, arguments: "bar");
           break;
       }
-      
     });
   }
   
@@ -30,16 +29,16 @@ class _BottomNavigationMenu extends State<StatefulWidget> {
     return BottomNavigationBar(
       items: [
         BottomNavigationBarItem(
-        title: Text('WC\n'),
+        title: Text('WC'),
         icon: Image.asset('assets/images/toilets.png'),
         ),
         BottomNavigationBarItem(
-          title: Text('Vending Machine\n'),
+          title: Text('Coffee / Snack'),
           icon: Image.asset('assets/images/machine.png'),
         ),
         BottomNavigationBarItem(
-          title: Text('Coffee Machine\n'),
-          icon: Image.asset('assets/images/coffee-machine.png'),
+          title: Text('Bar'),
+          icon: Image.asset('assets/images/store.png'),
         ),
       ],
       onTap: _onItemTapped,

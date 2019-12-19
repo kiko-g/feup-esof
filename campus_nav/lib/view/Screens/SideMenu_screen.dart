@@ -29,6 +29,7 @@ class SideMenu extends StatelessWidget {
                 Divider(thickness: 5,),
                 
                 ListTile(
+                  key: Key('Map Button'),
                   title: Text('Map'),
                   leading: Icon(Icons.map),
                   onTap: () {
