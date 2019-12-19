@@ -93,12 +93,6 @@ class Model {
   getProfile() => _profile;
 
   getDestinations() => _locations;
-
-  getHasDestination() => hasDestination;
-
-  removeHasDestination() => hasDestination = 'false';
-
-  addHasDestination(String nome) => hasDestination = nome;
 }
 
 class Settings {

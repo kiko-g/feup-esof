@@ -119,10 +119,4 @@ class Controller {
 
   // Rooms functions
   Map getDestiantions() => _model.getDestinations();
-
-  getHasDestination() => _model.getHasDestination();
-
-  removeHasDestination() => _model.removeHasDestination();
-
-  addHasDestination(String s) => _model.addHasDestination(s);
 }

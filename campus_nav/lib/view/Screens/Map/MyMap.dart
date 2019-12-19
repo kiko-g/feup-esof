@@ -111,6 +111,8 @@ class MyMapState extends State<MyMap> {
     super.initState();
     getPermissions();
 
+    destination = destination!=null?destination:'false';
+
     var positions = Controller.instance().getDestiantions();
 
     // Executes when user opens map through lower homepage destination shortcuts
@@ -178,8 +180,6 @@ class MyMapState extends State<MyMap> {
         }
       }
     }
-
-    Controller.instance().removeHasDestination();
   }
 
   @override
