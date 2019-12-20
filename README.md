@@ -1,9 +1,8 @@
-
 # openCX-nav-inc Development Report
 
 Welcome to the documentation pages of the Campus NAV of **openCX**!
 
-You can find here detailed about the (sub)product, hereby mentioned as module, from a high-level vision to low-level implementation decisions, a kind of Software Development Report (see [template](https://github.com/softeng-feup/open-cx/blob/master/docs/templates/Development-Report.md)), organized by discipline (as of RUP): 
+You can find here detailed about the (sub)product, hereby mentioned as module, from a high-level vision to low-level implementation decisions, a kind of Software Development Report (see [template](https://github.com/softeng-feup/open-cx/blob/master/docs/templates/Development-Report.md)), organized by discipline (as of RUP):
 
 * [**Business Modelling**](#business-modelling)
   * [Product Vision](#product-vision)
@@ -22,6 +21,7 @@ You can find here detailed about the (sub)product, hereby mentioned as module, f
   * [Iteration 2](#iteration-2)
   * [Iteration 3](#iteration-3)
   * [Iteration 4](#iteration-4)
+  * [Iteration 5](#iteration-5)
 * [**Test**](#test)
   * [Acceptance tests](#acceptance-tests)
   * [Test Plan](#test-plan)
@@ -42,29 +42,24 @@ Thank you!
 > :mortar_board: Matheus Alves ([matheusstiehler](https://github.com/matheusstiehler))
 
 ---
-
 ## ***Business Modelling***
 ## Product Vision
 :hourglass_flowing_sand:
 Navigation app designed to help attendees find key areas inside a conference building.
 
 ---
-
 ## Elevator Pitch 
 :iphone:
 What is the most annoying thing when going to a conference meeting? 
 
-Of course it is to find the places you want to go.
+Definitely finding the places where you want to go inside a building you have never been to before.
 
-With Campus NAV you have a variaty of different information about the conference building you are in. You have 
-access to all information about any conference taking place there (path, room, speakers, duration, ...) and also 
-to the nearest routes to bathrooms, coffe machines, snack machines and even nearby bar's and restaurants. 
+Campus NAV provides you with information you need about the conference building you're in. 
+You have access to all the details about any conference taking place there (path, room, speakers, duration, ...), as well as information about the routes to bathrooms, coffee machines, vending machines and even bars nearby.
 
-This way you can focus on the important things, connecting and learning.
-
+This way you can focus on the important things, which are connecting and learning.
 
 ---
-
 ## ***Requirements***
 :signal_strength:
 The application should give the user a realiable realtime location and provide up to date information about conference schedules.
@@ -78,11 +73,9 @@ An online database will need to be used to store conferences. To be maintained t
 
 
 ## Use case diagram
-
 ![Use case diagram](/doc/useCases.jpg)
 
 ## Use Cases
-
 -  **Go to Conference**
 > **Actor**: Attendee\
 > **Description**: After an attendee has arrived at a conference location, and has selected the option to be directed to a conference, the application will guide him to the conference room.\
@@ -190,7 +183,7 @@ An online database will need to be used to store conferences. To be maintained t
 ---
 ## User stories
 :arrow_forward: :clipboard:
-**[Trello Link](https://trello.com/b/XgQ9OzGB)**
+**[Trello Board Link](https://trello.com/b/XgQ9OzGB)**
 
 ---
 ## Domain Model
@@ -276,7 +269,7 @@ User stories between #2 and #5 could not be finished until the due date of the i
 
 
 ### Iteration 4
-In the fourth and final iteration (for the purpose of ESOF) we focused on finishing what we had projected for iteration 3 and left some user stories in the [backlog](#Project-management) section of our trello board, to save some features we would like to implement in the future.
+In the fourth and final iteration of our project (for the purpose of ESOF) we focused on finishing what we had projected for iteration 3 and left some user stories in the [backlog](#Project-management) section of our trello board, to save some features we would like to implement in the future.
 > **Release 4 User Stories**\
 > [#1 - Map guiding to conference](https://trello.com/c/nDhrlslB/39-as-a-user-i-want-to-be-guided-to-a-conference)\
 > [#2 - Map guiding to vending machines](https://trello.com/c/pb3l2oYx/44-as-a-user-i-want-to-be-guided-to-the-coffee-and-snack-machines)\
@@ -285,8 +278,11 @@ In the fourth and final iteration (for the purpose of ESOF) we focused on finish
 > [#5 - Path to location](https://trello.com/c/K2VlNtTz/63-as-a-user-i-want-to-see-the-path-that-will-guide-me-from-my-location-to-the-location-of-selected-conference-room)
 
 > **Backlog user stories**\
-> [#1 - Changes in conferences](https://trello.com/c/2SZ2VWLM/42-as-a-user-i-want-to-know-about-any-potential-changes-that-affect-the-conferences)\
-> [#2 - Automatic testing](https://trello.com/c/ohe6eE3f/51-as-a-developer-i-want-to-test-automatically-every-feature-of-the-app)
+> [#1 - Information provided about changes in conferences](https://trello.com/c/2SZ2VWLM/42-as-a-user-i-want-to-know-about-any-potential-changes-that-affect-the-conferences)\
+> [#2 - Automatic testing for every feature](https://trello.com/c/ohe6eE3f/51-as-a-developer-i-want-to-test-automatically-every-feature-of-the-app)
+
+### Iteration 5
+Iteration 5 was different from the previous releases since it was not about developping Campus NAV. Instead in this iteration we contributed towards an open source project, [Open CX](https://github.com/softeng-feup/open-cx) with a feature of the Campus NAV.
 
 ---
 ## ***Test***
