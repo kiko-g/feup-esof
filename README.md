@@ -64,7 +64,7 @@ This way you can focus on the important things, which are connecting and learnin
 :signal_strength:
 The application should give the user a realiable realtime location and provide up to date information about conference schedules.
 
-For this, the application needs to keep a stable connection with the various beacons scaterred through the buildings.
+Hence the application needs to keep a stable connection with the various beacons scaterred through the buildings.
 
 Both connection with the various beacons and the user location will be achieved using bluetooth in conjuction with open source APIs.
 
@@ -84,7 +84,7 @@ An online database will need to be used to store conferences. To be maintained t
 > 
 > **Normal Flow**:
 > 1. The attendee turns internet and gps connection on.
-> 2. The attendee will indicate that he wants to be guided to a conference he has selected.
+> 2. The attendee will indicate he wants to be guided to a conference he has selected.
 > 3. The system will search for optimal route.
 > 4. The attendee will follow directions given by the application.
 > 5. The attendee will reach the conference location.
@@ -107,9 +107,9 @@ An online database will need to be used to store conferences. To be maintained t
 > **Normal Flow**:
 > 1. The attendee turns internet and gps connection on.
 > 2. The attendee presses map button.
-> 3. The application aquires his position.
+> 3. The application acquires his position.
 > 4. The application shows the map.
-> 5. The attendee knows is postion.
+> 5. The attendee knows their position.
 > 
 > **Alternate Flows and Exceptions**:
 > The user is not in FEUP -> The application must give a warning and show map without position.
@@ -173,9 +173,9 @@ An online database will need to be used to store conferences. To be maintained t
 > 1. The staff connects to the internet.
 > 2. The staff goes to the database website.
 > 3. The webiste will acquire data from database.
-> 4. The staff will change conferences listed, possibly adding more or removing some.
+> 4. The staff will change conferences listed, possibly adding or removing some.
 > 5. The attendee will submit changes to database.
-> 6. The website transmites changes to database.
+> 6. The website transmits changes to database.
 > 
 > **Alternate Flows and Exceptions**:
 > The information is not correct -> The website needs to warn the staff.
@@ -282,26 +282,25 @@ In the fourth and final iteration of our project (for the purpose of ESOF) we fo
 > [#2 - Automatic testing for every feature](https://trello.com/c/ohe6eE3f/51-as-a-developer-i-want-to-test-automatically-every-feature-of-the-app)
 
 ### Iteration 5
-Iteration 5 was different from the previous releases since it was not about developping Campus NAV. Instead in this iteration we contributed towards an open source project ([Open CX](https://github.com/softeng-feup/open-cx))with a feature of the Campus NAV app.
+Iteration 5 was different from the previous releases since it was not about developping Campus NAV. Instead we contributed towards an open source project ([Open CX](https://github.com/softeng-feup/open-cx)) with a unique feature of the Campus NAV app.
 
 ---
 ## ***Test***
 ### Acceptance Tests
 :ballot_box_with_check:
-We have defined some acceptance tests using Gherkin, which can be found in our [Trello board](https://trello.com/b/XgQ9OzGB).
-They are located in each user story (description).\
-For now they are only defined. The goal is for them to be automated in our application.
+We have defined some acceptance tests, which can be found in our [Trello board](https://trello.com/b/XgQ9OzGB).
+They are located in the description of each user story.\
+For now they are only defined. The ultimate goal would be to have them all automated in our app.
 
 ### Test Plan
 :blue_book:
-The main focus of testing was to become more familiar with the concept of acceptance testing using **Gherkin**. Hence, we decided to choose a set of features and created tests for them, so that we could be sure they were working properly. These tests are all executed automatically.\
-The features we chose for testing were **Main Page Drawer** and **AAA**
+The main focus of testing was to become more familiar with the concept of acceptance testing using **Gherkin**. 
+Hence, we decided to choose a feature and created tests for it, so that we could be sure it was working properly. These tests are all executed automatically. The feature we chose for testing was the **Main Page Drawer** using multiple test cases, where we test a variety of outcomes after opening the drawer and tapping buttons on it.
 
 ### Automated Tests
 :100: **Main Page Drawer**: We decided to create a test case for each selectable option in the main page drawer (Home Page, Map, Profile, Favorites, Settings and Help).\
-Every test, opens the drawer, taps the option of that test case  and checks if the title of the final screen is correct. This way we know for sure whether it corresponds to the expected page or not.
-
-:100: **AAA**
+Every test, opens the drawer, taps the option of that test case  and checks if the title of the final screen is correct. This way we know for sure whether it corresponds to the expected page or not.\
+You can find the test folder [here](https://github.com/softeng-feup/open-cx-nav-inc/tree/master/campus_nav/test_driver).
 
 ---
 ## ***Configuration and change management***
