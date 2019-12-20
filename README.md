@@ -282,7 +282,7 @@ In the fourth and final iteration of our project (for the purpose of ESOF) we fo
 > [#2 - Automatic testing for every feature](https://trello.com/c/ohe6eE3f/51-as-a-developer-i-want-to-test-automatically-every-feature-of-the-app)
 
 ### Iteration 5
-Iteration 5 was different from the previous releases since it was not about developping Campus NAV. Instead in this iteration we contributed towards an open source project, [Open CX](https://github.com/softeng-feup/open-cx) with a feature of the Campus NAV.
+Iteration 5 was different from the previous releases since it was not about developping Campus NAV. Instead in this iteration we contributed towards an open source project ([Open CX](https://github.com/softeng-feup/open-cx))with a feature of the Campus NAV app.
 
 ---
 ## ***Test***
