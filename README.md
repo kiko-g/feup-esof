@@ -209,8 +209,8 @@ In addition to this, we spent some time discussing what would be the general log
 
 In terms of the status of the app we had an initial sketch of the main page and navigation side bar, showcasing buttons to select each of the conference's available.
 
-![Prototype Image 1](/doc/prototype1.png)
-![Prototype Image 2](/doc/prototype2.png)
+![Prototype Image 1](/docs/screenshots/prototype1.png)
+![Prototype Image 2](/docs/screenshots/prototype2.png)
 
 ---
 
