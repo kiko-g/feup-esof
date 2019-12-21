@@ -21,7 +21,6 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^0.1.2    
-  webview_flutter: ^0.3.14+1
   material_design_icons_flutter: ^3.2.3695
   dynamic_theme: ^1.0.1
   flutter_gherkin: ^1.1.4
