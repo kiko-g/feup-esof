@@ -194,11 +194,11 @@ An online database will need to be used to store conferences. To be maintained t
 ## Logical architecture
 :office:
 
-![Logical diagram](doc/UML/Code_structure/architecture.svg)
+![Logical diagram](docs/UML/Code_structure/architecture.svg)
 
 ---
 ## Physical architecture
-![Deployment diagram](doc/UML/Deployment_diagram/Deployment_diagram.svg)
+![Deployment diagram](docs/UML/Deployment_diagram/Deployment_diagram.svg)
 
 ---
 ## Prototype
