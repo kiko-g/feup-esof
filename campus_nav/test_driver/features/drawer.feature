@@ -1,11 +1,6 @@
 Feature: Drawer
   Tests that verify the correct functioning of the app drawer in the main screen.
 
-  Scenario: Selecting the drawer
-    Given I restart the app
-    When I tap the "Drawer" widget
-    Then I open the drawer
-
   Scenario: Selecting the first drawer option
     Given I open the drawer
     When I tap the "Home Page Button" widget
