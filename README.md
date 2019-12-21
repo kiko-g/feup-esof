@@ -72,7 +72,7 @@ An online database will need to be used to store conferences. To be maintained t
 
 
 ## Use case diagram
-![Use case diagram](/doc/useCases.jpg)
+![Use case diagram](/docs/useCases.jpg)
 
 ## Use Cases
 -  **Go to Conference**
@@ -194,11 +194,11 @@ An online database will need to be used to store conferences. To be maintained t
 ## Logical architecture
 :office:
 
-![Logical diagram](doc/UML/Code_structure/architecture.svg)
+![Logical diagram](docs/UML/Code_structure/architecture.svg)
 
 ---
 ## Physical architecture
-![Deployment diagram](doc/UML/Deployment_diagram/Deployment_diagram.svg)
+![Deployment diagram](docs/UML/Deployment_diagram/Deployment_diagram.svg)
 
 ---
 ## Prototype
@@ -209,19 +209,19 @@ In addition to this, we spent some time discussing what would be the general log
 
 In terms of the status of the app we had an initial sketch of the main page and navigation side bar, showcasing buttons to select each of the conference's available.
 
-![Prototype Image 1](/doc/prototype1.png)
-![Prototype Image 2](/doc/prototype2.png)
+![Prototype Image 1](/docs/screenshots/prototype1.png)
+![Prototype Image 2](/docs/screenshots/prototype2.png)
 
 ---
 
 ## ***Implementation***
-:computer: :information_source:
+:computer: :information_source: 
 The aplication is currently being implemented using a MVC model coupled with a Router that changes the pages. This allows a better team management overall due to the fragmentation of the code in smaller sections and making different pages independent from one another.
 The map view is currently being developed with GoogleMaps.
 
 The section below describes each product iteration alongside with the user stories associated with them. 
 
-In addition to the description of each product iteration we are going to leave links to the user stories associated with each iteration. Please note that our trello board highlights which User Stories refer to each Release. Also, we added [release tags](https://github.com/softeng-feup/open-cx-nav-inc/releases) to our github repository in order to simplify the task of browsing each iteration in depth. This way allows for easier access to the status of the project by the end of each iteration/release.
+In addition to the description of each product iteration we are going to leave links to the user stories associated with each iteration. Please note that our trello board highlights which User Stories refer to each Release. Also, we added [release tags](https://github.com/softeng-feup/open-cx-nav-inc/releases) to our github repository in order to simplify the task of browsing each iteration in depth. This way allows for easier access to the status of the project by the end of each iteration/release. 
 
 ### Iteration 1
 On the first iteration we dedicated some time to learning Flutter/Dart and built the core and barebones of our application. We focused on developping:
@@ -275,6 +275,16 @@ In the fourth and final iteration of our project (for the purpose of ESOF) we fo
 > [#3 - Map guiding to bar](https://trello.com/c/ykpkgqpG/45-as-a-user-i-want-to-know-to-be-guided-to-a-bar)\
 > [#4 - Map guiding to bathroom](https://trello.com/c/nRLgEPtV/46-as-a-user-i-want-to-be-guided-to-the-mens-womens-and-differently-abled-restrooms-based-on-the-selected-gender-on-the-profile)\
 > [#5 - Path to location](https://trello.com/c/K2VlNtTz/63-as-a-user-i-want-to-see-the-path-that-will-guide-me-from-my-location-to-the-location-of-selected-conference-room)
+
+After this iteration, and for the purpose of ESOF, our app had reached its final state. Below you can find some screenshots of the application in action.
+
+![Final 1](/docs/screenshots/final1.png)
+![Final 2](/docs/screenshots/final2.png)
+![Final 3](/docs/screenshots/final3.png)
+![Final 4](/docs/screenshots/final4.png)
+![Final 5](/docs/screenshots/final5.png)
+![Final 6](/docs/screenshots/final6.png)
+
 
 > **Backlog user stories**\
 > [#1 - Information provided about changes in conferences](https://trello.com/c/2SZ2VWLM/42-as-a-user-i-want-to-know-about-any-potential-changes-that-affect-the-conferences)\
