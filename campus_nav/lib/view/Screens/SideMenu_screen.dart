@@ -20,6 +20,7 @@ class SideMenu extends StatelessWidget {
                 ),            
                 
                 ListTile(
+                  key: Key('Home Page Button'),
                   title: Text('Home Page'),
                   leading: Icon(Icons.home),
                   onTap: () {
@@ -29,6 +30,7 @@ class SideMenu extends StatelessWidget {
                 Divider(thickness: 5,),
                 
                 ListTile(
+                  key: Key('Map Button'),
                   title: Text('Map'),
                   leading: Icon(Icons.map),
                   onTap: () {
@@ -38,6 +40,7 @@ class SideMenu extends StatelessWidget {
                 Divider(thickness: 5,),
                 
                 ListTile(
+                  key: Key('Profile Button'),
                   title: Text('Profile'),
                   leading: Icon(Icons.person),
                   onTap: () {
@@ -47,6 +50,7 @@ class SideMenu extends StatelessWidget {
                 Divider(thickness: 5,),
                 
                 ListTile(
+                  key: Key('Favorites Button'),
                   title: Text('Favorites'),
                   leading: Icon(Icons.star),
                   onTap: () {
@@ -56,6 +60,7 @@ class SideMenu extends StatelessWidget {
                 Divider(thickness: 5,),
                 
                 ListTile(
+                  key: Key('Settings Button'),
                   title: Text('Settings'),
                   leading: Icon(Icons.settings),
                   onTap: () {
@@ -65,6 +70,7 @@ class SideMenu extends StatelessWidget {
                 Divider(thickness: 5,),
 
                 ListTile(
+                  key: Key('Help Button'),
                   title: Text('Help'),
                   leading: Icon(Icons.help),
                   onTap: () {

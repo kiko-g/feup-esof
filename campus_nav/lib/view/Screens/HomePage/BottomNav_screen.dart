@@ -1,7 +1,6 @@
 //Flutter widgets
 import 'package:flutter/material.dart';
 
-import '../../../controller/Controller.dart';
 import '../../Router/RouterConstants.dart';
 
 class BottomNavigationMenu extends StatefulWidget{
@@ -13,17 +12,15 @@ class _BottomNavigationMenu extends State<StatefulWidget> {
     setState(() {
       switch (index) {
         case 0:
-          Controller.instance().addHasDestination("wc");
+          Navigator.pushNamed(context, mapRoute, arguments: "wc");
           break;
         case 1:
-          Controller.instance().addHasDestination("machine");
+          Navigator.pushNamed(context, mapRoute, arguments: "machines");
           break;
         case 2:
-          Controller.instance().addHasDestination("coffee");
+          Navigator.pushNamed(context, mapRoute, arguments: "bar");
           break;
       }
-      
-      Navigator.pushNamed(context, mapRoute);
     });
   }
   
@@ -32,16 +29,16 @@ class _BottomNavigationMenu extends State<StatefulWidget> {
     return BottomNavigationBar(
       items: [
         BottomNavigationBarItem(
-        title: Text('WC\n'),
+        title: Text('WC'),
         icon: Image.asset('assets/images/toilets.png'),
         ),
         BottomNavigationBarItem(
-          title: Text('Vending Machine\n'),
+          title: Text('Coffee / Snack'),
           icon: Image.asset('assets/images/machine.png'),
         ),
         BottomNavigationBarItem(
-          title: Text('Coffee Machine\n'),
-          icon: Image.asset('assets/images/coffee-machine.png'),
+          title: Text('Bar'),
+          icon: Image.asset('assets/images/store.png'),
         ),
       ],
       onTap: _onItemTapped,

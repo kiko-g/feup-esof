@@ -13,9 +13,9 @@ class MyProfileState extends State<MyProfile> {
     return  new Scaffold(
         appBar: new AppBar(
           title: new Text(
-            'MyProfile', style: 
-            new TextStyle()
-            ),
+            'Campus NAV Profile', 
+            key: Key('Screen title'),
+          ),
         ),
         drawer: Controller.instance().getSideMenu(),
         body: MyProfileWidget(),

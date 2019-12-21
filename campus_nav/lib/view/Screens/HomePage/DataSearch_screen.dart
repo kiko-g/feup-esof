@@ -18,6 +18,19 @@ class DataSearch extends SearchDelegate<String> {
   }
 
   @override
+  ThemeData appBarTheme(BuildContext context) {
+    assert(context != null);
+    final ThemeData theme = Theme.of(context);
+    assert(theme != null);
+    return theme.copyWith(
+      primaryColor: theme.bottomAppBarColor,
+      primaryIconTheme: theme.primaryIconTheme.copyWith(color: Colors.grey),
+      primaryColorBrightness: Brightness.light,
+      primaryTextTheme: theme.textTheme,
+    );
+  }
+
+  @override
   Widget buildLeading(BuildContext context) {
     return IconButton(
       icon: AnimatedIcon(

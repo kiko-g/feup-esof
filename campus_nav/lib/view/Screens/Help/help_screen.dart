@@ -17,7 +17,7 @@ class _HelpScreenState extends State<HelpScreen> {
   Widget build(BuildContext context) 
   {
     return Scaffold(
-      appBar: AppBar( title: Text("Help & About Page"), ),
+      appBar: AppBar( title: Text("Campus NAV Help", key: Key('Screen title')), ),
       drawer: Controller.instance().getSideMenu(),
       body: 
       Container(    

@@ -64,14 +64,14 @@ class Model {
   ];
 
   static Map _locations = {
-    'B001'    : [[41.177831, -8.595771]],
-    'B002'    : [[41.177773, -8.595635]],
-    'B003'    : [[41.177714, -8.595541]],
+    'B001'    : [[41.177785, -8.595762]],
+    'B002'    : [[41.177757, -8.595660]],
+    'B003'    : [[41.177692, -8.595586]],
     'B004'    : [[41.177368, -8.595121]],
     'B005'    : [[41.177250, -8.595163]],
-    'wc'      : [[41.177831, -8.595771],[41.177773, -8.595635]], //estao mal, so meti para testar
-    'machine' : [[41.177831, -8.595771],[41.177714, -8.595541]], //estao mal, so meti para testar
-    'coffee'  : [[41.177368, -8.595121]] //estao mal, so meti para testar
+    'wc'      : [[41.177383, -8.594701],[41.177564, -8.595611],[41.177764, -8.595037],[41.177730, -8.596451],[41.177798, -8.596765],[41.178283, -8.597865]], 
+    'machines' : [[41.177297, -8.595212],[41.177417, -8.595614],[41.177522, -8.595005],[41.177654, -8.595838]],
+    'bar' : [[41.178467, -8.597256],[41.177478, -8.594876]]
   };
 
   Model() {
@@ -93,12 +93,6 @@ class Model {
   getProfile() => _profile;
 
   getDestinations() => _locations;
-
-  getHasDestination() => hasDestination;
-
-  removeHasDestination() => hasDestination = 'false';
-
-  addHasDestination(String nome) => hasDestination = nome;
 }
 
 class Settings {
