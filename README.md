@@ -38,8 +38,7 @@ Thank you!
 > :mortar_board: Francisco Gonçalves ([kiko-g](https://github.com/kiko-g))\
 > :mortar_board: João Mota ([jppm99](https://github.com/jppm99))\
 > :mortar_board: Luís Ramos ([luispvramos](https://github.com/LuisPRamos))\
-> :mortar_board: Martim Silva ([motapinto](https://github.com/motapinto))\
-> :mortar_board: Matheus Alves ([matheusstiehler](https://github.com/matheusstiehler))
+> :mortar_board: Martim Silva ([motapinto](https://github.com/motapinto))
 
 ---
 ## ***Business Modelling***
