@@ -72,7 +72,7 @@ An online database will need to be used to store conferences. To be maintained t
 
 
 ## Use case diagram
-![Use case diagram](/doc/useCases.jpg)
+![Use case diagram](/docs/useCases.jpg)
 
 ## Use Cases
 -  **Go to Conference**
