@@ -10,15 +10,15 @@ import 'conference_screen.dart';
 import 'BottomNav_screen.dart';
 
 class MyHomePage extends StatelessWidget {
-  final title;
   final DataSearch searchWidget = DataSearch();
-  MyHomePage({this.title});
+  MyHomePage();
   
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        leading: new Icon(Icons.access_alarm, key: Key('Drawer'),),
+        title: Text('Campus NAV', key: Key('Screen title')),
         actions: <Widget>[
           new IconButton(
             icon: new Icon(Icons.search),

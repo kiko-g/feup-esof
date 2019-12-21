@@ -17,7 +17,9 @@ class MySettingsState extends State<MySettings> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: AppBar(title: Text('Settings'),),
+      appBar: AppBar(
+        title: Text('Campus NAV Settings', key: Key('Screen title'),),
+      ),
       drawer: Controller.instance().getSideMenu(),
       body: Container(
         padding: new EdgeInsets.all(32.0),
