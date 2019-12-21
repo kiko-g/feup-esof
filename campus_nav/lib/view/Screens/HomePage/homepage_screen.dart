@@ -17,7 +17,6 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: new Icon(Icons.access_alarm, key: Key('Drawer'),),
         title: Text('Campus NAV', key: Key('Screen title')),
         actions: <Widget>[
           new IconButton(
